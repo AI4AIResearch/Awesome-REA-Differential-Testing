@@ -10,6 +10,8 @@ import shutil
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from localization import read_localizations, localized_records
+
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "site"
 OUTPUT = ROOT / "dist"
@@ -22,7 +24,7 @@ FONT_AWESOME_ICONS = {
     "chevron": "chevron-down", "code": "code", "chip": "microchip",
     "phone": "mobile-screen", "box": "cube", "network": "diagram-project",
     "layers": "layer-group", "document": "file-lines", "book": "book-open",
-    "terminal": "terminal", "github": "github",
+    "terminal": "terminal", "github": "github", "globe": "globe",
 }
 
 
@@ -170,13 +172,17 @@ def main() -> None:
         else:
             successful = [record for record in index_data.get("resources", []) if record.get("scan_status") == "readme-scanned"]
             if successful:
-                index_data["resources"] = successful
+                repository_locales = read_localizations(ROOT)
+                index_data["resources"] = localized_records(successful, repository_locales)
+                index_data["meta"]["localization"] = {"languages": ["en", "zh-CN"], "translated_records": sum(record["id"] in repository_locales for record in successful), "method": "AI-assisted description translation; original upstream text retained."}
                 index_meta = index_data.get("meta", {})
                 metadata["source_index"] = {"available": True, "resource_count": len(successful), "status": index_meta.get("status", ""), "completed_at": index_meta.get("completed_at"), "verification": "automated-readme-scan"}
                 source_index_output.write_text(json.dumps(index_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
-    (OUTPUT / "catalog.json").write_text(json.dumps({"meta": metadata, "resources": resources}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    topic_labels_path = SOURCE / "topics.i18n.json"
+    topic_labels = json.loads(topic_labels_path.read_text()) if topic_labels_path.exists() else {}
+    (OUTPUT / "catalog.json").write_text(json.dumps({"meta": metadata, "resources": resources, "topic_labels": topic_labels}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for filename, attribute in (("app.js", "src"), ("styles.css", "href"), ("favicon.svg", "href")):
         revision = hashlib.sha256((OUTPUT / filename).read_bytes()).hexdigest()[:16]
         html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')

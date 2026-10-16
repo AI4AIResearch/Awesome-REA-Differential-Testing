@@ -6,15 +6,19 @@ import os
 from pathlib import Path
 import re
 import sys
-import urllib.error
 import urllib.parse
 import urllib.request
 
 from validate import validate_benchmarks, validate_resources, validate_source_index
+from localization import LOCALE_FILES, validate_localizations
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- awesome-rea-automated-review -->'
 CATALOGS = ('data/rea-resources.json', 'data/tool-resources.json')
+SOURCE_INDEX = 'data/source-index.json'
+LOCALIZATION_INPUTS = (SOURCE_INDEX, *LOCALE_FILES)
+REVIEW_FILES = frozenset((*CATALOGS, 'data/benchmarks.json', *LOCALIZATION_INPUTS))
+LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----')
 LOCAL_PATH = re.compile(r'/Users/[^/\s]+/|/home/[^/\s]+/')
 MAX_FILE_BYTES = 8 * 1024 * 1024
@@ -37,8 +41,82 @@ def api(repository, endpoint, token, method='GET', payload=None, raw=False):
 
 
 def content_at(repository, filename, sha, token):
+    # Contributor files are retrieved only as text from this exact data allowlist.
+    if filename not in REVIEW_FILES:
+        raise ValueError('File is not an allowed review data input')
     path = urllib.parse.quote(filename, safe='/')
     return api(repository, f'contents/{path}?ref={sha}', token, raw=True)
+
+
+def parse_json(text):
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('Duplicate JSON key')
+            result[key] = value
+        return result
+
+    def invalid_constant(value):
+        raise ValueError('Non-JSON numeric constant')
+
+    return json.loads(text, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+
+
+def review_localizations(records, contents, errors):
+    translations = {}
+    for filename in LOCALE_FILES:
+        if filename not in contents:
+            errors.append(f'{filename}: required localization data is missing.')
+            continue
+        try:
+            entries = parse_json(contents[filename])
+        except (ValueError, TypeError):
+            errors.append(f'{filename}: expected valid JSON without duplicate keys.')
+            continue
+        if not isinstance(entries, dict):
+            errors.append(f'{filename}: expected an object keyed by resource ID.')
+            continue
+        overlap = translations.keys() & entries.keys()
+        if overlap:
+            errors.append(f'{filename}: {len(overlap)} localization IDs also occur in another locale file.')
+        for identifier, entry in entries.items():
+            if not isinstance(entry, dict):
+                errors.append(f'{filename}: localization {identifier!r} must be an object.')
+                continue
+            if set(entry) - LOCALE_FIELDS:
+                errors.append(f'{filename}: localization {identifier!r} has unsupported fields.')
+            for flag in ('english_retains_name', 'technical_only'):
+                if flag in entry and type(entry[flag]) is not bool:
+                    errors.append(f'{filename}: localization {identifier!r} has a non-boolean {flag}.')
+            translations[identifier] = entry
+    validate_localizations(records, translations, errors)
+    return len(translations)
+
+
+def load_review_contents(repository, sha, token, files, changed, errors):
+    needed = set(changed & REVIEW_FILES)
+    if set(CATALOGS) & changed:
+        needed.update(CATALOGS)
+    if set(LOCALIZATION_INPUTS) & changed:
+        needed.update(LOCALIZATION_INPUTS)
+    removed = {entry['filename'] for entry in files if entry['status'] == 'removed'}
+    removed.update(entry['previous_filename'] for entry in files
+                   if entry['status'] == 'renamed' and 'previous_filename' in entry)
+    contents = {}
+    for filename in sorted(needed):
+        if filename in removed:
+            errors.append(f'{filename}: removing or renaming catalog/localization data requires maintainer review.')
+            continue
+        try:
+            if filename in changed:
+                contents[filename] = content_at(repository, filename, sha, token)
+            else:
+                # The workflow checks out the trusted base; no unchanged PR data or code is loaded.
+                contents[filename] = (ROOT / filename).read_text(encoding='utf-8')
+        except (OSError, UnicodeError, ValueError):
+            errors.append(f'{filename}: could not safely retrieve required JSON data for this review.')
+    return contents
 
 
 def review_data(contents, changed):
@@ -46,7 +124,7 @@ def review_data(contents, changed):
     if set(CATALOGS) & changed:
         records = []
         for filename in CATALOGS:
-            data = json.loads(contents[filename])
+            data = parse_json(contents[filename])
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array.')
             else:
@@ -54,16 +132,21 @@ def review_data(contents, changed):
         validate_resources(records, errors)
         reviewed.append(f'{len(records)} curated records checked together for schema, duplicate IDs/URLs, provenance, targets, dates, and review labels.')
     if 'data/benchmarks.json' in changed:
-        data = json.loads(contents['data/benchmarks.json'])
+        data = parse_json(contents['data/benchmarks.json'])
         if not isinstance(data, list):
             errors.append('Benchmarks must be an array.')
         else:
             validate_benchmarks(data, errors)
             reviewed.append(f'{len(data)} benchmark records checked for timestamp, count, and source consistency.')
-    if 'data/source-index.json' in changed:
-        data = json.loads(contents['data/source-index.json'])
+    if set(LOCALIZATION_INPUTS) & changed:
+        data = parse_json(contents[SOURCE_INDEX])
         validate_source_index(data, errors)
         reviewed.append('Automated source-index records checked separately from curated resources.')
+        if (isinstance(data, dict) and isinstance(data.get('resources'), list)
+                and all(isinstance(record, dict) and isinstance(record.get('id'), str)
+                        for record in data['resources'])):
+            count = review_localizations(data['resources'], contents, errors)
+            reviewed.append(f'{count} repository localizations checked across all locale files for coverage, duplicate IDs, bilingual descriptions, and explicit language exceptions.')
     return errors, reviewed
 
 
@@ -100,6 +183,8 @@ def main():
         if len(batch) < 100:
             break
     changed = {entry['filename'] for entry in files}
+    changed.update(entry['previous_filename'] for entry in files
+                   if entry['status'] == 'renamed' and 'previous_filename' in entry)
     errors, reviewed = [], []
     if pull.get('changed_files', len(files)) > 300:
         errors.append('This PR exceeds the 300-file automatic review limit; split it for a complete review.')
@@ -113,22 +198,16 @@ def main():
             errors.append(f'{path}: private configuration should not be committed.')
         if path.startswith(('.cache/', '.wrangler/', 'dist/')) or '/output/' in path or path.endswith(('.woff', '.woff2')):
             errors.append(f'{path}: generated, raw, or licensed production assets do not belong in this public source repository.')
-    relevant = set(CATALOGS) | {'data/benchmarks.json', 'data/source-index.json'}
-    contents = {filename: (ROOT / filename).read_text() for filename in CATALOGS}
-    for filename in sorted(changed & relevant):
-        if any(entry['filename'] == filename and entry['status'] == 'removed' for entry in files):
-            errors.append(f'{filename}: removing a catalog requires maintainer review.')
-            continue
-        try:
-            contents[filename] = content_at(repository, filename, sha, token)
-        except (urllib.error.HTTPError, UnicodeError, ValueError):
-            errors.append(f'{filename}: could not safely retrieve text for this commit.')
+        if (path.startswith('data/locales/') and path not in LOCALE_FILES
+                and path != 'data/locales/README.md'):
+            errors.append(f'{path}: locale file is not in the trusted review allowlist; maintainer review is required.')
+    contents = load_review_contents(repository, sha, token, files, changed, errors)
     try:
-        findings, checked = review_data(contents, changed & set(contents))
+        findings, checked = review_data(contents, changed & REVIEW_FILES)
         errors.extend(findings)
         reviewed.extend(checked)
     except (ValueError, TypeError, KeyError):
-        errors.append('Changed catalog JSON could not be parsed or validated. Check its shape locally.')
+        errors.append('Required catalog or localization JSON could not be parsed or validated. Check its shape locally.')
     manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
     body = [MARKER, '### Automated catalog review', '', f'Commit: `{sha[:12]}`.', '',
             '**Changes need attention.**' if errors else '**No issues found by these automatic checks.**', '']

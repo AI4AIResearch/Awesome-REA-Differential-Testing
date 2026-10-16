@@ -2,6 +2,10 @@
 
 const UI = {
   "en": {
+    "pageTitle": "Awesome Reverse Engineering Anything",
+    "collectionTitle": 'Awesome Reverse<br class="mobile-title-break"> Engineering Anything<span class="title-dot" aria-hidden="true">.</span>',
+    "languageSelection": "Language",
+    "homeLabel": "AwesomeREA.org home",
     "skip": "Skip to the collection",
     "mainNav": "Main navigation",
     "submitResource": "Submit resource",
@@ -30,7 +34,7 @@ const UI = {
     "sourceIntro": "Automatically indexed repositories; descriptions and topics come from upstream.",
     "aboutCollection": "About this index",
     "sourceDisclosure": "READMEs were fetched automatically. These entries have not been manually reviewed or executed; target labels are inferred and do not establish REA compatibility.",
-    "sourceLanguageNote": "Descriptions retain their original language.",
+    "sourceLanguageNote": "Repository descriptions are available in English and Chinese. Translations are AI-assisted; original descriptions remain in the downloadable data.",
     "sourceLoading": "Loading repositories…",
     "clearFilters": "Clear filters ×",
     "emptyTitle": "No matching resources.",
@@ -81,6 +85,10 @@ const UI = {
     "iconsCredit": "Font Awesome Pro icons ↗"
   },
   "zh": {
+    "pageTitle": "逆向工程资源合集 · Awesome Reverse Engineering Anything",
+    "collectionTitle": '逆向工程资源合集<span class="title-dot" aria-hidden="true">.</span>',
+    "languageSelection": "语言",
+    "homeLabel": "AwesomeREA.org 首页",
     "skip": "跳到资源集合",
     "mainNav": "主导航",
     "submitResource": "提交资源",
@@ -92,7 +100,7 @@ const UI = {
     "curatedMode": "精选资源",
     "sourceSearchLabel": "搜索仓库、项目简介和主题",
     "sourceSearchPlaceholder": "搜索仓库、工具或主题…",
-    "targetFilterLabel": "分析目标",
+    "targetFilterLabel": "领域",
     "targetAll": "全部",
     "targetWebsite": "网站",
     "targetGame": "游戏",
@@ -103,13 +111,13 @@ const UI = {
     "sourceAnyTopic": "所有主题",
     "sourceSortLabel": "排序",
     "sourceSortRelevance": "自动相关性",
-    "sourceSortStars": "Star 数量",
+    "sourceSortStars": "星标最多",
     "sourceSortUpdated": "最近更新",
     "sourceSortName": "仓库名称",
     "sourceIntro": "自动索引的项目仓库，简介与主题来自上游。",
     "aboutCollection": "关于此索引",
     "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工审阅或执行测试；目标标签为自动分类，不表示已验证 REA 兼容性。",
-    "sourceLanguageNote": "项目简介保留上游原文（主要为英文）。",
+    "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
     "emptyTitle": "没有匹配的资源。",
@@ -142,8 +150,8 @@ const UI = {
     "reviewed": "复核于",
     "sourceReviewed": "资料已复核",
     "sourceNotRecorded": "未记录",
-    "sourceStars": "Stars",
-    "sourceStarsTitle": "元数据采集时的 GitHub Star 快照，不是实时数量。",
+    "sourceStars": "星标",
+    "sourceStarsTitle": "元数据采集时的 GitHub 星标快照，不是实时数量。",
     "sourceNoDescription": "上游仓库未提供项目简介。",
     "sourceTopicHint": "按此主题筛选",
     "sourceLicenseUnknown": "许可证未识别",
@@ -162,15 +170,15 @@ const UI = {
 };
 
 const CATEGORY = {
-  "core": ["REA essentials", "REA 核心"], "workflow-guides": ["Workflow guides", "工作流指南"], "official-case-studies": ["Upstream case studies", "官方案例"], "community-case-studies": ["Community case studies", "社区案例"], "community-integrations": ["REA community integrations", "REA 社区集成"], "community-labs": ["Community labs", "社区实验"], "related-lists": ["Companion collections", "相关目录"], "agent-mcp": ["MCP servers", "MCP 服务"], "agent-workflows": ["Agent workflows", "Agent 工作流"], "native-analysis": ["Native analysis", "原生二进制分析"], "dynamic-analysis": ["Runtime & debugging", "运行时与调试"], "android": ["Android", "Android"], "dotnet": [".NET", ".NET"], "javascript-electron": ["JavaScript & Electron", "JavaScript 与 Electron"], "webassembly": ["WebAssembly", "WebAssembly"], "firmware": ["Firmware", "固件"], "binary-libraries": ["Binary analysis libraries", "二进制分析库"], "binary-diffing": ["Binary diffing", "二进制差异分析"], "learning": ["Learning", "学习资源"], "game-analysis": ["Game analysis", "游戏分析"], "games": ["Games", "游戏"], "game-tools": ["Game tools", "游戏工具"], "web-analysis": ["Website & browser analysis", "网站与浏览器分析"]
+  "core": ["REA essentials", "REA 核心"], "workflow-guides": ["Workflow guides", "工作流指南"], "official-case-studies": ["Upstream case studies", "官方案例"], "community-case-studies": ["Community case studies", "社区案例"], "community-integrations": ["REA community integrations", "REA 社区集成"], "community-labs": ["Community labs", "社区实验"], "related-lists": ["Companion collections", "相关目录"], "agent-mcp": ["MCP servers", "MCP 服务"], "agent-workflows": ["Agent workflows", "智能体工作流"], "native-analysis": ["Native analysis", "原生二进制分析"], "dynamic-analysis": ["Runtime & debugging", "运行时与调试"], "android": ["Android", "Android"], "dotnet": [".NET", ".NET"], "javascript-electron": ["JavaScript & Electron", "JavaScript 与 Electron"], "webassembly": ["WebAssembly", "WebAssembly"], "firmware": ["Firmware", "固件"], "binary-libraries": ["Binary analysis libraries", "二进制分析库"], "binary-diffing": ["Binary diffing", "二进制差异分析"], "learning": ["Learning", "学习资源"], "game-analysis": ["Game analysis", "游戏分析"], "games": ["Games", "游戏"], "game-tools": ["Game tools", "游戏工具"], "web-analysis": ["Website & browser analysis", "网站与浏览器分析"]
 };
 const RELATION = {
-  "official-core": ["REA · OFFICIAL", "REA · 官方核心"], "official-skill": ["REA · OFFICIAL SKILL", "REA · 官方 Skill"], "official-documentation": ["REA · DOCUMENTATION", "REA · 官方文档"], "official-guide": ["REA · GUIDE", "REA · 官方指南"], "official-case-study": ["REA · CASE STUDY", "REA · 官方案例"], "community-integration": ["REA · COMMUNITY", "REA · 社区集成"], "community-reported-mixed-workflow": ["COMMUNITY · MIXED WORKFLOW", "社区 · 混合工作流"], "community-learning-resource": ["COMMUNITY · LEARNING", "社区 · 学习资源"], "upstream-maintainer-companion-list": ["COMPANION COLLECTION", "相关资源目录"], "independent-agent-integration": ["INDEPENDENT · AGENT", "独立 · Agent 集成"], "foundation": ["FOUNDATION TOOL", "基础工具"], "learning": ["LEARNING RESOURCE", "学习资源"]
+  "official-core": ["REA · OFFICIAL", "REA · 官方核心"], "official-skill": ["REA · OFFICIAL SKILL", "REA · 官方技能"], "official-documentation": ["REA · DOCUMENTATION", "REA · 官方文档"], "official-guide": ["REA · GUIDE", "REA · 官方指南"], "official-case-study": ["REA · CASE STUDY", "REA · 官方案例"], "community-integration": ["REA · COMMUNITY", "REA · 社区集成"], "community-reported-mixed-workflow": ["COMMUNITY · MIXED WORKFLOW", "社区 · 混合工作流"], "community-learning-resource": ["COMMUNITY · LEARNING", "社区 · 学习资源"], "upstream-maintainer-companion-list": ["COMPANION COLLECTION", "相关资源目录"], "independent-agent-integration": ["INDEPENDENT · AGENT", "独立 · 智能体集成"], "foundation": ["FOUNDATION TOOL", "基础工具"], "learning": ["LEARNING RESOURCE", "学习资源"]
 };
 const params = new URLSearchParams(location.search);
 let storedLang = "en";
 try { storedLang = localStorage.getItem("awesomerea-language") || "en"; } catch (_) { /* storage may be disabled */ }
-const state = { lang: params.get("lang") === "zh" || (!params.has("lang") && storedLang === "zh") ? "zh" : "en", q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, records: [], loaded: false, error: false };
+const state = { lang: params.get("lang") === "zh" || (!params.has("lang") && storedLang === "zh") ? "zh" : "en", q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, records: [], loaded: false, error: false };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -179,17 +187,22 @@ const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : k
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
 function icon(name, small = false) { if (document.documentElement.dataset.iconSet === "fontawesome") { const span = node("span", "icon fa-symbol fa-" + name + (small ? " icon-small" : "")); span.setAttribute("aria-hidden", "true"); return span; } const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "icon" + (small ? " icon-small" : "")); svg.setAttribute("aria-hidden", "true"); const use = document.createElementNS("http://www.w3.org/2000/svg", "use"); use.setAttribute("href", "#i-" + name); svg.append(use); return svg; }
 function external(href, className, text) { const link = node("a", className, text); link.href = href; link.target = "_blank"; link.rel = "noopener noreferrer"; return link; }
-function updateURL() { const next = new URL(location.href); ["q", "group", "category", "kind", "target", "lang"].forEach(key => { const value = state[key]; if (value && value !== "all" && !(key === "lang" && value === "en")) next.searchParams.set(key, value); else next.searchParams.delete(key); }); history.replaceState(null, "", next); }
+function updateURL() { const next = new URL(location.href); ["q", "group", "category", "kind", "target", "lang"].forEach(key => { const value = state[key]; if (value && value !== "all") next.searchParams.set(key, value); else next.searchParams.delete(key); }); history.replaceState(null, "", next); }
 function applyLanguage() {
   document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
-  document.title = "Awesome Reverse Engineering Anything";
+  document.title = t("pageTitle");
+  $('meta[property="og:image:alt"]')?.setAttribute("content", t("pageTitle"));
+  $("#language-select").value = state.lang;
+  for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) $(selector)?.setAttribute("content", t("collectionDescription"));
+  for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) $(selector)?.setAttribute("content", t("pageTitle"));
+  $('meta[property="og:locale"]')?.setAttribute("content", state.lang === "zh" ? "zh_CN" : "en_US");
   $$('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
   $$('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   $$('[data-i18n-aria]').forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
-  $$('[data-lang]').forEach(el => { el.setAttribute("aria-pressed", String(el.dataset.lang === state.lang)); });
+
   renderCategories(); if (state.loaded) render();
   if (state.error) $("#results-status").textContent = t("errorTitle");
-  if (sourceState.loaded) renderSources();
+  if (sourceState.loaded) { renderTopicOptions(); renderSources(); }
   if (sourceState.error) $("#source-status").textContent = t("sourceErrorTitle");
 }
 function renderCategories() {
@@ -201,7 +214,7 @@ const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integrati
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>label(KIND,a).localeCompare(label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
 function card(record) {
-  const article=node("article","resource-card");const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
+  const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(CATEGORY,record.category)),external(record.evidence_url,"",t("readSource")+" ↗"));article.append(meta);
   const details=node("details","requirements");details.append(node("summary","",t("requirements")));const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
@@ -209,7 +222,8 @@ function card(record) {
 }
 function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 function render() {
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); grid.setAttribute("aria-busy", "false");
+  const expanded = new Set($$(".resource-card:has(details[open])").map(el=>el.dataset.recordId));
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); $$(".resource-card").forEach(el=>{if(expanded.has(el.dataset.recordId))el.querySelector("details").open=true;}); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项` : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
@@ -221,7 +235,8 @@ async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
     const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
-    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || [])].join(" ").toLocaleLowerCase()}));
+    state.topicLabels = data.topic_labels || {};
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(CATEGORY[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || [])].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all"; if (!["all","website","game","app","binary","firmware"].includes(state.target)) state.target = "all";
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => el.href = data.meta.repository_url + (el.dataset.repoPath ? "/" + el.dataset.repoPath : ""));
@@ -234,12 +249,12 @@ $("#kind-select").addEventListener("change", event => { state.kind=event.target.
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
-$$('[data-lang]').forEach(el => el.addEventListener("click", () => { state.lang = el.dataset.lang; try { localStorage.setItem("awesomerea-language",state.lang); } catch (_) { /* optional preference */ } updateURL(); applyLanguage(); }));
+$("#language-select").addEventListener("change", event => { state.lang = event.target.value === "zh" ? "zh" : "en"; try { localStorage.setItem("awesomerea-language",state.lang); } catch (_) { /* optional preference */ } updateURL(); applyLanguage(); });
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
 
-const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24 };
+const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set() };
 function sourceURL() { const next = new URL(location.href); if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index"); else next.searchParams.set("view", "curated"); for (const [key,value] of [["sourceq",sourceState.q],["source-target",sourceState.target],["topic",sourceState.topic],["sort",sourceState.sort]]) { if (value && value !== "all" && value !== "relevance") next.searchParams.set(key,value); else next.searchParams.delete(key); } history.replaceState(null,"",next); }
 function configureSourceIndex(meta) {
   const count=Number(meta?.resource_count||0);sourceState.available=count>0;$("#mode-sources").hidden=!sourceState.available;$("#mode-source-count").textContent=count?count.toLocaleString():"";$("#mode-curated-count").textContent=state.records.length;
@@ -250,11 +265,21 @@ function setIndexMode(mode) {
   for (const [id,active] of [["#mode-curated",!isSource],["#mode-sources",isSource]]) { $(id).classList.toggle("active",active); $(id).setAttribute("aria-pressed",String(active)); }
   sourceURL(); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
 }
+function topicLabel(topic) { return state.topicLabels[topic]?.[state.lang] || topic; }
+function topicSearch(topic) { const entry = state.topicLabels[topic]; return [topic, entry?.en || "", entry?.zh || ""].join(" ").toLocaleLowerCase(); }
+function topicDisplay(topic) { const translated = topicLabel(topic); return translated === topic ? topic : `${translated} · ${topic}`; }
+function canonicalTopic(value) { const trimmed=value.trim().toLocaleLowerCase(); const match=Object.entries(state.topicLabels).find(([key, entry]) => [key, `${entry.en} · ${key}`, `${entry.zh} · ${key}`].some(label=>label.toLocaleLowerCase()===trimmed)); return match ? match[0] : value; }
+function renderTopicOptions() {
+  const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1)));
+  sourceState.topicIDs = new Set(topicCounts.keys());
+  const options = document.createDocumentFragment(); [...topicCounts].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0])).slice(0,150).forEach(([topic,count]) => { const option = node("option","",`${topic} (${count})`); option.value=topicDisplay(topic); options.append(option); });
+  $("#source-topic-options").replaceChildren(options); $("#source-topic").value=topicDisplay(sourceState.topic);
+}
 function sourceTime(value) { return value ? String(value).replace("T"," ").slice(0,19) + (String(value).includes("T") ? " UTC" : "") : t("sourceNotRecorded"); }
 function sourceFiltered() {
   const terms = sourceState.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); const topic = sourceState.topic.toLocaleLowerCase().trim();
-  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => item.toLocaleLowerCase().includes(topic))) && terms.every(term => r.search.includes(term)));
-  const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topic.toLocaleLowerCase().includes(term)) ? 2 : 0),0);
+  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
+  const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
   if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || a.full_name.localeCompare(b.full_name));
   else if (sourceState.sort === "updated") result.sort((a,b) => String(b.updated_at || "").localeCompare(String(a.updated_at || "")) || a.full_name.localeCompare(b.full_name));
   else if (sourceState.sort === "name") result.sort((a,b) => a.full_name.localeCompare(b.full_name));
@@ -269,18 +294,19 @@ function sourceFiltered() {
   return result;
 }
 function sourceCard(record) {
-  const article = node("article","source-card"); const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link",record.full_name); link.append(icon("external",true)); title.append(link); head.append(title);
+  const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link",record.full_name); link.append(icon("external",true)); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
-  article.append(node("p","source-card-description" + (!record.description_en ? " source-card-empty" : ""),record.description_en || t("sourceNoDescription")));
-  if (record.topics.length) { const topics = node("div","source-topics"); record.topics.slice(0,4).forEach(topic => { const button = node("button","source-topic-chip",topic); button.type = "button"; button.title = t("sourceTopicHint"); button.addEventListener("click",() => { sourceState.topic = topic; sourceState.visible = 24; $("#source-topic").value = topic; sourceURL(); renderSources(); }); topics.append(button); }); article.append(topics); }
+  const description = record[state.lang === "zh" ? "description_zh" : "description_en"];
+  article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t("sourceNoDescription")));
+  if (record.topics.length) { const topics = node("div","source-topics"); record.topics.slice(0,4).forEach(topic => { const button = node("button","source-topic-chip",topicLabel(topic)); button.type = "button"; button.title = t("sourceTopicHint") + ": " + topic; button.addEventListener("click",() => { sourceState.topic = topic; sourceState.visible = 24; $("#source-topic").value = topicDisplay(topic); sourceURL(); renderSources(); }); topics.append(button); }); article.append(topics); }
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails"))); const dl = node("dl");
   [[t("indexStatusLabel"),t("sourceScanStatus")],[t("sourceRequirementsLabel"),t("sourceRequirements")],[t("sourceReadmeAt"),sourceTime(record.observed_at)],[t("sourceMetadataAt"),sourceTime(record.metadata_observed_at)],[t("sourceHash"),record.readme_sha256 || t("sourceNotRecorded")],[t("sourceRevision"),record.readme_git_sha || t("sourceNotRecorded")],[t("sourceReadmeSize"),record.readme_bytes != null ? Number(record.readme_bytes).toLocaleString() : t("sourceNotRecorded")]].forEach(([label,value]) => dl.append(node("dt","",label),node("dd","",String(value)))); details.append(dl); article.append(details); return article;
 }
 function renderSources() {
-  if (!sourceState.loaded) return; const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); $("#source-results").setAttribute("aria-busy","false");
+  if (!sourceState.loaded) return; const expanded = new Set($$(".source-card:has(details[open])").map(el=>el.dataset.recordId)); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); $$(".source-card").forEach(el=>{if(expanded.has(el.dataset.recordId))el.querySelector("details").open=true;}); $("#source-results").setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库` : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
-  const completed = sourceState.meta.completed_at || sourceState.meta.finished_at || ""; $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。Star 为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? " 扫描完成于 " : " Scan completed ") + sourceTime(completed) : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "");
+  const completed = sourceState.meta.completed_at || sourceState.meta.finished_at || ""; $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? " 扫描完成于 " : " Scan completed ") + sourceTime(completed) : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "");
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
@@ -289,9 +315,8 @@ async function loadSources() {
   if (sourceState.loading) return; sourceState.loading = true; sourceState.error = false; $("#source-results").setAttribute("aria-busy","true"); $("#source-error").hidden = true; $("#source-status").textContent = t("sourceLoading");
   try {
     const response = await fetch(dataURL("source-index.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Source index HTTP "+response.status); const data = await response.json(); sourceState.meta = data.meta || {};
-    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; return {...r,full_name,topics,targets,order:index,search:[full_name,r.description_en || "",r.category || "",...topics,...targets].join(" ").toLocaleLowerCase()}; });
-    const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1))); const options = document.createDocumentFragment(); [...topicCounts].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0])).slice(0,150).forEach(([topic,count]) => { const option = node("option","",`${topic} (${count})`); option.value=topic; options.append(option); }); $("#source-topic-options").replaceChildren(options);
-    sourceState.loaded = true; $("#mode-source-count").textContent = sourceState.records.length.toLocaleString(); renderSources();
+    sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; return {...r,full_name,topics,targets,order:index,search:[full_name,r.description_en || "",r.description_zh || "",r.description_original || "",r.category || "",...topics.map(topicSearch),...targets.flatMap(target => [target, UI.en["target"+target[0].toUpperCase()+target.slice(1)], UI.zh["target"+target[0].toUpperCase()+target.slice(1)]])].join(" ").toLocaleLowerCase()}; });
+    sourceState.loaded = true; renderTopicOptions(); $("#mode-source-count").textContent = sourceState.records.length.toLocaleString(); renderSources();
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
   finally { sourceState.loading = false; }
 }
@@ -300,7 +325,7 @@ $("#mode-curated").addEventListener("click",() => setIndexMode("curated")); $("#
 if (!["all","website","game","app","binary","firmware"].includes(sourceState.target)) sourceState.target="all";
 if (!["relevance","stars","updated","name"].includes(sourceState.sort)) sourceState.sort="relevance";
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
-for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=e.target.value; sourceState.visible=24; sourceURL(); renderSources(); });
+for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; sourceState.visible=24; sourceURL(); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
 $("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 

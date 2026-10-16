@@ -50,7 +50,7 @@
   },
   "jadx-ai-mcp": {
     "requirements": [
-      "JADX 插件和独立 Python MCP Server 都要安装；Java 11+、Python 3.10+。"
+      "JADX 插件和独立 Python MCP 服务都要安装；Java 11+、Python 3.10+。"
     ]
   },
   "frida-mcp-yfe404": {
@@ -72,13 +72,13 @@
     "requirements": [
       "Python 3.8+；分析引擎和 MCP 服务独立配置，属于社区项目。"
     ],
-    "name": "Claude 逆向工程 Skill"
+    "name": "Claude 逆向工程技能"
   },
   "specterops-re-skills": {
     "requirements": [
       "只提供方法与参考，Binary Ninja/Ghidra MCP 需要另行安装配置。"
     ],
-    "name": "SpecterOps 逆向工程 Skills"
+    "name": "SpecterOps 逆向工程技能"
   },
   "ghidra": {
     "requirements": [
@@ -127,7 +127,7 @@
   },
   "electron-asar": {
     "requirements": [
-      "当前 README 要求 Node.js 22.12+；解包本身不恢复缺失的 source map。"
+      "当前 README 要求 Node.js 22.12+；解包本身不恢复缺失的源码映射。"
     ]
   },
   "webcrack": {
@@ -198,7 +198,7 @@
   },
   "gdb": {
     "requirements": [
-      "调试器需支持目标架构；可使用本地进程、core dump 或远程调试端点。"
+      "调试器需支持目标架构；可使用本地进程、核心转储或远程调试端点。"
     ]
   },
   "rr": {
@@ -208,7 +208,7 @@
   },
   "diaphora": {
     "requirements": [
-      "依赖 IDA 与 Python 3；伪代码/microcode 比较取决于反编译器能力。"
+      "依赖 IDA 与 Python 3；伪代码/微码比较取决于反编译器能力。"
     ]
   },
   "bindiff": {
@@ -218,7 +218,7 @@
   },
   "detect-it-easy": {
     "requirements": [
-      "从项目指向的 DIE-engine Releases 获取程序；签名与启发式结果仍需判断。"
+      "从项目指向的 DIE-engine 发行版获取程序；签名与启发式结果仍需判断。"
     ]
   },
   "ost2": {
@@ -252,10 +252,10 @@
     ]
   },
   "rea-official-skill": {
-    "name": "官方 reverse-engineer-anything skill",
+    "name": "官方 reverse-engineer-anything 技能",
     "requirements": [
-      "安装 skill 提供工作流指引，不会自动注册 MCP 或安装分析引擎。",
-      "以连接中的实际工具 schema 为准；仓库主分支可能领先于已安装版本。"
+      "安装技能提供工作流指引，不会自动注册 MCP 或安装分析引擎。",
+      "以连接中的实际工具模式定义为准；仓库主分支可能领先于已安装版本。"
     ]
   },
   "rea-installation": {
@@ -380,8 +380,8 @@
   "dsh-mcp-rea": {
     "name": "dsh-mcp-rea",
     "requirements": [
-      "需要 REA 及相应分析引擎；以本地 bundle 发布，不是公开 npm 包。",
-      "直接执行使用文档中的 REA_ENTRY 模式；PATH 回退方式会调用 shell。",
+      "需要 REA 及相应分析引擎；以本地打包组件发布，不是公开 npm 包。",
+      "直接执行使用文档中的 REA_ENTRY 模式；PATH 回退方式会调用命令解释器。",
       "其平台与引擎说明可能滞后于上游；本目录未安装或开展安全审计。"
     ]
   },
@@ -390,7 +390,7 @@
     "requirements": [
       "需要 Claude Code、受支持的 Node.js，以及插件文档规定的 macOS/Linux 环境。",
       "可选 Jev 服务凭据用于外部模型调用，代码片段可能发送到该服务。",
-      "引擎失败时 hook 允许流程继续，不构成安全保证。"
+      "引擎失败时钩子允许流程继续，不构成安全保证。"
     ]
   },
   "rea-lab": {
@@ -469,7 +469,7 @@
   "playwright-mcp": {
     "name": "Playwright MCP",
     "requirements": [
-      "需要 Node.js 18+ 和 MCP 客户端；上游另有面向编码 agent 的 CLI 与 skills 方案。"
+      "需要 Node.js 18+ 和 MCP 客户端；上游另有面向编码智能体的 CLI 与技能方案。"
     ]
   },
   "awesome-rea-cases": {

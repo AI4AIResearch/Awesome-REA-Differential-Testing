@@ -12,7 +12,9 @@ Queries cover reverse engineering, binary analysis, Ghidra, IDA, Frida, decompil
 
 The scanner performs a real [Get a repository README](https://docs.github.com/en/rest/repos/contents#get-a-repository-readme) request for each candidate it attempts. It records the README's URL, Git blob identifier, SHA-256 digest, byte count, line count, a bounded heading count and detected installation/usage/requirements/example/license sections. Full README bodies are discarded rather than republished. No code, installers, binaries, tests or commands from a repository are executed.
 
-Repository descriptions remain in their original upstream language. The `description_en` field holds that source text for the shared display interface; `description_zh` currently mirrors it and is explicitly marked `not-translated`. These descriptions are attributed source text, not original editorial summaries. The heading statistic counts distinct heading-like lines up to a cap of six; six means at least six, and no heading text is retained. Upstream content keeps its own license; the index does not relicense it.
+Repository descriptions remain in their original upstream language in `data/source-index.json`. For historical schema compatibility, `description_en` holds that source text even when it is not English, while `description_zh` mirrors it with status `not-translated`. The separate [localization files](../data/locales/README.md) supply English and Simplified Chinese descriptions for the website. Its generated source index retains the original in `description_original` and marks the derived descriptions as AI-assisted translations. Translation does not verify a repository's claims, safety, or compatibility.
+
+These descriptions derive from attributed upstream text, not independent editorial reviews. The heading statistic counts distinct heading-like lines up to a cap of six; six means at least six, and no heading text is retained. Upstream content keeps its own license; the index does not relicense it.
 
 ## Read the labels correctly
 

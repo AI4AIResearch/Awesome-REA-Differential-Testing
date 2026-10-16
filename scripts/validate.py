@@ -12,6 +12,7 @@ from urllib.parse import unquote, urlsplit
 
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS
 from catalog import ROOT, RESOURCE_FILES
+from localization import read_localizations, validate_localizations
 
 
 RESOURCE_FIELDS = {
@@ -391,7 +392,9 @@ def main():
     index_path = ROOT / 'data/source-index.json'
     if index_path.exists():
         try:
-            scanned = validate_source_index(json.loads(index_path.read_text()), errors)
+            index_document = json.loads(index_path.read_text())
+            scanned = validate_source_index(index_document, errors)
+            validate_localizations(index_document['resources'], read_localizations(ROOT), errors)
         except (OSError, ValueError):
             errors.append('Source index could not be read as JSON.')
     count = validate_markdown(ROOT, errors)

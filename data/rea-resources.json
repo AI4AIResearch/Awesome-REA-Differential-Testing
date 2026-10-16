@@ -188,7 +188,7 @@
     "category": "workflow-guides",
     "relationship": "official-documentation",
     "description_en": "Read PE/CLI metadata and CIL, compare managed members and inspect declared native boundaries without loading the assembly.",
-    "description_zh": "静态读取 .NET 元数据与 CIL，比较成员并检查声明的 native 边界。",
+    "description_zh": "静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。",
     "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/managed-code-analysis.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",

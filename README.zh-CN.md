@@ -32,10 +32,10 @@
 <a id="website"></a>
 ### Website · 网站
 
-- [webcrack](https://github.com/j4k0xb/webcrack) — 识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify bundle，改善代码可读性。 **[工具]**
+- [webcrack](https://github.com/j4k0xb/webcrack) — 识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。 **[工具]**
 - [WABT](https://github.com/WebAssembly/wabt) — WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。 **[工具 · WebAssembly]**
 - [wasm-tools](https://github.com/bytecodealliance/wasm-tools) — Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。 **[工具 · WebAssembly]**
-- [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) — 连接 Agent 与 Chrome，检查实时页面、调试网络并记录性能轨迹。 **[集成 · 独立 MCP]**
+- [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) — 连接智能体与 Chrome，检查实时页面、调试网络并记录性能轨迹。 **[集成 · 独立 MCP]**
 - [mitmproxy](https://github.com/mitmproxy/mitmproxy) — 通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。 **[工具]**
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp) — 通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。 **[集成 · 独立 MCP]**
 
@@ -48,7 +48,7 @@
 - [AssetRipper](https://github.com/AssetRipper/AssetRipper) — 分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。 **[工具]**
 - [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) — 结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。 **[工具]**
 - [Il2CppDumper](https://github.com/Perfare/Il2CppDumper) — 恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。 **[工具]**
-- [RenderDoc MCP](https://github.com/scarletfantasy/renderdoc-mcp) — 向 Agent 开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。 **[集成 · 独立 MCP]**
+- [RenderDoc MCP](https://github.com/scarletfantasy/renderdoc-mcp) — 向智能体开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。 **[集成 · 独立 MCP]**
 
 <a id="app"></a>
 ### App · 应用
@@ -61,7 +61,7 @@
 - [Frida](https://github.com/frida/frida) — 动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。 **[工具]**
 - [JADX](https://github.com/skylot/jadx) — 将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。 **[工具 · Android]**
 - [Apktool](https://github.com/iBotPeaches/Apktool) — 将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。 **[工具 · Android]**
-- [Androguard](https://github.com/androguard/androguard) — 用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供 agent skills 和 MCP 文档。 **[工具 · Android]**
+- [Androguard](https://github.com/androguard/androguard) — 用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供智能体技能和 MCP 文档。 **[工具 · Android]**
 - [ILSpy](https://github.com/icsharpcode/ILSpy) — .NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。 **[工具 · .NET]**
 - [dnSpyEx](https://github.com/dnSpyEx/dnSpy) — dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。 **[工具 · .NET]**
 - [@electron/asar](https://github.com/electron/asar) — Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。 **[工具]**
@@ -74,7 +74,7 @@
 - [radare2](https://github.com/radareorg/radare2) — 可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。 **[工具]**
 - [Cutter](https://github.com/rizinorg/cutter) — 基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。 **[工具]**
 - [Qiling](https://github.com/qilingframework/qiling) — 在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。 **[工具]**
-- [Unicorn Engine](https://github.com/unicorn-engine/unicorn) — 多架构 CPU 仿真引擎，可控制寄存器、内存和 hook，执行选定的指令片段。 **[工具 · 程序库]**
+- [Unicorn Engine](https://github.com/unicorn-engine/unicorn) — 多架构 CPU 仿真引擎，可控制寄存器、内存和钩子，执行选定的指令片段。 **[工具 · 程序库]**
 - [angr](https://github.com/angr/angr) — 结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。 **[工具 · 程序库]**
 - [LIEF](https://github.com/lief-project/LIEF) — 对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。 **[工具 · 程序库]**
 - [Capstone](https://github.com/capstone-engine/capstone) — 提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。 **[工具 · 程序库]**
@@ -102,18 +102,18 @@
 - [dsh-mcp-rea](https://github.com/Ersith/dsh-mcp-rea) — 社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。 **[集成 · REA]**
 - [rea-jev](https://github.com/juan-viox/rea-jev) — Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。 **[集成 · REA]**
 - [rea-casebook](https://github.com/pablodiazjorge/rea-casebook) — Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。 **[集成 · REA]**
-- [Hex-Rays IDA MCP](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 MCP 服务，让 agent 操作 IDA 数据库，支持无界面分析和可选 GUI 联动。 **[集成 · 独立 MCP]**
+- [Hex-Rays IDA MCP](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。 **[集成 · 独立 MCP]**
 - [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) — 通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。 **[集成 · 独立 MCP]**
-- [Binary Ninja MCP (official)](https://dev-docs.binary.ninja/guide/mcp.html) — Binary Ninja 自带的 MCP 接口向 agent 提供函数、符号、反汇编、中间语言和反编译文本。 **[集成 · 独立 MCP]**
+- [Binary Ninja MCP (official)](https://dev-docs.binary.ninja/guide/mcp.html) — Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。 **[集成 · 独立 MCP]**
 - [Binary Ninja MCP (fosdickio)](https://github.com/fosdickio/binary_ninja_mcp) — 社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。 **[集成 · 独立 MCP]**
 - [IDA Pro MCP (mrexodia)](https://github.com/mrexodia/ida-pro-mcp) — 已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。 **[集成 · 独立 MCP]**
 - [Radare2 MCP Server](https://github.com/radareorg/radare2-mcp) — 基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。 **[集成 · 独立 MCP]**
 - [r2ai](https://github.com/radareorg/r2ai) — 在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。 **[集成 · 独立 Agent]**
 - [DAILA](https://github.com/mahaloz/DAILA) — 跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。 **[集成 · 独立 Agent]**
 - [RevEng.AI Ghidra Plugin](https://github.com/RevEngAI/plugin-ghidra) — 将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。 **[集成 · 独立 Agent]**
-- [LLDB MCP](https://lldb.llvm.org/use/mcp.html) — LLDB 官方 MCP 接口提供调试会话与命令，使 agent 可以设置断点、检查内存和单步执行。 **[集成 · 独立 MCP]**
-- [Claude Reverse Engineering Skill](https://github.com/EncidXVII/claude-reverse-engineering-skill) — 社区 agent skill，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。 **[集成 · 独立 Agent]**
-- [SpecterOps Reverse Engineering Skills](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) — 针对 Binary Ninja 与 Ghidra 的分析 skills，提供 MCP 工具使用、分析步骤和标注方法。 **[集成 · 独立 Agent]**
+- [LLDB MCP](https://lldb.llvm.org/use/mcp.html) — LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。 **[集成 · 独立 MCP]**
+- [Claude Reverse Engineering Skill](https://github.com/EncidXVII/claude-reverse-engineering-skill) — 社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。 **[集成 · 独立 Agent]**
+- [SpecterOps Reverse Engineering Skills](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) — 针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。 **[集成 · 独立 Agent]**
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
@@ -130,7 +130,7 @@
 - [Native binary investigation](https://github.com/morluto/rea/blob/main/docs/native-investigation.md) — 从函数清单到指令、伪代码和引用链的原生二进制调查流程。 **[文档 · REA]**
 - [Cross-layer JavaScript application workflows](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md) — 从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。 **[文档 · REA]**
 - [Static Android APK analysis](https://github.com/morluto/rea/blob/main/docs/android-analysis.md) — 经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。 **[文档 · REA]**
-- [Managed-code analysis](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) — 静态读取 .NET 元数据与 CIL，比较成员并检查声明的 native 边界。 **[文档 · REA]**
+- [Managed-code analysis](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) — 静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。 **[文档 · REA]**
 - [Historical web network captures](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md) — 离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。 **[文档 · REA]**
 - [Firmware analysis](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) — 用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。 **[文档 · REA]**
 - [Browser observation guide](https://rea.tools/guides/browser/) — 通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。 **[文档 · REA]**
