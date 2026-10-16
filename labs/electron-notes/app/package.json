@@ -1,0 +1,10 @@
+{
+  "name": "awesome-rea-notes-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Original static-analysis fixture for tracing an Electron IPC export path.",
+  "main": "main.cjs",
+  "scripts": {
+    "test": "node --test csv.test.cjs"
+  }
+}

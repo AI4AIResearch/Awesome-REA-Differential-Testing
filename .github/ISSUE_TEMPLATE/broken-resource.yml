@@ -1,0 +1,17 @@
+name: Report an outdated resource
+description: Report a dead link, changed feature, or unsupported compatibility claim.
+title: "Correction: "
+body:
+  - type: input
+    id: resource
+    attributes:
+      label: Resource URL or catalog ID
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What changed?
+      description: Link to the primary source and suggest a correction.
+    validations:
+      required: true

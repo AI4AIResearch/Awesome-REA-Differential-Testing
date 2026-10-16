@@ -1,0 +1,537 @@
+[
+  {
+    "id": "rea-upstream",
+    "name": "REA — Reverse Engineer Anything",
+    "url": "https://github.com/morluto/rea",
+    "category": "core",
+    "relationship": "official-core",
+    "description_en": "The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior.",
+    "description_zh": "REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "rea-agents 6.5.0 was the published npm version at review time.",
+      "Node.js ^22.19.0 || ^24.11.0 || >=26.0.0; additional tools depend on the target."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-official-skill",
+    "name": "Official reverse-engineer-anything skill",
+    "url": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything",
+    "category": "core",
+    "relationship": "official-skill",
+    "description_en": "Target routing, connection recovery and evidence practices for agents using REA.",
+    "description_zh": "官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/.agents/skills/reverse-engineer-anything/SKILL.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installing the skill provides instructions; it does not by itself register MCP or install analysis engines.",
+      "Use the connected server's actual tool schemas; repository main may be ahead of an installed release."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-installation",
+    "name": "Installation and client setup",
+    "url": "https://github.com/morluto/rea/blob/main/docs/installation.md",
+    "category": "core",
+    "relationship": "official-documentation",
+    "description_en": "Reviewed setup plans, client registration, provider prerequisites and scoped readiness checks.",
+    "description_zh": "安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/installation.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supported Node.js and npm.",
+      "Setup previews client configuration changes; native engines have separate prerequisites."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-cli-evidence",
+    "name": "CLI and Evidence",
+    "url": "https://github.com/morluto/rea/blob/main/docs/cli.md",
+    "category": "core",
+    "relationship": "official-documentation",
+    "description_en": "CLI workflows for saving Evidence and projecting smaller views from completed analysis.",
+    "description_zh": "保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/cli.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installed REA CLI or an explicitly pinned package runner.",
+      "CLI processes are separate; retain result files for later operations."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-mcp-contracts",
+    "name": "MCP contracts and generated catalog",
+    "url": "https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog",
+    "category": "core",
+    "relationship": "official-documentation",
+    "description_en": "Canonical tool contracts, provider discovery and Evidence semantics for integration authors.",
+    "description_zh": "官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/mcp-contracts.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A compatible MCP client for live use.",
+      "Discover the live catalog before relying on tools documented on main."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-native-workflow",
+    "name": "Native binary investigation",
+    "url": "https://github.com/morluto/rea/blob/main/docs/native-investigation.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Locate a function, inspect instructions and pseudocode, and follow references with a selected native provider.",
+    "description_zh": "从函数清单到指令、伪代码和引用链的原生二进制调查流程。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/native-investigation.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A target binary and a configured supported provider such as Ghidra, Hopper or IDA.",
+      "Host, architecture and provider support are scoped separately; pseudocode is not original source."
+    ],
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "rea-js-workflows",
+    "name": "Cross-layer JavaScript application workflows",
+    "url": "https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Trace features and compare authenticated JavaScript application graphs while preserving static-analysis limits.",
+    "description_zh": "从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/javascript-application-workflows.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Evidence from analyze_javascript_application or supported runtime reconciliation.",
+      "No native engine is required for the static JavaScript path; keep the complete parent Evidence."
+    ],
+    "targets": [
+      "website",
+      "app"
+    ]
+  },
+  {
+    "id": "rea-android-guide",
+    "name": "Static Android APK analysis",
+    "url": "https://github.com/morluto/rea/blob/main/docs/android-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Inspect Android package identity, classes, methods and references through REA's JADX integration.",
+    "description_zh": "经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/android-analysis.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Full JDK 17 or newer and caller-supplied jadx-headless-mcp 0.7.1 with the documented digest check.",
+      "Linux requires a procps-compatible ps for provider process ownership."
+    ],
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "rea-managed-guide",
+    "name": "Managed-code analysis",
+    "url": "https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Read PE/CLI metadata and CIL, compare managed members and inspect declared native boundaries without loading the assembly.",
+    "description_zh": "静态读取 .NET 元数据与 CIL，比较成员并检查声明的 native 边界。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/managed-code-analysis.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A supported PE/CLI assembly; no native engine is required for metadata/CIL inspection.",
+      "NativeAOT, IL2CPP and packaged single-file deployments have different boundaries."
+    ],
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "rea-web-captures",
+    "name": "Historical web network captures",
+    "url": "https://github.com/morluto/rea/blob/main/docs/web-network-captures.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Inspect saved web captures offline; recorded URLs are not fetched and no proxy is started.",
+    "description_zh": "离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/web-network-captures.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A supported existing capture and an explicit format selection.",
+      "PCAP/TShark workflows are separate and have different host/tool requirements."
+    ],
+    "targets": [
+      "website",
+      "app"
+    ]
+  },
+  {
+    "id": "rea-firmware-guide",
+    "name": "Firmware analysis",
+    "url": "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Inspect firmware regions with Binwalk and explicitly extract with Unblob, retaining tool and artifact identity.",
+    "description_zh": "用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/firmware-analysis.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Caller-supplied Binwalk 3.1.x for inspection; Unblob 26.6.x for extraction.",
+      "The documented verification scope is Linux x64; extraction needs a new caller-selected output directory."
+    ],
+    "targets": [
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-browser-guide",
+    "name": "Browser observation guide",
+    "url": "https://rea.tools/guides/browser/",
+    "category": "workflow-guides",
+    "relationship": "official-guide",
+    "description_en": "Follow a user-triggered export request in the supplied Notes browser example and connect it to the downloaded result.",
+    "description_zh": "通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A user-owned Chrome-family browser, loopback CDP connection and explicitly allowed origins.",
+      "The recorded upstream example used a separate controller to click; REA did not perform the click."
+    ],
+    "targets": [
+      "website"
+    ]
+  },
+  {
+    "id": "rea-aegis-case",
+    "name": "Aegis: trace a login-code calculation",
+    "url": "https://rea.tools/showcase/aegis/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "description_en": "An official APK investigation follows TOTP methods in Aegis and publishes artifact identities and selected Evidence.",
+    "description_zh": "追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/aegis-login-code.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Upstream case: Aegis 3.4.3, REA 6.1.0, jadx-headless-mcp 0.7.1 and OpenJDK 21 on Linux x64.",
+      "Use the matching official APK for reproduction; this listing did not rerun the case."
+    ],
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "rea-ctf-case",
+    "name": "DownUnderCTF: masked-squares flag checker",
+    "url": "https://rea.tools/showcase/ctf/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "description_en": "An official educational challenge investigation connects binary checks to equations and records an original-program validation.",
+    "description_zh": "官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/ctf-masked-squares.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Upstream case: public DownUnderCTF 2023 challenge, REA 4.1.0 and Ghidra 12.1.4 on Linux x64.",
+      "Target hash and source revision are documented; author-reported execution was not repeated here."
+    ],
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "rea-dxball-case",
+    "name": "DX-Ball: reconstruct sound panning",
+    "url": "https://rea.tools/showcase/dx-ball/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "description_en": "Recover one sound-pan function from instructions and constants; upstream cites 3,205 cases and a 63-byte match.",
+    "description_zh": "根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/dx-ball-sound-pan.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The matching DX-Ball 1.07 executable and the documented native-analysis environment.",
+      "The cited reconstruction checks concern one function, not full-game equivalence; no checks were rerun here."
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ]
+  },
+  {
+    "id": "rea-notion-case",
+    "name": "Notion: trace the clipboard bridge",
+    "url": "https://rea.tools/showcase/notion/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "description_en": "Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit.",
+    "description_zh": "结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/notion-clipboard.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Upstream case uses Notion Desktop 7.6.1 packaged JavaScript and REA 4.1.0.",
+      "The full clipboard route was not automatically paired or observed as a desktop execution."
+    ],
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "rea-th04-case",
+    "name": "TH04: recover a DOS bullet-ring helper",
+    "url": "https://rea.tools/showcase/th04/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "description_en": "Inspect a 16-bit PC-98 DOS helper and relate its angle calculation to a pinned reconstruction and historical compiler checks.",
+    "description_zh": "检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The matching original TH04 MAIN.EXE and the documented Ghidra DOS load profile.",
+      "The showcase covers one helper; full-game reconstruction claims are outside its scope."
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ]
+  },
+  {
+    "id": "rea-electron-guide",
+    "name": "JavaScript and Electron: follow a CSV export",
+    "url": "https://rea.tools/guides/javascript/",
+    "category": "workflow-guides",
+    "relationship": "official-guide",
+    "description_en": "A source-owned Notes fixture teaches the renderer, preload, IPC and CSV path with linked analysis evidence.",
+    "description_zh": "官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Supported Node.js and REA; no native engine is required for this static fixture.",
+      "The fixture is source-owned teaching material, not an installed Electron distribution; static findings do not prove execution."
+    ],
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "rea-playbook",
+    "name": "rea-playbook",
+    "url": "https://github.com/jinshi666888/rea-playbook",
+    "category": "community-labs",
+    "relationship": "community-learning-resource",
+    "description_en": "An Electron practice target, Evidence extractor and MCP probe; offline fixture mode is distinguished from real REA analysis.",
+    "description_zh": "提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。",
+    "evidence_url": "https://github.com/jinshi666888/rea-playbook/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README pins the real-analysis path to rea-agents 6.3.0 and lists supported Node.js versions.",
+      "The offline demo reads bundled results without running REA; its tests were not rerun here."
+    ],
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "dsh-mcp-rea",
+    "name": "dsh-mcp-rea",
+    "url": "https://github.com/Ersith/dsh-mcp-rea",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "description_en": "A community MCP bridge presents a smaller selected tool surface and forwards explicit commands to the REA CLI.",
+    "description_zh": "社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。",
+    "evidence_url": "https://github.com/Ersith/dsh-mcp-rea/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires REA and the relevant analysis providers; distributed as a local bundle rather than a public npm package.",
+      "Use the documented REA_ENTRY mode for direct execution; PATH fallback invokes a shell.",
+      "Its README's provider/platform claims may lag upstream; no installation or security audit was performed."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "rea-jev",
+    "name": "rea-jev",
+    "url": "https://github.com/juan-viox/rea-jev",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "description_en": "A Claude Code plugin adds Jev-based routing and evidence checks around a pinned REA MCP integration.",
+    "description_zh": "Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。",
+    "evidence_url": "https://github.com/juan-viox/rea-jev/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Claude Code, supported Node.js and the plugin's documented macOS/Linux environment.",
+      "Optional Jev service credentials enable external model calls; excerpts may be sent to that service.",
+      "Hooks fail open on provider failure; they are not a security guarantee."
+    ],
+    "targets": [
+      "app",
+      "website"
+    ]
+  },
+  {
+    "id": "rea-lab",
+    "name": "rea-lab",
+    "url": "https://github.com/pablodiazjorge/rea-lab",
+    "category": "community-labs",
+    "relationship": "community-learning-resource",
+    "description_en": "A Windows REA/Ghidra lab with seeded challenges, published studies, upstream contributions and recorded limitations.",
+    "description_zh": "Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。",
+    "evidence_url": "https://github.com/pablodiazjorge/rea-lab/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented environment uses Windows 11, REA 6.4.0 and Ghidra 12.1.4.",
+      "Study results are author-reported and task/model-specific, not independently reproduced by this index.",
+      "Code and documentation use different licenses; inspect the relevant repository notices."
+    ],
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "rea-casebook",
+    "name": "rea-casebook",
+    "url": "https://github.com/pablodiazjorge/rea-casebook",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "description_en": "A Claude Code mod collects received REA Evidence, tracks unknowns and records findings that cite delivered evidence IDs.",
+    "description_zh": "Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。",
+    "evidence_url": "https://github.com/pablodiazjorge/rea-casebook/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README requires Claude Code 2.1.296 or newer and an MCP server registered under the name rea.",
+      "Developed with REA 6.4.0 and Ghidra 12.1 on Windows; broader behavior was not tested here.",
+      "Evidence IDs being present does not itself prove a conclusion is correct."
+    ],
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "picoprint-rea-investigation",
+    "name": "PicoPrint: LX-D02 printer investigation",
+    "url": "https://github.com/bigtower17/picoprint",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer.",
+    "description_zh": "作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。",
+    "evidence_url": "https://github.com/morluto/rea/discussions/4152",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Project README lists Windows 10/11, Bluetooth LE, an LX-D02 printer and Go 1.25+ to build.",
+      "REA's stated role was readiness/device discovery and investigation framing; hermes-dec handled Hermes v98.",
+      "Hardware behavior and author-reported results were not reproduced here."
+    ],
+    "targets": [
+      "app",
+      "firmware"
+    ]
+  },
+  {
+    "id": "morluto-awesome-re",
+    "name": "Awesome Reverse Engineering",
+    "url": "https://github.com/morluto/awesome-reverse-engineering",
+    "category": "related-lists",
+    "relationship": "upstream-maintainer-companion-list",
+    "description_en": "A task-oriented reverse-engineering resource list by REA's maintainer, useful for broader tools and foundations.",
+    "description_zh": "REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。",
+    "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Individual tools retain their own requirements and licenses.",
+      "Inclusion in this companion list does not establish REA integration or compatibility."
+    ],
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "awesome-rea-cases",
+    "name": "Awesome REA Cases",
+    "url": "https://github.com/songshikang0111/awesome-REA-cases",
+    "category": "related-lists",
+    "relationship": "community-learning-resource",
+    "description_en": "A bilingual collection of REA and other AI-assisted reverse engineering cases, with source links and explicit distinctions between reported and reproduced outcomes.",
+    "description_zh": "中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。",
+    "evidence_url": "https://github.com/songshikang0111/awesome-REA-cases/blob/main/README.md",
+    "verified_at": "2026-10-16T01:08:16Z",
+    "verification": "source-reviewed",
+    "requirements": "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it.",
+    "targets": [
+      "website",
+      "game",
+      "app",
+      "binary",
+      "firmware"
+    ]
+  }
+]

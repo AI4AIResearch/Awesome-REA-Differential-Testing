@@ -1,0 +1,481 @@
+{
+  "hex-rays-ida-mcp": {
+    "requirements": [
+      "IDA 9.4+、idalib、Python 3.11+、Git 和 uv；GUI 插件按需安装。"
+    ]
+  },
+  "ghidramcp": {
+    "requirements": [
+      "Ghidra 与扩展版本必须匹配；桥接需要 Python，无界面模式另有 PyGhidra 条件。"
+    ]
+  },
+  "binary-ninja-official-mcp": {
+    "requirements": [
+      "核验的是开发版文档；GUI 使用 HTTP，无界面 stdio 需要 macOS/Linux 的 Commercial 或 Ultimate。"
+    ],
+    "name": "Binary Ninja MCP（官方）"
+  },
+  "binary-ninja-community-mcp": {
+    "requirements": [
+      "需安装 Binary Ninja 插件及客户端桥接；README 要求 Python 3.12+。"
+    ],
+    "name": "Binary Ninja MCP（fosdickio）"
+  },
+  "ida-pro-mcp-community": {
+    "requirements": [
+      "需要 IDA Pro；新配置先看维护者指向官方服务的迁移说明。"
+    ],
+    "name": "IDA Pro MCP（mrexodia）"
+  },
+  "radare2-mcp": {
+    "requirements": [
+      "需要匹配的 radare2/r2pm；HTTP 多会话功能受 radare2 ABI 约束。"
+    ]
+  },
+  "r2ai": {
+    "requirements": [
+      "需要 radare2 插件及本地模型或远程模型服务凭据。"
+    ]
+  },
+  "daila": {
+    "requirements": [
+      "需要受支持的反编译器和模型后端；Ghidra 按文档启用 PyGhidra。"
+    ]
+  },
+  "revengai-ghidra": {
+    "requirements": [
+      "需要 RevEng.AI API key；创建服务端分析会上传所选二进制。"
+    ],
+    "name": "RevEng.AI Ghidra 插件"
+  },
+  "jadx-ai-mcp": {
+    "requirements": [
+      "JADX 插件和独立 Python MCP Server 都要安装；Java 11+、Python 3.10+。"
+    ]
+  },
+  "frida-mcp-yfe404": {
+    "requirements": [
+      "Node.js 20+、Frida 17；设备端操作需可连接的目标及 frida-server。"
+    ]
+  },
+  "super-trouper": {
+    "requirements": [
+      "预编译主机版本面向 macOS/Linux；目标需满足 Frida 连接条件。"
+    ]
+  },
+  "lldb-mcp": {
+    "requirements": [
+      "需要包含 lldb-mcp 的 LLDB 构建；不能默认系统预装版本已具备此接口。"
+    ]
+  },
+  "claude-reverse-engineering-skill": {
+    "requirements": [
+      "Python 3.8+；分析引擎和 MCP 服务独立配置，属于社区项目。"
+    ],
+    "name": "Claude 逆向工程 Skill"
+  },
+  "specterops-re-skills": {
+    "requirements": [
+      "只提供方法与参考，Binary Ninja/Ghidra MCP 需要另行安装配置。"
+    ],
+    "name": "SpecterOps 逆向工程 Skills"
+  },
+  "ghidra": {
+    "requirements": [
+      "使用正式发行包及对应 JDK；扩展需匹配 Ghidra 版本。"
+    ]
+  },
+  "radare2": {
+    "requirements": [
+      "按主机平台选择发行版；反编译器等能力可能来自独立插件。"
+    ]
+  },
+  "cutter": {
+    "requirements": [
+      "Linux/macOS/Windows 桌面工具；插件需匹配发布版本。"
+    ]
+  },
+  "frida": {
+    "requirements": [
+      "依赖目标平台的附加、server/Gadget 或签名条件。"
+    ]
+  },
+  "jadx": {
+    "requirements": [
+      "Java 11+ 或内置运行时；反编译不保证完整，关键结论需对照字节码。"
+    ]
+  },
+  "apktool": {
+    "requirements": [
+      "需要对应版本的 Java/启动器；重建 APK 与恢复 Java 源码是不同能力。"
+    ]
+  },
+  "androguard": {
+    "requirements": [
+      "当前 README 区分 v5 源码与 PyPI 4.1.4；不能直接把 v5 MCP 能力归给旧包。"
+    ]
+  },
+  "ilspy": {
+    "requirements": [
+      "选择桌面版或 ILSpyCmd 及匹配的 .NET 运行时。"
+    ]
+  },
+  "dnspyex": {
+    "requirements": [
+      "Windows 工作流；Unity 调试另需配套运行时。"
+    ]
+  },
+  "electron-asar": {
+    "requirements": [
+      "当前 README 要求 Node.js 22.12+；解包本身不恢复缺失的 source map。"
+    ]
+  },
+  "webcrack": {
+    "requirements": [
+      "当前 README 指定 Node.js 22 或 24；效果取决于混淆和打包模式。"
+    ]
+  },
+  "wabt": {
+    "requirements": [
+      "选择支持目标 WASM 特性的版本；部分提案需要显式选项。"
+    ]
+  },
+  "wasm-tools": {
+    "requirements": [
+      "可用预编译版本或 Rust 工具链；组件/提案支持随版本变化。"
+    ]
+  },
+  "binwalk": {
+    "requirements": [
+      "v3 为 Rust 实现；提取能力依赖外部工具或完整容器环境。"
+    ]
+  },
+  "unblob": {
+    "requirements": [
+      "需 Python 包及外部解包器，或带依赖的容器镜像。"
+    ]
+  },
+  "ghidra-firmware-utils": {
+    "requirements": [
+      "当前构建要求 Ghidra 12.0+、JDK 21+，仍须与实际安装环境匹配。"
+    ],
+    "name": "Ghidra 固件工具集"
+  },
+  "qiling": {
+    "requirements": [
+      "需为目标准备对应的根文件系统和依赖库；平台仿真覆盖有边界。"
+    ]
+  },
+  "unicorn": {
+    "requirements": [
+      "要自行提供 CPU 状态、内存和外部行为；不是完整操作系统模拟器。"
+    ]
+  },
+  "angr": {
+    "requirements": [
+      "需要 Python 环境，以及合理的输入、状态和外部函数模型。"
+    ]
+  },
+  "lief": {
+    "requirements": [
+      "C++/Python/Rust 接口；核心与扩展版功能需分别核对。"
+    ]
+  },
+  "capstone": {
+    "requirements": [
+      "按 ISA 和模式选择绑定/版本；开发分支与稳定版本可能不同。"
+    ]
+  },
+  "imhex": {
+    "requirements": [
+      "桌面或 Web 版本；数据来源及功能可用性因平台而异。"
+    ]
+  },
+  "x64dbg": {
+    "requirements": [
+      "Windows；根据目标位数选择 x32dbg 或 x64dbg。"
+    ]
+  },
+  "gdb": {
+    "requirements": [
+      "调试器需支持目标架构；可使用本地进程、core dump 或远程调试端点。"
+    ]
+  },
+  "rr": {
+    "requirements": [
+      "Linux；需要支持的 CPU 性能计数器，虚拟机另需计数器虚拟化。"
+    ]
+  },
+  "diaphora": {
+    "requirements": [
+      "依赖 IDA 与 Python 3；伪代码/microcode 比较取决于反编译器能力。"
+    ]
+  },
+  "bindiff": {
+    "requirements": [
+      "需要单独的反汇编/导出流程；官方说明覆盖 IDA、Binary Ninja 和 Ghidra。"
+    ]
+  },
+  "detect-it-easy": {
+    "requirements": [
+      "从项目指向的 DIE-engine Releases 获取程序；签名与启发式结果仍需判断。"
+    ]
+  },
+  "ost2": {
+    "requirements": [
+      "按课程说明选择前置知识与实验环境。"
+    ]
+  },
+  "pwn-college-re": {
+    "requirements": [
+      "托管挑战需要平台账户及其运行环境。"
+    ],
+    "name": "pwn.college：逆向工程"
+  },
+  "re-for-beginners": {
+    "requirements": [
+      "可在线阅读或下载 PDF；练习使用书中相应工具链。"
+    ],
+    "name": "逆向工程入门"
+  },
+  "radare2-book": {
+    "requirements": [
+      "官方列出最低 radare2 5.8.x，建议使用当前发布版本。"
+    ],
+    "name": "radare2 官方手册"
+  },
+  "rea-upstream": {
+    "name": "REA — Reverse Engineer Anything",
+    "requirements": [
+      "复核时 npm 已发布 rea-agents 6.5.0。",
+      "Node.js ^22.19.0、^24.11.0 或 >=26.0.0；额外工具取决于分析目标。"
+    ]
+  },
+  "rea-official-skill": {
+    "name": "官方 reverse-engineer-anything skill",
+    "requirements": [
+      "安装 skill 提供工作流指引，不会自动注册 MCP 或安装分析引擎。",
+      "以连接中的实际工具 schema 为准；仓库主分支可能领先于已安装版本。"
+    ]
+  },
+  "rea-installation": {
+    "name": "安装与客户端配置",
+    "requirements": [
+      "需要受支持的 Node.js 和 npm。",
+      "Setup 会预览客户端配置改动；原生分析引擎有各自的前置条件。"
+    ]
+  },
+  "rea-cli-evidence": {
+    "name": "CLI 与 Evidence",
+    "requirements": [
+      "需要已安装的 REA CLI，或显式固定版本的包运行器。",
+      "不同 CLI 调用是独立进程，后续处理应保留结果文件。"
+    ]
+  },
+  "rea-mcp-contracts": {
+    "name": "MCP 接口约定与生成目录",
+    "requirements": [
+      "实时使用需要兼容的 MCP 客户端。",
+      "依赖主分支文档中的工具前，先查询已连接服务的实际目录。"
+    ]
+  },
+  "rea-native-workflow": {
+    "name": "原生二进制调查",
+    "requirements": [
+      "需要目标二进制及已配置的 Ghidra、Hopper 或 IDA 等受支持分析引擎。",
+      "主机、架构和引擎的支持范围分别限定；伪代码不等于原始源码。"
+    ]
+  },
+  "rea-js-workflows": {
+    "name": "跨层 JavaScript 应用工作流",
+    "requirements": [
+      "使用 analyze_javascript_application 或受支持运行时对照产生的 Evidence。",
+      "静态 JavaScript 分析不需要原生引擎；保留完整父级 Evidence。"
+    ]
+  },
+  "rea-android-guide": {
+    "name": "Android APK 静态分析",
+    "requirements": [
+      "需要完整 JDK 17+，并自行提供 jadx-headless-mcp 0.7.1，按文档核对摘要。",
+      "Linux 需要兼容 procps 的 ps，以检查分析引擎进程归属。"
+    ]
+  },
+  "rea-managed-guide": {
+    "name": "托管代码分析",
+    "requirements": [
+      "需要受支持的 PE/CLI 程序集；元数据与 CIL 检查不需要原生引擎。",
+      "NativeAOT、IL2CPP 和打包为单文件的部署具有不同分析边界。"
+    ]
+  },
+  "rea-web-captures": {
+    "name": "历史网站网络记录",
+    "requirements": [
+      "需要已保存的受支持捕获文件，并显式指定格式。",
+      "PCAP/TShark 是独立工作流，主机与工具要求不同。"
+    ]
+  },
+  "rea-firmware-guide": {
+    "name": "固件分析",
+    "requirements": [
+      "自行提供 Binwalk 3.1.x 进行检查、Unblob 26.6.x 进行提取。",
+      "上游记录的验证范围为 Linux x64；提取需要新的、自行指定的输出目录。"
+    ]
+  },
+  "rea-browser-guide": {
+    "name": "浏览器观察指南",
+    "requirements": [
+      "需要自有的 Chrome 系浏览器、本地回环 CDP 连接及明确允许的来源。",
+      "上游示例由独立控制器执行点击，REA 本身没有完成点击操作。"
+    ]
+  },
+  "rea-aegis-case": {
+    "name": "Aegis：追踪登录验证码计算",
+    "requirements": [
+      "上游案例环境：Aegis 3.4.3、REA 6.1.0、jadx-headless-mcp 0.7.1、OpenJDK 21，Linux x64。",
+      "复现时使用匹配的官方 APK；本目录未重新运行该案例。"
+    ]
+  },
+  "rea-ctf-case": {
+    "name": "DownUnderCTF：masked-squares 校验器",
+    "requirements": [
+      "上游案例使用公开的 DownUnderCTF 2023 题目、REA 4.1.0、Ghidra 12.1.4，运行于 Linux x64。",
+      "文档提供目标摘要与源码版本；本目录未重复作者报告的执行。"
+    ]
+  },
+  "rea-dxball-case": {
+    "name": "DX-Ball：重建声音声像计算",
+    "requirements": [
+      "需要匹配的 DX-Ball 1.07 可执行文件及文档描述的原生分析环境。",
+      "重建检查仅针对一个函数，不代表完整游戏等价；本目录未重新执行。"
+    ]
+  },
+  "rea-notion-case": {
+    "name": "Notion：追踪剪贴板桥接",
+    "requirements": [
+      "上游案例使用 Notion Desktop 7.6.1 打包后的 JavaScript 和 REA 4.1.0。",
+      "完整剪贴板链路没有被自动配对，也没有作为桌面执行被观察。"
+    ]
+  },
+  "rea-th04-case": {
+    "name": "TH04：恢复 DOS 子弹环辅助函数",
+    "requirements": [
+      "需要匹配的 TH04 原版 MAIN.EXE 及文档说明的 Ghidra DOS 加载配置。",
+      "展示只覆盖一个辅助函数，不支持完整游戏重建的结论。"
+    ]
+  },
+  "rea-electron-guide": {
+    "name": "JavaScript 与 Electron：追踪 CSV 导出",
+    "requirements": [
+      "需要受支持的 Node.js 和 REA；这个静态教学样例无需原生分析引擎。",
+      "样例是作者自有源码教学材料，不是已安装的 Electron 发行包；静态发现不证明实际执行。"
+    ]
+  },
+  "rea-playbook": {
+    "name": "rea-playbook",
+    "requirements": [
+      "README 将真实分析路径固定为 rea-agents 6.3.0，并列出支持的 Node.js 版本。",
+      "离线演示读取已附带的结果，不会执行 REA；本目录未重新运行其测试。"
+    ]
+  },
+  "dsh-mcp-rea": {
+    "name": "dsh-mcp-rea",
+    "requirements": [
+      "需要 REA 及相应分析引擎；以本地 bundle 发布，不是公开 npm 包。",
+      "直接执行使用文档中的 REA_ENTRY 模式；PATH 回退方式会调用 shell。",
+      "其平台与引擎说明可能滞后于上游；本目录未安装或开展安全审计。"
+    ]
+  },
+  "rea-jev": {
+    "name": "rea-jev",
+    "requirements": [
+      "需要 Claude Code、受支持的 Node.js，以及插件文档规定的 macOS/Linux 环境。",
+      "可选 Jev 服务凭据用于外部模型调用，代码片段可能发送到该服务。",
+      "引擎失败时 hook 允许流程继续，不构成安全保证。"
+    ]
+  },
+  "rea-lab": {
+    "name": "rea-lab",
+    "requirements": [
+      "文档环境为 Windows 11、REA 6.4.0、Ghidra 12.1.4。",
+      "研究结果由作者报告，依赖具体任务和模型，本目录未独立复现。",
+      "代码与文档使用不同许可，请检查对应的仓库声明。"
+    ]
+  },
+  "rea-casebook": {
+    "name": "rea-casebook",
+    "requirements": [
+      "README 要求 Claude Code 2.1.296+，并将 MCP 服务注册为 rea。",
+      "开发环境为 Windows、REA 6.4.0、Ghidra 12.1；本目录未测试更广泛环境。",
+      "存在 Evidence ID 本身不能证明结论正确。"
+    ]
+  },
+  "picoprint-rea-investigation": {
+    "name": "PicoPrint：LX-D02 打印机调查",
+    "requirements": [
+      "README 列出 Windows 10/11、蓝牙 LE、LX-D02 打印机；编译需 Go 1.25+。",
+      "作者说明 REA 用于就绪检查、设备发现和调查组织，Hermes v98 由 hermes-dec 处理。",
+      "本目录未复现硬件行为或作者报告的结果。"
+    ]
+  },
+  "morluto-awesome-re": {
+    "name": "Awesome Reverse Engineering",
+    "requirements": [
+      "各工具保留各自的前置条件与许可。",
+      "被该相关目录收录不证明存在 REA 集成或兼容性。"
+    ]
+  },
+  "renderdoc": {
+    "name": "RenderDoc",
+    "requirements": [
+      "需要受支持的图形 API 和重放平台；上游支持捕获自有、开源或免费项目。暂不支持 Metal。"
+    ]
+  },
+  "assetripper": {
+    "name": "AssetRipper",
+    "requirements": [
+      "Unity 3.5.0–6000.4.X 的覆盖程度因版本而异；开源版采用 GPL-3.0，另有独立高级功能。"
+    ]
+  },
+  "cpp2il": {
+    "name": "Cpp2IL",
+    "requirements": [
+      "需要兼容的 Unity 构建和元数据；当前开发分支为重大重写，主要面向 .NET 9.0。"
+    ]
+  },
+  "il2cppdumper": {
+    "name": "Il2CppDumper",
+    "requirements": [
+      "需要匹配的 IL2CPP 可执行文件和 global-metadata.dat；文档支持 Unity 5.3–2022.2。"
+    ]
+  },
+  "renderdoc-mcp": {
+    "name": "RenderDoc MCP",
+    "requirements": [
+      "需要 Windows 及可重放的 .rdc 捕获文件；维护者基准版本为 RenderDoc 1.43。可选原生 Python 后端需自行编译绑定。"
+    ]
+  },
+  "chrome-devtools-mcp": {
+    "name": "Chrome DevTools MCP",
+    "requirements": [
+      "需要受支持的 Node.js LTS、Chrome 和 MCP 客户端；所选浏览器配置与目标需在本地可用。"
+    ]
+  },
+  "mitmproxy": {
+    "name": "mitmproxy",
+    "requirements": [
+      "需要配置客户端代理；HTTPS 检查需要相应的本地信任配置。已保存捕获文件与实时拦截是不同工作流。"
+    ]
+  },
+  "playwright-mcp": {
+    "name": "Playwright MCP",
+    "requirements": [
+      "需要 Node.js 18+ 和 MCP 客户端；上游另有面向编码 agent 的 CLI 与 skills 方案。"
+    ]
+  },
+  "awesome-rea-cases": {
+    "name": "Awesome REA Cases",
+    "requirements": [
+      "这是案例发现目录；复现前应检查每个案例的原始来源、再分发权限和证据状态。"
+    ]
+  }
+}

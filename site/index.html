@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>AwesomeREA.org — Reverse engineering, with evidence.</title>
+  <meta name="description" content="A curated field guide to agent-assisted reverse engineering. Find REA workflows, MCP integrations, tools and learning resources—with sources, requirements and review dates.">
+  <link rel="canonical" href="https://awesomerea.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AwesomeREA.org">
+  <meta property="og:title" content="AwesomeREA.org — Reverse engineering, with evidence.">
+  <meta property="og:description" content="Choose a tool. Trace a behavior. Keep the evidence. A curated, searchable field guide to agent-assisted reverse engineering.">
+  <meta property="og:url" content="https://awesomerea.org/">
+  <meta property="og:image" content="https://awesomerea.org/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AwesomeREA.org — Reverse engineering, with evidence.">
+  <meta name="twitter:description" content="A field guide to REA workflows, MCP integrations, reverse-engineering tools and learning resources.">
+  <meta name="twitter:image" content="https://awesomerea.org/social-card.svg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog" data-i18n="skip">Skip to the resource index</a>
+  <svg class="symbol-bank" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M8 5H5v14h14v-3M12 5h7v7M11 13l8-8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m7 7-5 5 5 5M17 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4M10 18h4"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5ZM3 7l9 5 9-5M12 12v10M7.5 4.5l9 5"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="6" rx="1"/><rect x="2" y="16" width="7" height="6" rx="1"/><rect x="15" y="16" width="7" height="6" rx="1"/><path d="M12 8v4M5.5 16v-4h13v4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5ZM2 12l10 5 10-5M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M14 2H5v20h14V7l-5-5ZM14 2v6h5M8 12h8M8 16h6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-10-1v16c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1ZM12 5v16"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="m6 8 4 4-4 4M13 16h5"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-2-1-3-1-3 0-1 0-3-1-4-2 0-3 1-4 2-2-.5-4-.5-6 0C8 3 7 2 5 2 4 3 4 5 4 6c0 0-1 1-1 3 0 4 3 6 7 6-1 1-1 2-1 3v4"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#" aria-label="AwesomeREA.org home"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation" data-i18n-aria="mainNav">
+        <a class="nav-index" href="#catalog" data-i18n="navIndex">The index</a>
+        <div class="language-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false">中文</button>
+        </div>
+        <a class="github-link" href="https://github.com/reacher-z/Awesome-REA" data-repo-path="" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span><svg class="icon icon-small" aria-hidden="true"><use href="#i-external"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span><span data-i18n="heroEyebrow">An independent community field guide</span></p>
+        <h1 id="hero-title"><span data-i18n="heroLineOne">Understand<br>what’s inside.</span><em data-i18n="heroLineTwo">Keep the evidence.</em></h1>
+        <p class="hero-description" data-i18n="heroDescription">A considered collection of REA workflows, agent integrations and reverse-engineering tools. Find your starting point. Make every conclusion traceable.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#catalog"><span data-i18n="browseIndex">Explore the index</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="text-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/labs/electron-notes/README.md" data-repo-path="blob/main/labs/electron-notes/README.md" target="_blank" rel="noopener noreferrer"><span data-i18n="tryLab">Try the original lab</span><span aria-hidden="true">↗</span></a></div>
+        <div class="hero-stats" aria-label="Collection facts" data-i18n-aria="collectionFacts"><div><strong id="stat-resources">{{RESOURCE_COUNT}}</strong><span data-i18n="resourcesLabel">curated resources</span></div><div><strong id="stat-agents">{{INTEGRATION_COUNT}}</strong><span data-i18n="integrationsLabel">independent integrations</span></div><div><strong id="stat-playbooks">{{PLAYBOOK_COUNT}}</strong><span data-i18n="playbooksLabel">task playbooks</span></div></div>
+      </div>
+      <div class="evidence-panel" role="img" aria-label="Investigation path: identify a target, gather static and runtime evidence, then explain the observed behavior." data-i18n-aria="diagramAlt">
+        <div class="panel-topline"><span class="mono" data-i18n="diagramLabel">INVESTIGATION / 001</span><span class="panel-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="trace-target"><span class="trace-step mono">01</span><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><div><strong data-i18n="targetTitle">A question. A target.</strong><span class="mono" data-i18n="targetSub">format / architecture / identity</span></div></div>
+        <div class="trace-branches"><div class="trace-node"><span class="node-label mono"><i></i><span data-i18n="staticLabel">STATIC</span></span><strong data-i18n="staticTitle">Follow the code</strong><span class="mono">renderer → preload<br>→ IPC → main</span></div><div class="trace-node"><span class="node-label mono"><i></i><span data-i18n="runtimeLabel">RUNTIME</span></span><strong data-i18n="runtimeTitle">Observe behavior</strong><span class="mono" data-i18n="runtimeSub">calls / memory<br>inputs / outputs</span></div></div>
+        <div class="trace-result"><div><span class="mono" data-i18n="resultLabel">02 / CONNECT THE EVIDENCE</span><strong data-i18n="resultTitle">An explanation you can check.</strong></div><span class="result-arrow" aria-hidden="true">↗</span></div>
+        <div class="panel-caption mono"><span data-i18n="diagramCaption">Addresses. Files. Observations. Limits.</span><span aria-hidden="true">[ ✓ ]</span></div>
+      </div>
+    </section>
+
+    <section class="targets-section shell" aria-labelledby="targets-title">
+      <div class="section-kicker"><h2 id="targets-title" data-i18n="targetsTitle">Start with what you have</h2><span class="mono" data-i18n="targetsSubtitle">FOCUSED TASK PLAYBOOKS</span></div>
+      <div class="target-grid">
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#electron-feature-trace" data-repo-path="blob/main/docs/playbooks.md#electron-feature-trace" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><span>Electron<span data-i18n="taskElectron">Trace a feature</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#native-function-recovery" data-repo-path="blob/main/docs/playbooks.md#native-function-recovery" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><span data-i18n="taskNativeName">Native binary<span>Recover a function</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#android-apk" data-repo-path="blob/main/docs/playbooks.md#android-apk" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>Android APK<span data-i18n="taskAndroid">Map the behavior</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#dotnet-assembly" data-repo-path="blob/main/docs/playbooks.md#dotnet-assembly" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><span>.NET<span data-i18n="taskDotnet">Read an assembly</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#saved-network-capture" data-repo-path="blob/main/docs/playbooks.md#saved-network-capture" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg><span data-i18n="taskCaptureName">Network capture<span>Follow a request</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#firmware-image" data-repo-path="blob/main/docs/playbooks.md#firmware-image" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg><span data-i18n="taskFirmwareName">Firmware<span>Find what’s embedded</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+        <a class="target-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/docs/playbooks.md#game-behavior" data-repo-path="blob/main/docs/playbooks.md#game-behavior" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg><span data-i18n="taskGameName">Game<span>Explain a mechanic</span></span><span class="target-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="catalog-heading"><div><p class="eyebrow mono" data-i18n="indexEyebrow">01 / THE COLLECTION</p><h2 id="catalog-title" data-i18n="indexTitle">The field index<span class="heading-dot">.</span></h2></div><p data-i18n="indexDescription">The right tool for the next question.<br>Sources and prerequisites, always attached.</p></div>
+        <div class="search-box"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><label class="sr-only" for="search-input" data-i18n="searchLabel">Search resources, tools and requirements</label><input id="search-input" type="search" placeholder="Search a tool, target or idea…" data-i18n-placeholder="searchPlaceholder" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></div>
+        <div class="target-filter-area"><span class="target-filter-label mono" data-i18n="targetFilterLabel">Explore by target</span><div class="target-filters" role="group" aria-label="Target domain" data-i18n-aria="targetFilterLabel"><button type="button" class="target-filter active" data-target="all" aria-pressed="true" data-i18n="targetAll">Everything</button><button type="button" class="target-filter" data-target="website" aria-pressed="false" data-i18n="targetWebsite">Website</button><button type="button" class="target-filter" data-target="game" aria-pressed="false" data-i18n="targetGame">Game</button><button type="button" class="target-filter" data-target="app" aria-pressed="false" data-i18n="targetApp">App</button><button type="button" class="target-filter" data-target="binary" aria-pressed="false" data-i18n="targetBinary">Binary</button><button type="button" class="target-filter" data-target="firmware" aria-pressed="false" data-i18n="targetFirmware">Firmware</button></div><span class="target-filter-hint" data-i18n="targetHint">Applicable domains, not compatibility claims.</span></div>
+        <div class="filter-row"><div class="group-filters" role="group" aria-label="Resource relationship" data-i18n-aria="groupLabel"><button type="button" class="filter active" data-group="all" aria-pressed="true"><span data-i18n="groupAll">All</span><span class="filter-count" data-count="all">{{RESOURCE_COUNT}}</span></button><button type="button" class="filter" data-group="rea" aria-pressed="false"><span>REA</span><span class="filter-count" data-count="rea"></span></button><button type="button" class="filter" data-group="agents" aria-pressed="false"><span data-i18n="groupAgents">Agents</span><span class="filter-count" data-count="agents"></span></button><button type="button" class="filter" data-group="tools" aria-pressed="false"><span data-i18n="groupTools">Tools</span><span class="filter-count" data-count="tools"></span></button><button type="button" class="filter" data-group="learn" aria-pressed="false"><span data-i18n="groupLearn">Learn</span><span class="filter-count" data-count="learn"></span></button></div><div class="category-control"><label for="category-select" class="sr-only" data-i18n="categoryLabel">Filter by category</label><select id="category-select"><option value="all" data-i18n="allCategories">All categories</option></select><svg class="icon icon-small" aria-hidden="true"><use href="#i-chevron"/></svg></div></div>
+        <div class="results-topline"><p id="results-status" role="status" aria-live="polite" aria-atomic="true" data-i18n="loading">Loading the index…</p><button id="clear-filters" type="button" class="clear-button" hidden data-i18n="clearFilters">Clear filters ×</button></div>
+        <p class="review-note"><span class="review-dot" aria-hidden="true"></span><span data-i18n="reviewNote">Source-reviewed means documentation checked. The lab separately records one CLI run and three fixture tests.</span><a href="https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md" data-repo-path="blob/main/data/README.md" target="_blank" rel="noopener noreferrer" data-i18n="aboutEvidence">About the evidence ↗</a></p>
+        <div id="resource-grid" class="resource-grid" aria-busy="true"></div>
+        <div id="empty-state" class="empty-state" hidden><div class="empty-symbol"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></div><h3 data-i18n="emptyTitle">No resources in this corner yet.</h3><p data-i18n="emptyDescription">Try a broader term or a different category.</p><button class="button button-primary" type="button" id="empty-reset" data-i18n="resetFilters">Reset filters</button></div>
+        <div id="error-state" class="empty-state" hidden><h3 data-i18n="errorTitle">The index couldn’t load.</h3><p data-i18n="errorDescription">Check your connection and try again, or open the source catalog on GitHub.</p><button class="button button-primary" type="button" id="retry-load" data-i18n="retry">Try again</button><a class="text-link" href="https://github.com/reacher-z/Awesome-REA/tree/main/data" data-repo-path="tree/main/data" target="_blank" rel="noopener noreferrer" data-i18n="sourceCatalog">Source catalog ↗</a></div>
+        <div class="load-more-row" id="load-more-row" hidden><button id="load-more" class="button button-outline" type="button"><span data-i18n="loadMore">Show more resources</span><span class="mono" id="remaining-count"></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button><p class="mono" id="shown-count"></p></div>
+        <noscript><p class="noscript-note">JavaScript enables search and filters. <a href="https://github.com/reacher-z/Awesome-REA#resource-catalog">Read the complete catalog on GitHub</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section class="lab-section shell" aria-labelledby="lab-title">
+      <div class="lab-copy"><p class="eyebrow mono"><span class="signal-dot" aria-hidden="true"></span><span data-i18n="labEyebrow">02 / A SMALL, REPRODUCIBLE START</span></p><h2 id="lab-title" data-i18n="labTitle">Trace a CSV export.<br>Check it yourself.</h2><p data-i18n="labDescription">Follow a Notes app feature from renderer to preload, IPC and main process. Then check the fixture’s CSV behavior with three executable tests.</p><a class="text-link" href="https://github.com/reacher-z/Awesome-REA/blob/main/labs/electron-notes/README.md" data-repo-path="blob/main/labs/electron-notes/README.md" target="_blank" rel="noopener noreferrer"><span data-i18n="openLab">Open the walkthrough and recorded CLI run</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="lab-terminal"><div class="terminal-top"><span class="mono" data-i18n="terminalTitle">LOCAL STATIC ANALYSIS</span><span class="terminal-tag mono">REA 6.5.0</span></div><p class="terminal-comment mono" data-i18n="commandContext"># Run from the cloned Awesome-REA repository</p><div class="command-row"><span aria-hidden="true" class="command-prompt">$</span><code id="rea-command">npx -y rea-agents@6.5.0 analyze-javascript-application &quot;$PWD/labs/electron-notes/app&quot; --json</code></div><div class="terminal-bottom"><button id="copy-command" type="button" class="copy-button"><svg class="icon icon-small" aria-hidden="true"><use href="#i-copy"/></svg><span data-i18n="copyCommand">Copy command</span></button><span class="mono" id="copy-status" role="status" aria-live="polite"></span></div><p class="command-requirements" data-i18n="commandRequirements">Requires Node.js ^22.19.0, ^24.11.0 or ≥26.0.0. The first run downloads REA and its dependencies. The walkthrough includes setup and verification steps.</p></div>
+    </section>
+
+    <section class="contribute-section shell"><div><p class="eyebrow mono" data-i18n="contributeEyebrow">A USEFUL INDEX IS A LIVING ONE</p><h2 data-i18n="contributeTitle">Found a better next step?</h2><p data-i18n="contributeDescription">Suggest a resource, fix a requirement, or share a reproducible investigation.</p></div><a class="button button-outline" href="https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md" data-repo-path="blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer"><span data-i18n="contributeButton">Contribute on GitHub</span><svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-top"><a class="wordmark footer-wordmark" href="#">Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span><span class="footer-dot" aria-hidden="true"></span></a><p data-i18n="footerDescription">An independent community collection.<br>Built for understanding, maintained with evidence.</p><div class="footer-links"><a href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer" data-i18n="upstreamRea">Upstream REA ↗</a><a href="https://github.com/reacher-z/Awesome-REA" data-repo-path="" target="_blank" rel="noopener noreferrer" data-i18n="viewSource">View source ↗</a><a href="catalog.json" data-i18n="downloadData">Catalog JSON ↗</a></div></div><div class="shell footer-bottom"><span class="mono" data-i18n="footerLicense">Original content: MIT. Linked projects keep their own licenses.</span><span class="mono" data-i18n="footerPurpose">Choose a tool. Trace a behavior. Keep the evidence.</span></div></footer>
+</body>
+</html>

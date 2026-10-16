@@ -1,0 +1,911 @@
+[
+  {
+    "id": "hex-rays-ida-mcp",
+    "name": "Hex-Rays IDA MCP",
+    "url": "https://github.com/HexRaysSA/ida-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Official Hex-Rays MCP server for agent access to IDA databases, with headless operation and optional GUI integration.",
+    "description_zh": "Hex-Rays 官方 MCP 服务，让 agent 操作 IDA 数据库，支持无界面分析和可选 GUI 联动。",
+    "evidence_url": "https://github.com/HexRaysSA/ida-mcp/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "IDA 9.4+ with idalib, Python 3.11+, Git and uv; the GUI plugin is optional for headless use.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "ghidramcp",
+    "name": "GhidraMCP",
+    "url": "https://github.com/LaurieWired/GhidraMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Ghidra extension and MCP bridge exposing decompilation, symbol navigation and renaming to agents, with GUI and headless modes.",
+    "description_zh": "通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。",
+    "evidence_url": "https://github.com/LaurieWired/GhidraMCP/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Match the extension to the documented Ghidra release; Python 3.10+ for the bridge, with additional PyGhidra requirements for headless mode.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "binary-ninja-official-mcp",
+    "name": "Binary Ninja MCP (official)",
+    "url": "https://dev-docs.binary.ninja/guide/mcp.html",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Binary Ninja's own MCP interface exposes functions, symbols, disassembly, intermediate languages and decompiled text to agents.",
+    "description_zh": "Binary Ninja 自带的 MCP 接口向 agent 提供函数、符号、反汇编、中间语言和反编译文本。",
+    "evidence_url": "https://dev-docs.binary.ninja/guide/mcp.html",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Reviewed in the development manual: use a build containing MCP. GUI server uses HTTP; headless stdio requires Commercial or Ultimate on macOS/Linux.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "binary-ninja-community-mcp",
+    "name": "Binary Ninja MCP (fosdickio)",
+    "url": "https://github.com/fosdickio/binary_ninja_mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Community Binary Ninja plugin and bridge for MCP clients, including workflows that switch among multiple open binaries.",
+    "description_zh": "社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。",
+    "evidence_url": "https://github.com/fosdickio/binary_ninja_mcp/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Binary Ninja, Python 3.12+ and an MCP client; install the plugin separately from the client bridge.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "ida-pro-mcp-community",
+    "name": "IDA Pro MCP (mrexodia)",
+    "url": "https://github.com/mrexodia/ida-pro-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Community IDA integration useful for existing setups and migration context; its maintainer now recommends the official Hex-Rays MCP server.",
+    "description_zh": "已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。",
+    "evidence_url": "https://github.com/mrexodia/ida-pro-mcp/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "IDA Pro rather than IDA Free, Python 3.11+ and an MCP client; consult the upstream migration notice before choosing a new setup.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "radare2-mcp",
+    "name": "Radare2 MCP Server",
+    "url": "https://github.com/radareorg/radare2-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Native radare2 MCP server offering binary-analysis tools, reusable sessions and configurable read-only access.",
+    "description_zh": "基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。",
+    "evidence_url": "https://github.com/radareorg/radare2-mcp/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A compatible radare2 build and r2pm, plus an MCP client; advanced HTTP session features depend on the radare2 ABI.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "r2ai",
+    "name": "r2ai",
+    "url": "https://github.com/radareorg/r2ai",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "description_en": "AI plugins inside radare2 for function explanations, naming suggestions and model-assisted decompilation using local or remote models.",
+    "description_zh": "在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。",
+    "evidence_url": "https://github.com/radareorg/r2ai/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "radare2 with the matching r2ai/decai plugins; configure a local model or the credentials required by the selected remote provider.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "daila",
+    "name": "DAILA",
+    "url": "https://github.com/mahaloz/DAILA",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "description_en": "Decompiler-independent AI assistant for function summaries and naming across IDA, Ghidra, Binary Ninja and angr-management.",
+    "description_zh": "跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。",
+    "evidence_url": "https://github.com/mahaloz/DAILA/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A supported decompiler and dailalib; configure a model backend. Ghidra requires the documented PyGhidra setup.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "revengai-ghidra",
+    "name": "RevEng.AI Ghidra Plugin",
+    "url": "https://github.com/RevEngAI/plugin-ghidra",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "description_en": "Connects Ghidra to RevEng.AI for function similarity, recovered names, AI explanations and agent-assisted annotation.",
+    "description_zh": "将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。",
+    "evidence_url": "https://github.com/RevEngAI/plugin-ghidra/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A compatible Ghidra/Java build and a RevEng.AI API key; creating service-side analysis uploads the selected binary.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "jadx-ai-mcp",
+    "name": "JADX-AI-MCP",
+    "url": "https://github.com/zinja-coder/jadx-ai-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "JADX plugin paired with a Python MCP server to inspect decompiled Android classes, resources, cross-references and debugger context.",
+    "description_zh": "结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。",
+    "evidence_url": "https://github.com/zinja-coder/jadx-ai-mcp/blob/jadx-ai/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "JADX with the plugin and the separate JADX MCP Server component; upstream lists Java 11+ and Python 3.10+.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "frida-mcp-yfe404",
+    "name": "frida-mcp (yfe404)",
+    "url": "https://github.com/yfe404/frida-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Frida MCP server with persistent instrumentation sessions, runtime inspection and Android static-to-dynamic navigation.",
+    "description_zh": "Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。",
+    "evidence_url": "https://github.com/yfe404/frida-mcp/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Node.js 20+, Frida 17 and an accessible target; on-device operations require the documented device/frida-server setup.",
+    "targets": [
+      "app",
+      "game"
+    ]
+  },
+  {
+    "id": "super-trouper",
+    "name": "Super Trouper",
+    "url": "https://github.com/crissyfield/super-trouper",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Single-binary Frida MCP server for discovering devices, managing process sessions and loading instrumentation scripts.",
+    "description_zh": "单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。",
+    "evidence_url": "https://github.com/crissyfield/super-trouper/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Published host binaries target macOS/Linux; target connectivity must support Frida. Source builds need Go, CGO and a matching Frida Core DevKit.",
+    "targets": [
+      "app",
+      "game"
+    ]
+  },
+  {
+    "id": "lldb-mcp",
+    "name": "LLDB MCP",
+    "url": "https://lldb.llvm.org/use/mcp.html",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "LLDB's official MCP interface gives agents debugger sessions and commands for breakpoints, memory inspection and stepping.",
+    "description_zh": "LLDB 官方 MCP 接口提供调试会话与命令，使 agent 可以设置断点、检查内存和单步执行。",
+    "evidence_url": "https://lldb.llvm.org/use/mcp.html",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "An LLDB distribution/build containing lldb-mcp and a compatible stdio MCP client; debug-target access follows the host platform's requirements.",
+    "targets": [
+      "binary",
+      "app"
+    ]
+  },
+  {
+    "id": "claude-reverse-engineering-skill",
+    "name": "Claude Reverse Engineering Skill",
+    "url": "https://github.com/EncidXVII/claude-reverse-engineering-skill",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "description_en": "Community agent skill for triage, headless exports and evidence-based RE reports; explicitly documents workflows with REA and other MCP servers.",
+    "description_zh": "社区 agent skill，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。",
+    "evidence_url": "https://github.com/EncidXVII/claude-reverse-engineering-skill/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "An Agent Skills-compatible client and Python 3.8+ for bundled scripts; analysis engines and MCP servers are configured separately.",
+    "targets": [
+      "app",
+      "binary"
+    ]
+  },
+  {
+    "id": "specterops-re-skills",
+    "name": "SpecterOps Reverse Engineering Skills",
+    "url": "https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "description_en": "Focused Binary Ninja and Ghidra analysis skills that describe MCP tool use, analysis recipes and annotation practices.",
+    "description_zh": "针对 Binary Ninja 与 Ghidra 的分析 skills，提供 MCP 工具使用、分析步骤和标注方法。",
+    "evidence_url": "https://github.com/SpecterOps/skills/blob/main/plugins/reverse-engineering/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Configure the chosen Binary Ninja or Ghidra MCP integration separately; the skill package does not install or wrap those servers.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "ghidra",
+    "name": "Ghidra",
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "description_en": "Open-source analysis suite for disassembly, decompilation, graphs and Java/Python automation across executable formats.",
+    "description_zh": "开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。",
+    "evidence_url": "https://github.com/NationalSecurityAgency/ghidra/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "An official Ghidra release and its required JDK; extension and script compatibility must match the installed release.",
+    "targets": [
+      "binary",
+      "game",
+      "firmware"
+    ]
+  },
+  {
+    "id": "radare2",
+    "name": "radare2",
+    "url": "https://github.com/radareorg/radare2",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "description_en": "Scriptable command-line framework for inspecting, disassembling, debugging and modifying binaries across many architectures.",
+    "description_zh": "可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。",
+    "evidence_url": "https://github.com/radareorg/radare2/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Use the release/build for your host; decompilers and other optional functionality may require separate plugins.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "cutter",
+    "name": "Cutter",
+    "url": "https://github.com/rizinorg/cutter",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "description_en": "Rizin-powered graphical reverse-engineering workspace with extensible views and Ghidra decompiler integration.",
+    "description_zh": "基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。",
+    "evidence_url": "https://github.com/rizinorg/cutter/blob/dev/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Desktop builds are available for Linux, macOS and Windows; use plugins compatible with the selected Cutter release.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "frida",
+    "name": "Frida",
+    "url": "https://github.com/frida/frida",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "description_en": "Dynamic instrumentation toolkit for observing and scripting the behavior of live native and managed processes.",
+    "description_zh": "动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。",
+    "evidence_url": "https://github.com/frida/frida/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Host bindings or CLI tools and a supported target setup; mobile/server/Gadget and signing requirements vary by platform.",
+    "targets": [
+      "app",
+      "game"
+    ]
+  },
+  {
+    "id": "jadx",
+    "name": "JADX",
+    "url": "https://github.com/skylot/jadx",
+    "category": "android",
+    "relationship": "foundation",
+    "description_en": "Dex-to-Java decompiler with CLI/GUI navigation, resource decoding and cross-reference search for Android packages.",
+    "description_zh": "将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。",
+    "evidence_url": "https://github.com/skylot/jadx/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "64-bit Java 11+ unless using a bundled runtime; decompilation can be incomplete and should be checked against bytecode.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "apktool",
+    "name": "Apktool",
+    "url": "https://github.com/iBotPeaches/Apktool",
+    "category": "android",
+    "relationship": "foundation",
+    "description_en": "Decodes Android resources and smali into a project-like tree and can rebuild modified packages.",
+    "description_zh": "将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。",
+    "evidence_url": "https://github.com/iBotPeaches/Apktool/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A supported Java runtime and the release-specific launcher; rebuilding is distinct from recovering original Java source.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "androguard",
+    "name": "Androguard",
+    "url": "https://github.com/androguard/androguard",
+    "category": "android",
+    "relationship": "foundation",
+    "description_en": "Python toolkit for APK/DEX metadata, bytecode and reference analysis; the v5 source branch also documents agent skills and MCP.",
+    "description_zh": "用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供 agent skills 和 MCP 文档。",
+    "evidence_url": "https://github.com/androguard/androguard/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Version-sensitive: the reviewed README distinguishes the v5 source tree from PyPI 4.1.4; v5 extras require additional Rust/Python components.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "ilspy",
+    "name": "ILSpy",
+    "url": "https://github.com/icsharpcode/ILSpy",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "description_en": ".NET assembly browser and C# decompiler with whole-project export, metadata inspection and a scriptable command-line frontend.",
+    "description_zh": ".NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。",
+    "evidence_url": "https://github.com/icsharpcode/ILSpy/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Choose a desktop or ILSpyCmd release and its matching .NET runtime; frontend and operating-system support are release-dependent.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "dnspyex",
+    "name": "dnSpyEx",
+    "url": "https://github.com/dnSpyEx/dnSpy",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "description_en": "Community continuation of dnSpy for debugging and editing .NET assemblies without the original source.",
+    "description_zh": "dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。",
+    "evidence_url": "https://github.com/dnSpyEx/dnSpy/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Windows desktop workflow; Unity debugging requires the companion runtime setup documented by the project.",
+    "targets": [
+      "app"
+    ]
+  },
+  {
+    "id": "electron-asar",
+    "name": "@electron/asar",
+    "url": "https://github.com/electron/asar",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "description_en": "Electron's archive tool lists and extracts ASAR contents so packaged JavaScript and application assets can be inspected.",
+    "description_zh": "Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。",
+    "evidence_url": "https://github.com/electron/asar/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "The reviewed release requires Node.js 22.12+; extraction reveals archive contents, not missing source maps or original source names.",
+    "targets": [
+      "app",
+      "website"
+    ]
+  },
+  {
+    "id": "webcrack",
+    "name": "webcrack",
+    "url": "https://github.com/j4k0xb/webcrack",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "description_en": "Improves JavaScript readability by reversing supported obfuscation patterns and unpacking webpack/Browserify bundles.",
+    "description_zh": "识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify bundle，改善代码可读性。",
+    "evidence_url": "https://github.com/j4k0xb/webcrack/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "The reviewed README specifies Node.js 22 or 24; results depend on the obfuscator/bundler patterns present in the input.",
+    "targets": [
+      "app",
+      "website"
+    ]
+  },
+  {
+    "id": "wabt",
+    "name": "WABT",
+    "url": "https://github.com/WebAssembly/wabt",
+    "category": "webassembly",
+    "relationship": "foundation",
+    "description_en": "WebAssembly tools for binary-to-text conversion, section inspection, validation, interpretation and C translation.",
+    "description_zh": "WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。",
+    "evidence_url": "https://github.com/WebAssembly/wabt/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Select a release supporting the module's WebAssembly features; optional proposals may require explicit flags.",
+    "targets": [
+      "website",
+      "binary"
+    ]
+  },
+  {
+    "id": "wasm-tools",
+    "name": "wasm-tools",
+    "url": "https://github.com/bytecodealliance/wasm-tools",
+    "category": "webassembly",
+    "relationship": "foundation",
+    "description_en": "Bytecode Alliance CLI and Rust libraries for inspecting WebAssembly modules, metadata, components and WIT interfaces.",
+    "description_zh": "Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。",
+    "evidence_url": "https://github.com/bytecodealliance/wasm-tools/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Use prebuilt release artifacts or a Rust toolchain; proposal/component support depends on the selected release.",
+    "targets": [
+      "website",
+      "binary"
+    ]
+  },
+  {
+    "id": "binwalk",
+    "name": "Binwalk",
+    "url": "https://github.com/ReFirmLabs/binwalk",
+    "category": "firmware",
+    "relationship": "foundation",
+    "description_en": "Identifies embedded formats and optionally extracts their contents, with entropy analysis for firmware triage.",
+    "description_zh": "识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。",
+    "evidence_url": "https://github.com/ReFirmLabs/binwalk/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "The current v3 implementation is Rust-based; extraction needs the appropriate external tools or the documented container environment.",
+    "targets": [
+      "firmware"
+    ]
+  },
+  {
+    "id": "unblob",
+    "name": "unblob",
+    "url": "https://github.com/onekey-sec/unblob",
+    "category": "firmware",
+    "relationship": "foundation",
+    "description_en": "Recursively extracts archives and filesystems from binary blobs while reporting chunk boundaries and unknown regions.",
+    "description_zh": "递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。",
+    "evidence_url": "https://github.com/onekey-sec/unblob/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Python package plus external extractors, or the bundled Docker image; check the project's dependency inventory for the formats needed.",
+    "targets": [
+      "firmware"
+    ]
+  },
+  {
+    "id": "ghidra-firmware-utils",
+    "name": "Ghidra Firmware Utilities",
+    "url": "https://github.com/al3xtjames/ghidra-firmware-utils",
+    "category": "firmware",
+    "relationship": "foundation",
+    "description_en": "Ghidra loaders and helpers for PCI option ROMs, UEFI firmware volumes, Intel flash descriptors and coreboot images.",
+    "description_zh": "面向 PCI Option ROM、UEFI 固件卷、Intel Flash Descriptor 和 coreboot 镜像的 Ghidra 加载器与辅助脚本。",
+    "evidence_url": "https://github.com/al3xtjames/ghidra-firmware-utils/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "The reviewed build instructions require Ghidra 12.0+ and JDK 21+; build against the same Ghidra/JRE environment used for analysis.",
+    "targets": [
+      "firmware"
+    ]
+  },
+  {
+    "id": "qiling",
+    "name": "Qiling",
+    "url": "https://github.com/qilingframework/qiling",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "description_en": "Python emulation framework that adds OS, filesystem and API behavior around CPU emulation for instrumented binary analysis.",
+    "description_zh": "在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。",
+    "evidence_url": "https://github.com/qilingframework/qiling/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A supported Python environment and the target's required root filesystem/libraries; emulation coverage varies by platform.",
+    "targets": [
+      "binary",
+      "firmware"
+    ]
+  },
+  {
+    "id": "unicorn",
+    "name": "Unicorn Engine",
+    "url": "https://github.com/unicorn-engine/unicorn",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "description_en": "Multi-architecture CPU emulator for executing selected instruction ranges with register, memory and hook control.",
+    "description_zh": "多架构 CPU 仿真引擎，可控制寄存器、内存和 hook，执行选定的指令片段。",
+    "evidence_url": "https://github.com/unicorn-engine/unicorn/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Use a supported binding and explicitly supply the CPU state and memory model; it is a CPU emulator rather than a complete OS environment.",
+    "targets": [
+      "binary",
+      "game",
+      "firmware"
+    ]
+  },
+  {
+    "id": "angr",
+    "name": "angr",
+    "url": "https://github.com/angr/angr",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "description_en": "Python binary-analysis framework combining control-flow recovery, symbolic execution, data-flow analysis and decompilation.",
+    "description_zh": "结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。",
+    "evidence_url": "https://github.com/angr/angr/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A compatible Python 3 environment; useful results require an appropriate model of program inputs, state and external functions.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "lief",
+    "name": "LIEF",
+    "url": "https://github.com/lief-project/LIEF",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "description_en": "Library for structured parsing and modification of executable formats including ELF, PE and Mach-O.",
+    "description_zh": "对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。",
+    "evidence_url": "https://github.com/lief-project/LIEF/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "C++, Python or Rust integration; check the distinction between core and extended features for the selected distribution.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "capstone",
+    "name": "Capstone",
+    "url": "https://github.com/capstone-engine/capstone",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "description_en": "Disassembly library with architecture-neutral APIs and instruction details for custom binary-analysis pipelines.",
+    "description_zh": "提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。",
+    "evidence_url": "https://github.com/capstone-engine/capstone/blob/next/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Select a library/binding release supporting the target ISA and mode; the next branch can differ from stable releases.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "imhex",
+    "name": "ImHex",
+    "url": "https://github.com/WerWolv/ImHex",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "description_en": "Hex editor with a binary-pattern language, structured data inspection and visual tools for understanding file formats.",
+    "description_zh": "带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。",
+    "evidence_url": "https://github.com/WerWolv/ImHex/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Desktop build or web edition; some data sources and features depend on the platform and selected build.",
+    "targets": [
+      "binary",
+      "game",
+      "firmware"
+    ]
+  },
+  {
+    "id": "x64dbg",
+    "name": "x64dbg",
+    "url": "https://github.com/x64dbg/x64dbg",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "description_en": "Windows binary debugger with disassembly, memory views and plugins for analyzing programs without source code.",
+    "description_zh": "Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。",
+    "evidence_url": "https://github.com/x64dbg/x64dbg/blob/development/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Windows; choose x32dbg or x64dbg according to the executable's architecture.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "gdb",
+    "name": "GDB",
+    "url": "https://sourceware.org/gdb/",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "description_en": "Native and remote debugger for controlling execution and inspecting live or crashed program state.",
+    "description_zh": "支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。",
+    "evidence_url": "https://www.sourceware.org/gdb/",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A GDB build supporting the target architecture and a permitted local process, core dump, simulator or remote debug endpoint.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "rr",
+    "name": "rr",
+    "url": "https://github.com/rr-debugger/rr",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "description_en": "Records process execution and replays it under GDB, enabling repeatable inspection and reverse execution.",
+    "description_zh": "记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。",
+    "evidence_url": "https://github.com/rr-debugger/rr/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Linux with supported CPU performance counters; VM use depends on counter virtualization and the project's hardware requirements.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "diaphora",
+    "name": "Diaphora",
+    "url": "https://github.com/joxeankoret/diaphora",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "description_en": "IDA-based binary diffing that matches functions and transfers names, comments and types between analyzed versions.",
+    "description_zh": "基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。",
+    "evidence_url": "https://github.com/joxeankoret/diaphora/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "IDA with Python 3 support; richer pseudocode and microcode comparisons depend on the corresponding decompiler capabilities.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "bindiff",
+    "name": "BinDiff",
+    "url": "https://github.com/google/bindiff",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "description_en": "Compares disassembled binaries to find matching functions and changed code across versions.",
+    "description_zh": "比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。",
+    "evidence_url": "https://github.com/google/bindiff/blob/main/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Requires a separate supported disassembler/export pipeline; upstream documents IDA Pro, Binary Ninja and Ghidra configurations.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "detect-it-easy",
+    "name": "Detect It Easy",
+    "url": "https://github.com/horsicq/Detect-It-Easy",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "description_en": "Format-aware file identification and static inspection using parsers, signatures and programmable heuristics.",
+    "description_zh": "结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。",
+    "evidence_url": "https://github.com/horsicq/Detect-It-Easy/blob/master/README.md",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Use the project-linked DIE-engine releases for the host platform; identification results require analyst interpretation.",
+    "targets": [
+      "binary",
+      "game"
+    ]
+  },
+  {
+    "id": "ost2",
+    "name": "OpenSecurityTraining2",
+    "url": "https://ost2.fyi/",
+    "category": "learning",
+    "relationship": "learning",
+    "description_en": "Free self-paced security courses with learning paths for reverse engineering, firmware and systems foundations.",
+    "description_zh": "免费的自主学习课程，提供逆向工程、固件和系统基础等学习路线。",
+    "evidence_url": "https://ost2.fyi/Learning-Paths.html",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Browser access; choose classes according to their published prerequisites and lab requirements.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "pwn-college-re",
+    "name": "pwn.college: Reverse Engineering",
+    "url": "https://pwn.college/program-security/reverse-engineering/",
+    "category": "learning",
+    "relationship": "learning",
+    "description_en": "Hands-on reverse-engineering module covering functions, data access, static tools and dynamic tools with hosted exercises.",
+    "description_zh": "包含托管练习的逆向工程课程，覆盖函数、数据访问、静态工具和动态工具。",
+    "evidence_url": "https://pwn.college/program-security/reverse-engineering/",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Browser access and the platform's account/environment setup for interactive challenges.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "re-for-beginners",
+    "name": "Reverse Engineering for Beginners",
+    "url": "https://beginners.re/",
+    "category": "learning",
+    "relationship": "learning",
+    "description_en": "Dennis Yurichev's free book on understanding compiled programs and assembly, available in multiple languages.",
+    "description_zh": "Dennis Yurichev 编写的免费逆向入门书，以汇编与编译后程序理解为核心，提供多语言版本。",
+    "evidence_url": "https://beginners.re/",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "A browser or PDF reader; use the toolchains relevant to the exercises being followed.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "radare2-book",
+    "name": "The Official Radare2 Book",
+    "url": "https://book.rada.re/",
+    "category": "learning",
+    "relationship": "learning",
+    "description_en": "Official practical reference for radare2 analysis, disassembly, scripting, debugging and related plugins.",
+    "description_zh": "radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。",
+    "evidence_url": "https://book.rada.re/",
+    "verified_at": "2026-10-15",
+    "verification": "source-reviewed",
+    "requirements": "Upstream lists radare2 5.8.x as the minimum and recommends a current release for following the examples.",
+    "targets": [
+      "binary"
+    ]
+  },
+  {
+    "id": "renderdoc",
+    "name": "RenderDoc",
+    "url": "https://github.com/baldurk/renderdoc",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "description_en": "Inspect frame captures, draw calls, shaders, and graphics resources in your own game or graphics application.",
+    "description_zh": "检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。",
+    "evidence_url": "https://github.com/baldurk/renderdoc/blob/v1.x/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Supported graphics API and replay platform; upstream supports captures of your own, open-source, or free projects. Metal is not supported.",
+    "targets": [
+      "game",
+      "app"
+    ]
+  },
+  {
+    "id": "assetripper",
+    "name": "AssetRipper",
+    "url": "https://github.com/AssetRipper/AssetRipper",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "description_en": "Analyze Unity game files, inspect asset dependencies, and convert supported assets into Unity project formats.",
+    "description_zh": "分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。",
+    "evidence_url": "https://github.com/AssetRipper/AssetRipper/blob/master/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Unity 3.5.0–6000.4.X coverage varies by version; GPL-3.0 open-source edition, with separate premium features.",
+    "targets": [
+      "game"
+    ]
+  },
+  {
+    "id": "cpp2il",
+    "name": "Cpp2IL",
+    "url": "https://github.com/SamboyCoding/Cpp2IL",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "description_en": "Recover managed representations from Unity IL2CPP builds using binary and metadata analysis; reconstruction remains a work in progress.",
+    "description_zh": "结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。",
+    "evidence_url": "https://github.com/SamboyCoding/Cpp2IL/blob/development/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Compatible Unity build and metadata; current development branch is a major rewrite and primarily targets .NET 9.0.",
+    "targets": [
+      "game",
+      "app",
+      "binary"
+    ]
+  },
+  {
+    "id": "il2cppdumper",
+    "name": "Il2CppDumper",
+    "url": "https://github.com/Perfare/Il2CppDumper",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "description_en": "Recover IL2CPP metadata and dummy assemblies, and generate helper scripts for native analysis tools; method code is not restored.",
+    "description_zh": "恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。",
+    "evidence_url": "https://github.com/Perfare/Il2CppDumper/blob/master/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Matching IL2CPP executable and global-metadata.dat; documented Unity support is 5.3–2022.2.",
+    "targets": [
+      "game",
+      "app",
+      "binary"
+    ]
+  },
+  {
+    "id": "renderdoc-mcp",
+    "name": "RenderDoc MCP",
+    "url": "https://github.com/scarletfantasy/renderdoc-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Expose existing RenderDoc captures to an agent for bounded frame, pipeline, resource, and shader inspection.",
+    "description_zh": "向 Agent 开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。",
+    "evidence_url": "https://github.com/scarletfantasy/renderdoc-mcp/blob/main/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Windows and replayable .rdc capture; maintainer baseline is RenderDoc 1.43. Optional native Python backend needs a source-built binding.",
+    "targets": [
+      "game",
+      "app"
+    ]
+  },
+  {
+    "id": "chrome-devtools-mcp",
+    "name": "Chrome DevTools MCP",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Connect an agent to Chrome for live page inspection, network debugging, and performance traces.",
+    "description_zh": "连接 Agent 与 Chrome，检查实时页面、调试网络并记录性能轨迹。",
+    "evidence_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Supported Node.js LTS, Chrome, and an MCP client; selected browser profile and target must be available locally.",
+    "targets": [
+      "website"
+    ]
+  },
+  {
+    "id": "mitmproxy",
+    "name": "mitmproxy",
+    "url": "https://github.com/mitmproxy/mitmproxy",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "description_en": "Inspect and record HTTP traffic with an interactive proxy, web interface, or scriptable command-line tools.",
+    "description_zh": "通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。",
+    "evidence_url": "https://github.com/mitmproxy/mitmproxy/blob/main/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Configure the client proxy; HTTPS inspection requires the appropriate local trust configuration. Saved captures and live interception are distinct workflows.",
+    "targets": [
+      "website",
+      "app"
+    ]
+  },
+  {
+    "id": "playwright-mcp",
+    "name": "Playwright MCP",
+    "url": "https://github.com/microsoft/playwright-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "description_en": "Drive browser interactions through structured accessibility snapshots to investigate reproducible web behavior.",
+    "description_zh": "通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。",
+    "evidence_url": "https://github.com/microsoft/playwright-mcp/blob/main/README.md",
+    "verified_at": "2026-10-16T01:05:01Z",
+    "verification": "source-reviewed",
+    "requirements": "Node.js 18+ and an MCP client; the upstream also offers a separate CLI-and-skills approach for coding agents.",
+    "targets": [
+      "website"
+    ]
+  }
+]
