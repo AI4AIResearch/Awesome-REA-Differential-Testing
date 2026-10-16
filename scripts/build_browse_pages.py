@@ -8,8 +8,8 @@ from pathlib import Path
 import shutil
 from urllib.parse import urlsplit
 
+from build_discovery_pages import collection_page_schema, jsonld_script
 from build_repository_index import CATEGORIES
-from build_discovery_pages import jsonld, page_graph
 
 CATEGORY_ICONS = {
     'web-analysis': 'globe', 'game-analysis': 'gamepad', 'android': 'phone',
@@ -138,27 +138,26 @@ def build_browse_pages(
                 category_links.append(f'<a href="{browse_path(language, slug)}"{active}>{escape(category_labels[language_index])}<span>{len(groups[slug]):,}</span></a>')
             if category:
                 content = '<div class="source-results browse-results">\n' + '\n'.join(repository_card(record, language, use_pro) for record in groups[category]) + '\n</div>'
+                schema_items = [
+                    {'name': record.get('full_name') or record['name'], 'url': record['url'],
+                     'description': record[f'description_{language}'] or ('上游仓库未提供项目简介。' if zh else 'No description supplied by the upstream repository.')}
+                    for record in groups[category]
+                ]
                 if not groups[category]:
                     content = '<p class="browse-empty">' + ('该分类暂无仓库。' if zh else 'No repositories in this category.') + '</p>'
             else:
                 cards = []
+                schema_items = []
                 for slug, category_labels in CATEGORIES.items():
                     count_label = f'{len(groups[slug]):,} 个仓库' if zh else f'{len(groups[slug]):,} repositories'
                     cards.append(f'''<a class="browse-category-card" href="{browse_path(language, slug)}">{icon(CATEGORY_ICONS[slug], use_pro)}<div class="browse-category-copy"><h2>{escape(category_labels[language_index])}</h2><p>{count_label}</p></div><span class="browse-category-arrow" aria-hidden="true">→</span></a>''')
+                    schema_items.append({'name': category_labels[language_index], 'url': site_url + browse_path(language, slug), 'description': count_label})
                 content = '<div class="browse-category-grid">\n' + '\n'.join(cards) + '\n</div>'
+            structured_data = jsonld_script(collection_page_schema(canonical, label, description, locale, schema_items, site_url))
             breadcrumbs = (f'<a href="{root_link}">{("首页" if zh else "Home")}</a><span aria-hidden="true">/</span>'
                            + (f'<a href="{browse_path(language)}">{("全部分类" if zh else "All categories")}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(label)}</span>'
                               if category else f'<span aria-current="page">{("全部分类" if zh else "All categories")}</span>'))
             icon_css = f'<link rel="stylesheet" href="{escape(icon_stylesheet_href, quote=True)}">' if use_pro else ''
-            items = ([{"name": record.get('full_name') or record['name'], "url": record['url']}
-                      for record in groups[category]] if category else
-                     [{"name": labels[language_index], "url": site_url + browse_path(language, slug)}
-                      for slug, labels in CATEGORIES.items()])
-            trail = [('首页' if zh else 'Home', site_url + '/')]
-            if category:
-                trail.append(('全部分类' if zh else 'All categories', site_url + browse_path(language)))
-            trail.append((label, canonical))
-            structured = jsonld(page_graph(site_url, canonical, title, description, locale, items=items, breadcrumbs=trail))
             document = f'''<!doctype html>
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if use_pro else '')}>
 <head>
@@ -188,7 +187,7 @@ def build_browse_pages(
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
   <link rel="stylesheet" href="{escape(browse_styles_href, quote=True)}">
   {icon_css}
-  {structured}
+  {structured_data}
 </head>
 <body>
 <a class="skip-link" href="#browse-content">{('跳到仓库目录' if zh else 'Skip to the directory')}</a>
@@ -212,7 +211,7 @@ def build_browse_pages(
   <div class="browse-topline"><p>{count_text}</p><p>{date_text}</p></div>
   {content}
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{browse_path(language)}">{('全部分类' if zh else 'All categories')}</a><a href="{curated_link}">{('精选资源' if zh else 'Curated resources')}</a><a href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('仓库索引 JSON ↓' if zh else 'Repository index JSON ↓')}</a><a href="/catalog.json?v={data_revision}" download="awesomerea-curated-catalog.json" type="application/json">{('精选目录 JSON ↓' if zh else 'Curated catalog JSON ↓')}</a></div></div><div class="shell footer-bottom">{('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.')}</div></footer>
+<footer class="site-footer"><div class="shell footer-top"><p>{('独立的资源集合，在公开协作中持续更新。' if zh else 'An independent resource collection, updated in public.')}</p><div class="footer-links"><a href="{browse_path(language)}">{('全部分类' if zh else 'All categories')}</a><a href="{curated_link}">{('精选资源' if zh else 'Curated resources')}</a><a href="{('/zh' if zh else '')}/papers/">{('研究论文' if zh else 'Research papers')}</a><a href="{('/zh' if zh else '')}/about/">{('关于与来源' if zh else 'About and sources')}</a><a href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('仓库索引 JSON ↓' if zh else 'Repository index JSON ↓')}</a><a href="/catalog.json?v={data_revision}" download="awesomerea-curated-catalog.json" type="application/json">{('精选目录 JSON ↓' if zh else 'Curated catalog JSON ↓')}</a></div></div><div class="shell footer-bottom">{('原创内容采用 MIT 许可。链接项目保留各自的许可。' if zh else 'Original content: MIT. Linked projects keep their own licenses.')}</div></footer>
 </body>
 </html>
 '''

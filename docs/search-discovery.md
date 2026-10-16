@@ -6,6 +6,7 @@ The canonical website is [AwesomeREA.org](https://awesomerea.org/); the public s
 
 ## What the site provides
 
+- `/papers/` and `/zh/papers/` provide the source-reviewed bibliography with original author names, publication status, precise dates, bilingual scope limits and BibTeX downloads. Some papers also appear in the curated catalog; the counts are not additive.
 - `/resources/` and `/zh/resources/` contain every curated record in ordinary HTML, with its original source, review date, requirements, and a stable section link.
 - `/about/` and `/zh/about/` explain the collection, its relationship to REA, source review, and the separate automated repository index.
 - `/browse/` and `/zh/browse/` provide category pages for the automated index. Their provenance stays distinct from curated resources.
@@ -58,3 +59,11 @@ For each observation, record query, language, engine, date, whether web search a
 `aicanwhat.com` is a separate planned directory for AI-built software and agent training/evaluation environments. It should have its own source-backed entries and canonical identity, rather than duplicate the AwesomeREA website. The 2026-10-16 audit could not resolve its hostname; it needs a real deployed site before crawler checks or sitemap submission can establish anything.
 
 At launch, use Games / Websites / Apps as content types, platform and Showcase / Training / Evaluation as separate filters, static entry pages, original evidence, and explicit verification status. Adapt the checks above to that site's actual canonical origin. Submit it as a separate property only after its public URLs work.
+
+## Repeatable IndexNow submission
+
+A top-level `404.html` makes unknown paths return HTTP 404 instead of the homepage. The sitemap omits modification dates when a significant page-change date cannot be established reliably; a source-review timestamp is not a page-modification timestamp.
+
+Run `python3 scripts/submit_indexnow.py` to preview the sitemap URL batch, then `python3 scripts/submit_indexnow.py --submit` after deployment. The command first checks that the live sitemap and public ownership file exactly match this build. It submits only canonical awesomerea.org URLs. HTTP 200 confirms receipt; HTTP 202 means key validation is pending. Neither confirms indexing. See the [IndexNow protocol](https://www.indexnow.org/documentation).
+
+`site/indexnow.txt` is intentionally public domain-ownership proof, not an account credential. Keep Google verification files and DNS ownership records in place. Search Console account details, DNS dashboard identifiers, credentials and private analytics must never be committed. The GitHub repository is not covered by the website's domain-verification key.

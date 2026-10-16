@@ -11,7 +11,13 @@ const UI = {
     "submitResource": "Submit resource",
     "collectionEyebrow": "AN OPEN RESOURCE COLLECTION",
     "pageDescription": "Tools, projects, case studies and resources for reverse engineering websites, games, apps, binaries and firmware.",
-    "collectionDescription": "A collection of reverse-engineering tools, projects, case studies and references.",
+    "collectionDescription": "A collection of reverse-engineering tools, projects, case studies and research papers.",
+    "directoryNav": "Collection directories",
+    "directoryRepositories": "repositories",
+    "directoryCurated": "curated resources",
+    "directoryPapers": "research papers",
+    "directoryAbout": "About the collection ↗",
+    "directoryScanned": "READMEs scanned · curated entries and papers reviewed against public sources.",
     "browseCollection": "Browse the collection",
     "indexModeLabel": "Collection",
     "sourceMode": "Repositories",
@@ -62,8 +68,6 @@ const UI = {
     "contributeButton": "Contribute ↗",
     "downloadSourceData": "Repository index JSON ↓",
     "browseDirectory": "Browse by category ↗",
-    "curatedDirectory": "Curated directory ↗",
-    "aboutCollectionPage": "About the collection ↗",
     "downloadCuratedData": "Curated catalog JSON ↓",
     "viewSource": "GitHub ↗",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
@@ -99,7 +103,13 @@ const UI = {
     "submitResource": "提交资源",
     "collectionEyebrow": "开放的逆向工程资源集合",
     "pageDescription": "收集面向网站、游戏、应用、二进制和固件逆向工程的工具、项目、案例与资料。",
-    "collectionDescription": "收集逆向工程工具、项目、案例与参考资料。",
+    "collectionDescription": "收集逆向工程工具、项目、案例与研究论文。",
+    "directoryNav": "资源目录",
+    "directoryRepositories": "个项目仓库",
+    "directoryCurated": "项精选资源",
+    "directoryPapers": "篇研究论文",
+    "directoryAbout": "关于合集 ↗",
+    "directoryScanned": "份 README 已扫描 · 精选条目与论文均依据公开来源复核。",
     "browseCollection": "浏览资源集合",
     "indexModeLabel": "资源集合",
     "sourceMode": "项目仓库",
@@ -150,8 +160,6 @@ const UI = {
     "contributeButton": "参与贡献 ↗",
     "downloadSourceData": "仓库索引 JSON ↓",
     "browseDirectory": "按分类浏览 ↗",
-    "curatedDirectory": "精选资源目录 ↗",
-    "aboutCollectionPage": "关于这个目录 ↗",
     "downloadCuratedData": "精选目录 JSON ↓",
     "viewSource": "GitHub ↗",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
@@ -201,8 +209,7 @@ function applyLanguage() {
   document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
   document.title = t("pageTitle");
   $("#browse-directory").href = state.lang === "zh" ? "/zh/browse/" : "/browse/";
-  $("#curated-directory").href = state.lang === "zh" ? "/zh/resources/" : "/resources/";
-  $("#about-collection").href = state.lang === "zh" ? "/zh/about/" : "/about/";
+  $$('[data-locale-path]').forEach(el => { el.href = `${state.lang === "zh" ? "/zh" : ""}/${el.dataset.localePath}/`; });
   $('meta[property="og:image:alt"]')?.setAttribute("content", t("pageTitle"));
   $("#language-select").value = state.lang;
   for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) $(selector)?.setAttribute("content", t("pageDescription"));
