@@ -2,3 +2,11 @@
   Access-Control-Allow-Origin: *
 /fontawesome.css
   Access-Control-Allow-Origin: *
+/
+  Cache-Control: no-cache, must-revalidate
+/index.html
+  Cache-Control: no-cache, must-revalidate
+/catalog.json
+  Cache-Control: no-cache, must-revalidate
+/source-index.json
+  Cache-Control: no-cache, must-revalidate

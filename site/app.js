@@ -35,6 +35,7 @@ const state = { lang: params.get("lang") === "zh" || (!params.has("lang") && sto
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
+function dataURL(filename) { const url = new URL(filename, document.baseURI); const revision = document.documentElement.dataset.catalogRevision; if (revision) url.searchParams.set("v", revision); return url; }
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
 function icon(name, small = false) { if (document.documentElement.dataset.iconSet === "fontawesome") { const span = node("span", "icon fa-symbol fa-" + name + (small ? " icon-small" : "")); span.setAttribute("aria-hidden", "true"); return span; } const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "icon" + (small ? " icon-small" : "")); svg.setAttribute("aria-hidden", "true"); const use = document.createElementNS("http://www.w3.org/2000/svg", "use"); use.setAttribute("href", "#i-" + name); svg.append(use); return svg; }
@@ -80,7 +81,7 @@ function reset() { state.q = ""; state.group = "all"; state.category = "all"; st
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
-    const response = await fetch(new URL("catalog.json", document.baseURI)); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
+    const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
     state.records = data.resources.map(r => ({...r, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || [])].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all"; if (!["all","website","game","app","binary","firmware"].includes(state.target)) state.target = "all";
     $("#stat-resources").textContent = state.records.length; $("#stat-agents").textContent = state.records.filter(r => r.group === "agents").length; $("#stat-playbooks").textContent = String(data.meta.playbook_count).padStart(2,"0");
@@ -155,7 +156,7 @@ function renderSources() {
 async function loadSources() {
   if (sourceState.loading) return; sourceState.loading = true; sourceState.error = false; $("#source-results").setAttribute("aria-busy","true"); $("#source-error").hidden = true; $("#source-status").textContent = t("sourceLoading");
   try {
-    const response = await fetch(new URL("source-index.json",document.baseURI)); if (!response.ok) throw new Error("Source index HTTP "+response.status); const data = await response.json(); sourceState.meta = data.meta || {};
+    const response = await fetch(dataURL("source-index.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Source index HTTP "+response.status); const data = await response.json(); sourceState.meta = data.meta || {};
     sourceState.records = (data.resources || []).filter(r => r.scan_status === "readme-scanned").map((r,index) => { const topics = Array.isArray(r.topics) ? r.topics.map(String) : []; const targets = Array.isArray(r.targets) ? r.targets : []; const full_name = r.full_name || r.name || r.id; return {...r,full_name,topics,targets,order:index,search:[full_name,r.description_en || "",r.category || "",...topics,...targets].join(" ").toLocaleLowerCase()}; });
     const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1))); const options = document.createDocumentFragment(); [...topicCounts].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0])).slice(0,150).forEach(([topic,count]) => { const option = node("option","",`${topic} (${count})`); option.value=topic; options.append(option); }); $("#source-topic-options").replaceChildren(options);
     sourceState.loaded = true; $("#mode-source-count").textContent = sourceState.records.length.toLocaleString(); renderSources();

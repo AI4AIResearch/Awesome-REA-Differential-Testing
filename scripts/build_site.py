@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import shutil
@@ -160,7 +161,6 @@ def main() -> None:
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "PLAYBOOK_COUNT": str(playbook_count).zfill(2), "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
     html = configure_fontawesome(html, args.fontawesome_dir, args.fontawesome_assets_url)
-    (OUTPUT / "index.html").write_text(html, encoding="utf-8")
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = OUTPUT / "source-index.json"
     metadata["source_index"] = {"available": False, "resource_count": 0}
@@ -179,6 +179,16 @@ def main() -> None:
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
     (OUTPUT / "catalog.json").write_text(json.dumps({"meta": metadata, "resources": resources}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for filename, attribute in (("app.js", "src"), ("styles.css", "href")):
+        revision = hashlib.sha256((OUTPUT / filename).read_bytes()).hexdigest()[:16]
+        html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')
+    data_digest = hashlib.sha256()
+    for filename in ("catalog.json", "source-index.json"):
+        path = OUTPUT / filename
+        if path.is_file():
+            data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
+    html = html.replace('<html ', f'<html data-catalog-revision="{data_digest.hexdigest()[:16]}" ', 1)
+    (OUTPUT / "index.html").write_text(html, encoding="utf-8")
     (OUTPUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUTPUT / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (OUTPUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
