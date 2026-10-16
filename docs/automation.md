@@ -19,3 +19,5 @@ The job can write a review comment but does not check out or run the contributor
 ## Website delivery
 
 See [website building and publishing](website.md) for the static build and hosting setup. Production uses the public source repository while optional Font Awesome Pro assets are supplied through the licensed deployment path. Pro fonts, credentials, private configuration, raw analysis output, and deployment bundles are excluded from the public repository.
+
+The production build command runs `scripts/build_production.py`. It stops deployment if catalog validation, the fixture hash check, the three behavior tests, or JavaScript syntax validation fails. Cloudflare's existing Git connection builds each change to `main` and creates PR previews; no deployment API token is stored in this repository.

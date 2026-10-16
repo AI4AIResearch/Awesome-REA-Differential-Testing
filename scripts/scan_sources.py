@@ -11,6 +11,7 @@ import base64
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import datetime as dt
 import hashlib
+from functools import lru_cache
 import json
 from pathlib import Path
 import re
@@ -179,39 +180,104 @@ class GitHub:
             raise ScanError('invalid-api-json') from None
 
 
+@lru_cache(maxsize=1)
+def curated_references():
+    """Use explicit curated target tags; do not infer REA compatibility."""
+    result = {}
+    primary = {
+        'core': 'reverse-engineering', 'related-lists': 'reverse-engineering',
+        'native-analysis': 'native-analysis', 'dynamic-analysis': 'dynamic-analysis',
+        'dotnet': 'managed-code', 'android': 'android', 'firmware': 'firmware',
+        'game-analysis': 'game-analysis', 'web-analysis': 'web-analysis',
+        'javascript-electron': 'web-analysis', 'binary-libraries': 'native-analysis',
+        'binary-diffing': 'native-analysis', 'webassembly': 'web-analysis',
+    }
+    for filename in ('rea-resources.json', 'tool-resources.json'):
+        path = ROOT / 'data' / filename
+        if not path.exists():
+            continue
+        for record in json.loads(path.read_text(encoding='utf-8')):
+            parsed = urlsplit(record['url'])
+            parts = parsed.path.strip('/').split('/')
+            if parsed.hostname != 'github.com' or len(parts) < 2:
+                continue
+            key = '/'.join(parts[:2]).casefold()
+            value = result.setdefault(key, {'targets': set(), 'category': None, 'ids': []})
+            value['targets'].update(record.get('targets', []))
+            value['ids'].append(record['id'])
+            # A scoped page may support a target domain without defining a repository's main purpose.
+            if len(parts) == 2 and record['category'] in primary and value['category'] is None:
+                value['category'] = primary[record['category']]
+    return result
+
+
 def classify(repo):
     topics = {topic.lower() for topic in repo.get('topics', [])}
-    text = ' '.join([repo['full_name'], repo.get('description') or '', *topics]).lower()
+    description = re.sub(r'https?://[^\s<>]+', ' ', repo.get('description') or '', flags=re.I)
+    name = repo['full_name'].lower()
+    purpose = (name + ' ' + description).lower()
+    text = ' '.join([purpose, *topics])
     targets = set()
-    if topics & {'javascript-deobfuscation', 'web-reversing', 'webassembly', 'wasm'} or re.search(r'javascript|electron|browser|webassembly', text):
+    managed = bool(topics & {'csharp', 'c-sharp', 'managed-code', 'ilspy', 'dnspy'} or
+                   any(t == 'dotnet' or t.startswith('dotnet-') for t in topics) or
+                   re.search(r'(?<![\w./-])\.net\b|\bdotnet\b|\bcsharp\b|\bc-sharp\b|\bcil\b|\bilspy\b|\bdnspy\b', text))
+    android = bool(re.search(r'\bandroid\b|\bapk\b|\bjadx\b|\bdex\b', text))
+    native = bool(topics & {'binary-analysis', 'binary-diffing', 'ghidra', 'ida-plugin', 'idapro',
+                           'frida', 'radare2', 'rizin', 'disassembler', 'memory-forensics', 'debugger'} or
+                  re.search(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\brizin\b|\bcutter\b|\bx64dbg\b|\bgdb\b|\blldb\b|\belf\b|\bmach-o\b|\bnative\b|\bassembly\b|\bx86\b|\bx64\b|\barm(?:32|64)?\b|\bavr\b|\brisc-v\b|\briscv\b|\bmips\b', text))
+    native_primary = bool(re.search(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\brizin\b|\bcutter\b|\bx64dbg\b|\bgdb\b|\blldb\b|\bassembly\b|\bx86\b|\bx64\b|\barm(?:32|64)?\b|\bavr\b|\brisc-v\b|\briscv\b|\bmips\b', purpose))
+    dynamic = bool(topics & {'frida', 'frida-script', 'memory-forensics', 'debugger'} or
+                   re.search(r'\bdebugger\b|\binstrument(?:ation|able)\b', purpose))
+    web_explicit = bool(topics & {'javascript-deobfuscation', 'web-reversing', 'website-clone',
+                                  'web-scraping', 'browser', 'mitmproxy', 'openapi', 'swagger', 'rest-api'} or
+                        re.search(r'\bwebsite\b|\bweb-site\b|\bbrowser\b|\belectron\b|\brest[- ]apis?\b|\bmitmproxy\b|\bweb\b|javascript.{0,30}(?:deobfuscat|decompil)|(?:deobfuscat|decompil).{0,30}javascript', purpose))
+    if web_explicit or (topics & {'webassembly', 'wasm'} and not native_primary):
         targets.add('website')
-    if topics & {'game-reversing', 'game-decompilation', 'il2cpp', 'unity-reverse-engineering'} or re.search(r'\bgames?\b|\bunity\b|\bunreal\b|\bplaystation\b|\btouhou\b|\bgamecube\b', text):
+    if topics & {'game-reversing', 'game-decompilation', 'il2cpp', 'unity-reverse-engineering', 'galgame', 'visual-novel'} or re.search(r'\bgames?\b|\bunity\b|\bunreal\b|\bplaystation\b|\btouhou\b|\bgamecube\b|\bvisual novel\b', text):
         targets.add('game')
-    if re.search(r'\bandroid\b|\bapk\b|\bios\b|\belectron\b|\bdotnet\b|\.net\b|\bjava\b|\bjadx\b|\bil2cpp\b|\bmobile\b', text):
+    if managed or android or re.search(r'\bios\b|\bipados\b|\belectron\b|\bmobile\b|\bdesktop\b|\bapp(?:lication)?s?\b|java[- ](?:bytecode|decompiler)', text):
         targets.add('app')
     if re.search(r'\bfirmware\b|\bbinwalk\b|\bunblob\b|\buefi\b|\bbios\b', text):
         targets.add('firmware')
-    if topics & {'binary-analysis', 'binary-diffing', 'ghidra', 'ida-plugin', 'idapro', 'frida', 'radare2', 'decompiler', 'disassembler', 'memory-forensics'} or re.search(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\bx64dbg\b|\belf\b|\bmach-o\b|\bnative\b', text):
+    if native:
         targets.add('binary')
-    if 'firmware' in targets:
+    # Model Context Protocol is an agent interface, not evidence of network-protocol analysis.
+    network_text = re.sub(r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b', ' ', text)
+    network = bool(topics & {'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'mitmproxy', 'network-forensics'} or
+                   re.search(r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)|\brest[- ]apis?\b', network_text))
+    collection = bool(topics & {'awesome', 'awesome-list', 'awesome-lists', 'references'} or
+                      re.search(r'\b(?:collection|list|reference)\b', purpose))
+    if managed:
+        category = 'managed-code'
+    elif native_primary:
+        category = 'dynamic-analysis' if dynamic else 'native-analysis'
+    elif collection:
+        category = 'reverse-engineering'
+    elif android:
+        category = 'android'
+    elif 'firmware' in targets:
         category = 'firmware'
     elif 'game' in targets:
         category = 'game-analysis'
-    elif re.search(r'\bandroid\b|\bapk\b|\bjadx\b', text):
-        category = 'android'
-    elif re.search(r'\bdotnet\b|\.net\b|\bcil\b|\bilspy\b|\bdnspy\b', text):
-        category = 'managed-code'
-    elif re.search(r'protocol-analysis|\bprotocol\b|\bpcap\b|\bwireshark\b', text):
+    elif network:
         category = 'protocol-analysis'
     elif 'website' in targets:
         category = 'web-analysis'
-    elif topics & {'frida', 'frida-script', 'memory-forensics', 'debugger'} or re.search(r'\bdebugger\b|\binstrumentation\b', text):
+    elif dynamic:
         category = 'dynamic-analysis'
-    elif 'binary' in targets:
+    elif native:
         category = 'native-analysis'
     else:
         category = 'reverse-engineering'
-    return sorted(targets), category
+    reference = curated_references().get(name)
+    origin = 'automatic-metadata'
+    reference_ids = []
+    if reference:
+        targets.update(reference['targets'])
+        category = reference['category'] or category
+        origin = 'curated-cross-reference'
+        reference_ids = reference['ids']
+    return sorted(targets), category, origin, reference_ids
 
 
 def scan_readme(api, repo):
@@ -257,7 +323,7 @@ def scan_readme(api, repo):
         ]:
             if re.search(pattern, text):
                 signals.append(label)
-        targets, category = classify(repo)
+        targets, category, classification_origin, classification_reference_ids = classify(repo)
         description = repo.get('description') or ''
         record = {
             'id': 'scan-' + str(repo['id']),
@@ -291,6 +357,8 @@ def scan_readme(api, repo):
             'requirements': 'See upstream requirements; not manually reviewed.',
             'targets': targets,
             'category': category,
+            'classification_origin': classification_origin,
+            'classification_reference_ids': classification_reference_ids,
             'matched_queries': repo['_matched_queries'],
         }
         return record, None
@@ -343,6 +411,7 @@ def main():
           str(initial_rate['resources']['core']['remaining']), flush=True)
     meta = {
         'schema_version': 1,
+        'classification_engine_version': 2,
         'started_at': started,
         'completed_at': None,
         'requested_successful_scans': args.target,
@@ -354,7 +423,7 @@ def main():
         'method': 'Public, non-fork, non-archived GitHub repository search followed by an actual authenticated GET of each repository README. README bytes are decoded, analyzed for document features, SHA-256 hashed and discarded.',
         'description_policy': 'Repository descriptions remain in their original upstream language. description_zh mirrors the same text and is explicitly not a translation. No LLM-written description or individual manual review is claimed.',
         'readme_heading_count_policy': 'Count of distinct heading-like lines encountered, capped at six; a count of six means at least six. Heading text is not retained.',
-        'classification_policy': 'Targets and categories are conservative automatic labels from repository names, descriptions and topics. An empty targets array means insufficient metadata, not unsupported capability.',
+        'classification_policy': 'Automatic labels use repository names, URL-stripped descriptions and explicit topics, with primary-function precedence. Canonical repository matches can add curated target tags and a primary category; classification_origin and classification_reference_ids identify that cross-reference. Labels do not establish REA compatibility. Empty targets mean insufficient metadata.',
         'limits': {
             'workers': args.workers, 'requests_per_second': args.requests_per_second,
             'search_interval_seconds': 2.1, 'max_readme_bytes': MAX_README_BYTES,

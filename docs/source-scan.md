@@ -18,7 +18,7 @@ Repository descriptions remain in their original upstream language. The `descrip
 
 - `readme-scanned` means an actual readable, nonempty README was retrieved successfully.
 - `automated-readme-scan` does not mean manually reviewed, installed, tested, secure, licensed for reuse or integrated with REA.
-- Targets and categories are automatic metadata labels. An empty target list means there was not enough information for a conservative classification.
+- Targets and categories use repository metadata after removing URLs and separating MCP from network-protocol signals. Main tool functions take precedence over secondary game or firmware topics. Canonical matches in the curated catalog can add explicit target tags and a primary category; classification_origin and classification_reference_ids identify these cross-references. This is not a review of the full scanned repository or a REA compatibility claim. An empty target list means insufficient metadata.
 - Stars and license identifiers are GitHub metadata snapshots. A license identifier is not a review of a project's complete licensing terms.
 - `failures` records attempted repositories that did not produce a successful README scan. `unattempted_candidates` records the discovered candidates left over after reaching the requested successful-scan target.
 

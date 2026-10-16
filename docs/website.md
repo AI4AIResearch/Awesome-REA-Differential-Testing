@@ -41,7 +41,7 @@ This adds two local WOFF2 files, minimal icon CSS and a footer credit only to ig
 CI can instead reference the collection's existing authorized static icon deployment without downloading or copying Pro files:
 
 ```sh
-python3 scripts/build_site.py --fontawesome-assets-url https://awesome-rea.pages.dev
+python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
 ```
 
 The local-package and asset-URL options are mutually exclusive. The asset origin must continue serving `fontawesome.css` and its two relative `fonts/` URLs with font CORS enabled. Keep that Direct Upload project available while production uses it; [site/_headers](../site/_headers) supplies the corresponding public asset headers.
