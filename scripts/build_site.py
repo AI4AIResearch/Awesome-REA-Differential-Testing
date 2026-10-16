@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the dependency-free GitHub Pages site from the two source catalogs."""
+"""Build the dependency-free static site from the two source catalogs."""
 from __future__ import annotations
 
 import json

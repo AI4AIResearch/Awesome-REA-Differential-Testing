@@ -7,4 +7,12 @@ node_modules/
 labs/**/output/
 *.local.json
 dist/
-
+.env
+.env.*
+!.env.example
+.wrangler/
+.cloudflare/
+secrets.json
+credentials*.json
+*.pem
+*.key
