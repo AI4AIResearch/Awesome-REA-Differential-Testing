@@ -18,7 +18,5 @@ jobs:
         with:
           node-version: '26'
       - run: python3 scripts/validate.py
-      - run: python3 scripts/verify_evidence.py --fixture-only
-      - run: node --test labs/electron-notes/app/csv.test.cjs
       - run: python3 scripts/build_site.py
       - run: node --check site/app.js

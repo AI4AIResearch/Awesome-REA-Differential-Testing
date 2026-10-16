@@ -12,12 +12,12 @@ The job can write a review comment but does not check out or run the contributor
 
 ## Continuous integration
 
-`Catalog checks` runs on pushes and PRs. It validates curated data and local Markdown links, checks generated README sections, confirms the original lab's file hashes, runs its three behavior tests, builds the static site, and checks JavaScript syntax. The workflow has read-only repository permissions.
+`Catalog checks` runs on pushes and PRs. It validates curated data and local Markdown links, checks generated README sections, builds the collection website, and checks JavaScript syntax. The workflow has read-only repository permissions.
 
-`Source links` runs weekly and on manual request. It distinguishes confirmed missing links from rate limits and inconclusive network responses. `Reproduce REA lab` is a manual, version-pinned integration run so routine documentation changes do not repeatedly download the REA toolchain.
+`Source links` runs weekly and on manual request. It distinguishes confirmed missing links from rate limits and inconclusive network responses.
 
 ## Website delivery
 
 See [website building and publishing](website.md) for the static build and hosting setup. Production uses the public source repository while optional Font Awesome Pro assets are supplied through the licensed deployment path. Pro fonts, credentials, private configuration, raw analysis output, and deployment bundles are excluded from the public repository.
 
-The production build command runs `scripts/build_production.py`. It stops deployment if catalog validation, the fixture hash check, the three behavior tests, or JavaScript syntax validation fails. Cloudflare's existing Git connection builds each change to `main` and creates PR previews; no deployment API token is stored in this repository.
+The production build command runs `scripts/build_production.py`. It stops deployment if catalog validation or JavaScript syntax validation fails. Cloudflare's existing Git connection builds each change to `main` and creates PR previews; no deployment API token is stored in this repository.

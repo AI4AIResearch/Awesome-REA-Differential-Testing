@@ -1,33 +1,21 @@
-# Awesome REA roadmap
+# Collection roadmap
 
-Make it easier to choose an agent-assisted reverse engineering workflow and check its result. The repository's community goal is more than 2,000 Stars (2,001+); reaching it depends on usefulness, reach, and continued maintenance. The first release establishes a baseline, not a growth forecast.
+Awesome Reverse Engineering Anything is a resource collection for reverse-engineering projects, tools, case studies, integrations, and references across websites, games, apps, native binaries, and firmware.
 
-## Initial release
+## Collection priorities
 
-- English and Chinese entry points with a task-based navigation table.
-- Primary-source resource records with requirements and relationship labels.
-- A searchable JSON catalog and generated README sections.
-- An original static JavaScript/Electron investigation fixture.
-- Seven bounded investigation workflows and a reusable evidence template.
-- Automated catalog validation and a scheduled source-link check.
+1. Expand useful projects and cases in each target area, with original links and concise descriptions.
+2. Keep resource types distinct from target areas so readers can browse either way.
+3. Review promising entries from the larger repository index and promote them into the curated collection when their descriptions and relevance have been checked.
+4. Maintain English and Chinese entry points, searchable metadata, and consistent categories.
+5. Correct outdated names, redirects, licenses, and release requirements; archive superseded entries when they no longer help readers.
 
-## First 30 days
+## Maintenance
 
-| Window | Work | Acceptance criterion |
-| --- | --- | --- |
-| Days 1–7 | Invite feedback on the first lab and task picker | Record where new readers get stuck; fix reproducible onboarding failures |
-| Days 8–14 | Add one redistributable native fixture and one managed or APK fixture | Each has pinned tool versions, input hashes, expected results, and independent checks |
-| Days 15–21 | Publish a concise walkthrough derived from an actual lab run | Demonstrate the question, evidence path, result, and limitation; link the reproducible files |
-| Days 22–30 | Review community additions and update changed requirements | Resolve stale links, incorrect release claims, and duplicate entries |
+Pull requests and source scans support collection upkeep. Automatic checks cover schema, duplicates, link shape, generated documentation, and site builds. Editorial decisions about relevance and claims remain with maintainers.
 
-These are planned activities. New labs and external announcements are not part of the initial release.
+Track category coverage, useful additions, accepted corrections, contributors, and unresolved broken links. Stars are a visibility measure; the community aspiration is more than 2,000 Stars, not a promised timeline.
 
-## Measure usefulness and reach
+## Scope
 
-Track Stars as a visibility outcome alongside completed lab reproductions, accepted resource corrections, external contributions, and unresolved onboarding issues. Collect a dated weekly repository snapshot before making growth claims. Keep missing traffic data missing; public Star counts do not reveal conversion or causality.
-
-The [comparison dataset](../data/benchmarks.json) and [research notes](benchmark-research.zh-CN.md) distinguish mature tools from collections and direct competitors. Their current Star totals are context, not a conversion model for this repository.
-
-## Distribution work
-
-Share a useful walkthrough in communities where the topic and self-promotion rules allow it. Explain the result and its limitations before asking readers to visit the collection. Relevant upstream lists may accept an independently useful resource through their contribution process. Track actual responses and improve the entry point; do not use purchased Stars, unsolicited bulk messages, or automated promotional issues.
+The primary deliverables are the collection, its README, its data, and its browsing website. Supporting documentation explains catalog maintenance, source records, and publication.

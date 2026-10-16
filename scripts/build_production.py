@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the catalog, lab, and browser script before producing deployable files."""
+"""Validate the collection and browser script before producing deployable files."""
 import argparse
 from pathlib import Path
 import subprocess
@@ -14,8 +14,6 @@ def main():
     args = parser.parse_args()
     commands = [
         [sys.executable, 'scripts/validate.py'],
-        [sys.executable, 'scripts/verify_evidence.py', '--fixture-only'],
-        ['node', '--test', 'labs/electron-notes/app/csv.test.cjs'],
         ['node', '--check', 'site/app.js'],
     ]
     build = [sys.executable, 'scripts/build_site.py']

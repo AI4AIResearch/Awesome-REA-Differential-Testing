@@ -1,61 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title description">
-  <title id="title">Awesome REA — understand software, build from evidence</title>
-  <desc id="description">An independent field guide for Website, Game, App, Binary and Firmware investigations. A diagram connects an artifact, a trace and its evidence.</desc>
-  <defs>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#183440" stroke-opacity=".035"/>
-    </pattern>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#f0f3e8"/>
-    </linearGradient>
-  </defs>
-  <rect width="1280" height="360" rx="18" fill="#f6f5ee"/>
-  <rect width="1280" height="360" rx="18" fill="url(#grid)"/>
-  <path d="M0 335H1280" stroke="#d6ddcc" stroke-opacity=".75"/>
-  <g font-family="Arial, Helvetica, sans-serif">
-    <rect x="52" y="39" width="26" height="26" rx="5" fill="#dee9c8"/>
-    <path d="M59 57l11-11m-9 0h9v9" fill="none" stroke="#183440" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="90" y="57" font-size="13" font-weight="600" letter-spacing="2.6" fill="#183440">AWESOMEREA.ORG</text>
-    <text x="52" y="150" font-size="80" font-weight="500" letter-spacing="-4" fill="#183440">Awesome REA<tspan fill="#8da971">.</tspan></text>
-    <text x="55" y="204" font-size="27" letter-spacing="-.5" fill="#566b75">Understand software. Build from evidence.</text>
-    <g font-size="12" font-weight="600" letter-spacing="1.15">
-      <rect x="54" y="257" width="115" height="34" rx="17" fill="#dee9c8"/>
-      <text x="73" y="279" fill="#183440">WEBSITE</text>
-      <rect x="180" y="257" width="88" height="34" rx="17" fill="#dee9c8"/>
-      <text x="201" y="279" fill="#183440">GAME</text>
-      <rect x="279" y="257" width="74" height="34" rx="17" fill="#dee9c8"/>
-      <text x="299" y="279" fill="#183440">APP</text>
-      <text x="376" y="279" fill="#6d8177">BINARY</text>
-      <circle cx="461" cy="274" r="2" fill="#a3b2a3"/>
-      <text x="480" y="279" fill="#6d8177">FIRMWARE</text>
+  <title id="title">Awesome Reverse Engineering Anything</title>
+  <desc id="description">A collection of reverse engineering tools, projects, integrations, and resources for websites, games, apps, native binaries, and firmware.</desc>
+  <rect width="1280" height="360" rx="18" fill="#FFFFFF"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#1D3557">
+    <text x="52" y="51" font-size="13" font-weight="700" letter-spacing="2.3">AWESOMEREA.ORG</text>
+    <circle cx="267" cy="46" r="3" fill="#E63946"/>
+    <text x="49" y="127" font-size="59" font-weight="600" letter-spacing="-2.6">Awesome Reverse</text>
+    <text x="49" y="193" font-size="59" font-weight="600" letter-spacing="-2.6">Engineering Anything</text>
+    <text x="52" y="235" font-size="22" fill="#457B9D">Tools, projects, and resources. One collection.</text>
+    <g font-size="12" font-weight="600" letter-spacing=".8">
+      <rect x="52" y="267" width="112" height="32" rx="16" fill="#A8DADC" fill-opacity=".24"/>
+      <text x="70" y="288">WEBSITE</text>
+      <rect x="174" y="267" width="85" height="32" rx="16" fill="#A8DADC" fill-opacity=".24"/>
+      <text x="194" y="288">GAME</text>
+      <rect x="269" y="267" width="70" height="32" rx="16" fill="#A8DADC" fill-opacity=".24"/>
+      <text x="289" y="288">APP</text>
+      <text x="363" y="288">NATIVE BINARY</text>
+      <circle cx="490" cy="283" r="2" fill="#A8DADC"/>
+      <text x="509" y="288">FIRMWARE</text>
     </g>
-    <text x="56" y="325" font-size="11" letter-spacing="2" fill="#7a8b79">AN INDEPENDENT COMMUNITY FIELD GUIDE</text>
+    <text x="52" y="330" font-size="10" letter-spacing="1.8">AN INDEPENDENT COMMUNITY COLLECTION</text>
   </g>
-  <g transform="translate(823 47)">
-    <rect x="0" y="0" width="400" height="257" rx="16" fill="url(#panel)" stroke="#d5ddd0"/>
-    <g fill="#a3b2a3">
-      <circle cx="20" cy="20" r="3"/><circle cx="32" cy="20" r="3"/><circle cx="44" cy="20" r="3"/>
+  <g transform="translate(823 44)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="400" height="270" rx="13" fill="#FFFFFF" stroke="#A8DADC" stroke-opacity=".8"/>
+    <text x="24" y="31" font-size="11" font-weight="700" letter-spacing="1.7" fill="#1D3557">THE COLLECTION</text>
+    <path d="M24 48H376" stroke="#A8DADC" stroke-opacity=".6"/>
+    <g fill="#FFFFFF" stroke="#A8DADC" stroke-opacity=".7">
+      <rect x="24" y="67" width="352" height="48" rx="7"/>
+      <rect x="24" y="130" width="352" height="48" rx="7"/>
+      <rect x="24" y="193" width="352" height="48" rx="7"/>
     </g>
-    <text x="380" y="24" text-anchor="end" font-family="Courier New, monospace" font-size="10" letter-spacing="1.5" fill="#839781">FOLLOW THE TRAIL</text>
-    <path d="M21 39H379" stroke="#d5ddd0"/>
-    <path d="M87 111H172Q191 111 191 132V158Q191 176 209 176H310" fill="none" stroke="#8ba36a" stroke-width="1.6"/>
-    <path d="M191 133V83Q191 73 207 73H286" fill="none" stroke="#a3b2a3" stroke-width="1.5" stroke-dasharray="4 5"/>
-    <rect x="26" y="73" width="102" height="77" rx="8" fill="#fcfcf8" stroke="#a5b7a8"/>
-    <path d="M26 93H128" stroke="#a5b7a8"/>
-    <circle cx="38" cy="83" r="2" fill="#839781"/>
-    <path d="M42 111H99M42 122H78M42 133H109" stroke="#5b7465" stroke-width="3" stroke-linecap="round"/>
-    <circle cx="191" cy="133" r="8" fill="#fcfcf7" stroke="#8ba36a" stroke-width="1.6"/>
-    <circle cx="191" cy="133" r="3" fill="#dee9c8"/>
-    <rect x="279" y="55" width="92" height="42" rx="6" fill="#f1f4e9" stroke="#a3b2a3" stroke-dasharray="4 4"/>
-    <path d="M291 70H343M291 81H323" stroke="#7a8b79" stroke-width="2" stroke-linecap="round"/>
-    <rect x="255" y="135" width="116" height="80" rx="8" fill="#dee9c8"/>
-    <path d="M273 153H335M273 166H350M273 179H326" stroke="#183440" stroke-width="3" stroke-linecap="round"/>
-    <path d="M273 197H306" stroke="#8a9e72" stroke-width="2" stroke-linecap="round"/>
-    <g font-family="Courier New, monospace" font-size="10" letter-spacing="1.2">
-      <text x="27" y="173" fill="#5b7465">ARTIFACT</text>
-      <text x="168" y="210" fill="#5b7465">TRACE</text>
-      <text x="255" y="235" fill="#64804c">EVIDENCE</text>
+    <g font-size="16" fill="#1D3557">
+      <text x="43" y="97">Tools</text>
+      <text x="43" y="160">Projects</text>
+      <text x="43" y="223">Integrations</text>
     </g>
+    <g stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-opacity=".5">
+      <path d="M180 86H294M180 97H261"/>
+      <path d="M180 149H319M180 160H279"/>
+      <path d="M180 212H284M180 223H317"/>
+    </g>
+    <circle cx="350" cy="91" r="3" fill="#E63946"/>
+    <circle cx="350" cy="154" r="3" fill="#A8DADC"/>
+    <circle cx="350" cy="217" r="3" fill="#A8DADC"/>
   </g>
 </svg>

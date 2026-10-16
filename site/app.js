@@ -1,24 +1,163 @@
 "use strict";
 
 const UI = {
-  en: {
-    iconsCredit: "Font Awesome Pro icons ↗", skip: "Skip to the resource index", mainNav: "Main navigation", navIndex: "The index",
-    heroEyebrow: "An independent community field guide", heroLineOne: "Understand<br>what’s inside.", heroLineTwo: "Keep the evidence.",
-    heroDescription: "A considered collection of REA workflows, agent integrations and reverse-engineering tools. Find your starting point. Make every conclusion traceable.",
-    browseIndex: "Explore the index", tryLab: "Try the original lab", collectionFacts: "Collection facts", resourcesLabel: "curated resources", integrationsLabel: "independent integrations", playbooksLabel: "task playbooks",
-    diagramAlt: "Investigation path: identify a target, gather static and runtime evidence, then explain the observed behavior.", diagramLabel: "INVESTIGATION / 001", targetTitle: "A question. A target.", targetSub: "format / architecture / identity", staticLabel: "STATIC", staticTitle: "Follow the code", runtimeLabel: "RUNTIME", runtimeTitle: "Observe behavior", runtimeSub: "calls / memory<br>inputs / outputs", resultLabel: "02 / CONNECT THE EVIDENCE", resultTitle: "An explanation you can check.", diagramCaption: "Addresses. Files. Observations. Limits.",
-    targetsTitle: "Start with what you have", targetsSubtitle: "FOCUSED TASK PLAYBOOKS", taskElectron: "Trace a feature", taskNativeName: "Native binary<span>Recover a function</span>", taskAndroid: "Map the behavior", taskDotnet: "Read an assembly", taskCaptureName: "Website<span>Follow a request</span>", taskFirmwareName: "Firmware<span>Find what’s embedded</span>", taskGameName: "Game<span>Explain a mechanic</span>",
-    indexEyebrow: "01 / THE COLLECTION", indexTitle: "The field index<span class=\"heading-dot\">.</span>", indexDescription: "The right tool for the next question.<br>Sources and prerequisites, always attached.", searchLabel: "Search resources, tools and requirements", searchPlaceholder: "Search a tool, target or idea…", groupLabel: "Resource relationship", groupAll: "All", groupAgents: "Agents", groupTools: "Tools", groupLearn: "Learn", categoryLabel: "Filter by category", allCategories: "All categories", loading: "Loading the index…", clearFilters: "Clear filters ×", targetFilterLabel: "Explore by target", targetAll: "Everything", targetWebsite: "Website", targetGame: "Game", targetApp: "App", targetBinary: "Binary", targetFirmware: "Firmware", targetHint: "Applicable domains, not compatibility claims.",
-    reviewNote: "Source-reviewed means documentation checked. The lab separately records one CLI run and three fixture tests.", aboutEvidence: "About the evidence ↗", emptyTitle: "No resources in this corner yet.", emptyDescription: "Try a broader term or a different category.", resetFilters: "Reset filters", errorTitle: "The index couldn’t load.", errorDescription: "Check your connection and try again, or open the source catalog on GitHub.", retry: "Try again", sourceCatalog: "Source catalog ↗", loadMore: "Show more resources", requirements: "Before you start", readSource: "Read source", reviewed: "Reviewed", matched: "resources found", shownOf: "of", shown: "resources shown", allReady: "All resources shown", sourceReviewed: "Source-reviewed", resultsLabel: "resources",
-    labEyebrow: "02 / A SMALL, REPRODUCIBLE START", labTitle: "Trace a CSV export.<br>Check it yourself.", labDescription: "Follow a Notes app feature from renderer to preload, IPC and main process. Then check the fixture’s CSV behavior with three executable tests.", openLab: "Open the walkthrough and recorded CLI run", terminalTitle: "LOCAL STATIC ANALYSIS", commandContext: "# Run from the cloned Awesome-REA repository", copyCommand: "Copy command", copied: "Copied to clipboard", copyFailed: "Couldn’t copy. Select the command above.", commandRequirements: "Requires Node.js ^22.19.0, ^24.11.0 or ≥26.0.0. The first run downloads REA and its dependencies. The walkthrough includes setup and verification steps.",
-    contributeEyebrow: "A USEFUL INDEX IS A LIVING ONE", contributeTitle: "Found a better next step?", contributeDescription: "Suggest a resource, fix a requirement, or share a reproducible investigation.", contributeButton: "Contribute on GitHub", footerDescription: "An independent community collection.<br>Built for understanding, maintained with evidence.", upstreamRea: "Upstream REA ↗", viewSource: "View source ↗", downloadData: "Catalog JSON ↗", footerLicense: "Original content: MIT. Linked projects keep their own licenses.", footerPurpose: "Choose a tool. Trace a behavior. Keep the evidence."
+  "en": {
+    "skip": "Skip to the collection",
+    "mainNav": "Main navigation",
+    "submitResource": "Submit resource",
+    "collectionEyebrow": "AN OPEN RESOURCE COLLECTION",
+    "collectionDescription": "Tools, projects, case studies and resources for reverse engineering websites, games, apps, binaries and firmware.",
+    "browseCollection": "Browse the collection",
+    "indexModeLabel": "Collection",
+    "sourceMode": "Repositories",
+    "curatedMode": "Curated resources",
+    "sourceSearchLabel": "Search repositories, descriptions and topics",
+    "sourceSearchPlaceholder": "Search repositories, tools, topics…",
+    "targetFilterLabel": "Target",
+    "targetAll": "All",
+    "targetWebsite": "Website",
+    "targetGame": "Game",
+    "targetApp": "App",
+    "targetBinary": "Binary",
+    "targetFirmware": "Firmware",
+    "sourceTopicLabel": "Topic",
+    "sourceAnyTopic": "All topics",
+    "sourceSortLabel": "Sort",
+    "sourceSortRelevance": "Automatic relevance",
+    "sourceSortStars": "Most stars",
+    "sourceSortUpdated": "Recently updated",
+    "sourceSortName": "Repository name",
+    "sourceIntro": "Automatically indexed repositories; descriptions and topics come from upstream.",
+    "aboutCollection": "About this index",
+    "sourceDisclosure": "READMEs were fetched automatically. These entries have not been manually reviewed or executed; target labels are inferred and do not establish REA compatibility.",
+    "sourceLanguageNote": "Descriptions retain their original language.",
+    "sourceLoading": "Loading repositories…",
+    "clearFilters": "Clear filters ×",
+    "emptyTitle": "No matching resources.",
+    "sourceEmptyDescription": "Try another search term or broaden your filters.",
+    "resetFilters": "Reset filters",
+    "sourceErrorTitle": "Repositories couldn’t load.",
+    "sourceErrorDescription": "Curated resources are still available. Try again.",
+    "retry": "Try again",
+    "sourceLoadMore": "Show more repositories",
+    "searchLabel": "Search curated resources",
+    "searchPlaceholder": "Search tools, projects, case studies…",
+    "kindLabel": "Type",
+    "allKinds": "All types",
+    "categoryLabel": "Category",
+    "allCategories": "All categories",
+    "reviewNote": "Selected resources with concise descriptions and links to original sources.",
+    "aboutCurated": "Collection notes ↗",
+    "loading": "Loading resources…",
+    "emptyDescription": "Try another search term or broaden your filters.",
+    "errorTitle": "The collection couldn’t load.",
+    "errorDescription": "Please try again, or browse the collection on GitHub.",
+    "loadMore": "Show more resources",
+    "footerDescription": "An independent resource collection, updated in public.",
+    "contributeButton": "Contribute ↗",
+    "downloadData": "Catalog JSON ↗",
+    "viewSource": "GitHub ↗",
+    "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
+    "readSource": "Source",
+    "requirements": "Details & requirements",
+    "reviewed": "Reviewed",
+    "sourceReviewed": "Source-reviewed",
+    "sourceNotRecorded": "Not recorded",
+    "sourceStars": "stars",
+    "sourceStarsTitle": "GitHub stars at metadata collection time; not a live count.",
+    "sourceNoDescription": "No description supplied by the upstream repository.",
+    "sourceTopicHint": "Filter by this topic",
+    "sourceLicenseUnknown": "License not identified",
+    "sourceScanDetails": "Details",
+    "indexStatusLabel": "Index status",
+    "sourceScanStatus": "README scanned",
+    "sourceRequirementsLabel": "Requirements",
+    "sourceRequirements": "Check the upstream README for prerequisites; these have not been manually reviewed.",
+    "sourceReadmeAt": "README fetched",
+    "sourceMetadataAt": "Metadata observed",
+    "sourceHash": "README SHA-256",
+    "sourceRevision": "README Git SHA",
+    "sourceReadmeSize": "README bytes",
+    "iconsCredit": "Font Awesome Pro icons ↗"
   },
-  zh: {
-    iconsCredit: "图标：Font Awesome Pro ↗", skip: "跳到资源目录", mainNav: "主导航", navIndex: "资源目录", heroEyebrow: "独立社区维护的逆向工程指南", heroLineOne: "理解行为，<br>追溯实现。", heroLineTwo: "让结论有据可查。", heroDescription: "精选 REA 工作流、agent 集成与逆向分析工具。找到合适的起点，沿着真实证据，理解软件内部的运行方式。", browseIndex: "探索资源目录", tryLab: "动手完成原创实验", collectionFacts: "目录概况", resourcesLabel: "精选资源", integrationsLabel: "独立 agent 集成", playbooksLabel: "任务工作流",
-    diagramAlt: "调查路径：识别目标，收集静态与运行时证据，再解释观察到的行为。", diagramLabel: "调查路径 / 001", targetTitle: "一个问题，一个目标。", targetSub: "格式 / 架构 / 文件身份", staticLabel: "静态分析", staticTitle: "追踪代码路径", runtimeLabel: "运行时观察", runtimeTitle: "观察真实行为", runtimeSub: "调用 / 内存<br>输入 / 输出", resultLabel: "02 / 连接证据", resultTitle: "得到可以复查的解释。", diagramCaption: "地址、文件、观察结果与边界。", targetsTitle: "从手里的目标开始", targetsSubtitle: "聚焦一个可验证的问题", taskElectron: "追踪一项功能", taskNativeName: "原生二进制<span>理解一个函数</span>", taskAndroid: "定位行为实现", taskDotnet: "读取程序集", taskCaptureName: "网站 / 网络<span>梳理请求链路</span>", taskFirmwareName: "固件<span>识别嵌入内容</span>", taskGameName: "游戏<span>解释一个机制</span>",
-    indexEyebrow: "01 / 精选目录", indexTitle: "找到下一步<span class=\"heading-dot\">。</span>", indexDescription: "按目标选择工具。<br>每项资源都附有来源、前提与复核日期。", searchLabel: "搜索资源、工具与使用条件", searchPlaceholder: "搜索工具、分析目标或关键词…", groupLabel: "资源关系分类", groupAll: "全部", groupAgents: "Agents", groupTools: "工具", groupLearn: "学习", categoryLabel: "按类别筛选", allCategories: "所有类别", loading: "正在加载资源目录…", clearFilters: "清除筛选 ×", targetFilterLabel: "按目标探索", targetAll: "所有目标", targetWebsite: "网站", targetGame: "游戏", targetApp: "应用", targetBinary: "二进制", targetFirmware: "固件", targetHint: "目标标签表示适用领域，不代表已验证 REA 兼容性。",
-    reviewNote: "资料已复核表示阅读了项目文档；实验单独记录一次 CLI 运行与三项样例测试。", aboutEvidence: "了解证据标准 ↗", emptyTitle: "这里还没有匹配的资源。", emptyDescription: "换一个关键词，或扩大类别范围。", resetFilters: "重置筛选", errorTitle: "目录暂时未能加载。", errorDescription: "请检查网络后重试，也可以在 GitHub 阅读原始目录。", retry: "重新加载", sourceCatalog: "查看原始目录 ↗", loadMore: "加载更多资源", requirements: "开始之前", readSource: "查看来源", reviewed: "复核于", matched: "项匹配资源", shownOf: "/", shown: "项资源已显示", allReady: "已显示全部资源", sourceReviewed: "资料已复核", resultsLabel: "项资源",
-    labEyebrow: "02 / 从一个可复现的小实验开始", labTitle: "追踪 CSV 导出。<br>亲手检验你的解释。", labDescription: "沿着笔记应用的 renderer、preload、IPC 和主进程追踪功能，再用三项可执行测试检查样例的 CSV 转换行为。", openLab: "查看流程与 CLI 运行记录", terminalTitle: "本地静态分析", commandContext: "# 在已克隆的 Awesome-REA 仓库中执行", copyCommand: "复制命令", copied: "已复制到剪贴板", copyFailed: "复制失败，请手动选择上方命令。", commandRequirements: "需要 Node.js ^22.19.0、^24.11.0 或 ≥26.0.0。首次运行会下载 REA 及依赖；实验说明包含环境准备和验证步骤。", contributeEyebrow: "有用的目录，需要持续维护", contributeTitle: "你发现了更好的下一步？", contributeDescription: "推荐资源、纠正前置条件，或分享一份可复现的调查。", contributeButton: "在 GitHub 参与贡献", footerDescription: "独立社区维护的资源集合。<br>为理解软件而建，用可追溯的证据维护。", upstreamRea: "REA 官方项目 ↗", viewSource: "查看源码 ↗", downloadData: "目录 JSON ↗", footerLicense: "原创内容采用 MIT 许可。链接项目保留各自的许可。", footerPurpose: "选择工具，追踪行为，保留证据。"
+  "zh": {
+    "skip": "跳到资源集合",
+    "mainNav": "主导航",
+    "submitResource": "提交资源",
+    "collectionEyebrow": "开放的逆向工程资源集合",
+    "collectionDescription": "收集面向网站、游戏、应用、二进制和固件逆向工程的工具、项目、案例与资料。",
+    "browseCollection": "浏览资源集合",
+    "indexModeLabel": "资源集合",
+    "sourceMode": "项目仓库",
+    "curatedMode": "精选资源",
+    "sourceSearchLabel": "搜索仓库、项目简介和主题",
+    "sourceSearchPlaceholder": "搜索仓库、工具或主题…",
+    "targetFilterLabel": "分析目标",
+    "targetAll": "全部",
+    "targetWebsite": "网站",
+    "targetGame": "游戏",
+    "targetApp": "应用",
+    "targetBinary": "二进制",
+    "targetFirmware": "固件",
+    "sourceTopicLabel": "主题",
+    "sourceAnyTopic": "所有主题",
+    "sourceSortLabel": "排序",
+    "sourceSortRelevance": "自动相关性",
+    "sourceSortStars": "Star 数量",
+    "sourceSortUpdated": "最近更新",
+    "sourceSortName": "仓库名称",
+    "sourceIntro": "自动索引的项目仓库，简介与主题来自上游。",
+    "aboutCollection": "关于此索引",
+    "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工审阅或执行测试；目标标签为自动分类，不表示已验证 REA 兼容性。",
+    "sourceLanguageNote": "项目简介保留上游原文（主要为英文）。",
+    "sourceLoading": "正在加载仓库…",
+    "clearFilters": "清除筛选 ×",
+    "emptyTitle": "没有匹配的资源。",
+    "sourceEmptyDescription": "换一个关键词，或扩大筛选范围。",
+    "resetFilters": "重置筛选",
+    "sourceErrorTitle": "项目仓库暂时未能加载。",
+    "sourceErrorDescription": "精选资源仍可使用，请重新加载仓库。",
+    "retry": "重新加载",
+    "sourceLoadMore": "加载更多仓库",
+    "searchLabel": "搜索精选资源",
+    "searchPlaceholder": "搜索工具、项目、案例…",
+    "kindLabel": "类型",
+    "allKinds": "所有类型",
+    "categoryLabel": "类别",
+    "allCategories": "所有类别",
+    "reviewNote": "精选资源附简短介绍及原始来源链接。",
+    "aboutCurated": "收录说明 ↗",
+    "loading": "正在加载资源…",
+    "emptyDescription": "换一个关键词，或扩大筛选范围。",
+    "errorTitle": "资源集合暂时未能加载。",
+    "errorDescription": "请重试，或在 GitHub 浏览资源集合。",
+    "loadMore": "加载更多资源",
+    "footerDescription": "独立的资源集合，在公开协作中持续更新。",
+    "contributeButton": "参与贡献 ↗",
+    "downloadData": "目录 JSON ↗",
+    "viewSource": "GitHub ↗",
+    "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
+    "readSource": "来源",
+    "requirements": "详情与使用条件",
+    "reviewed": "复核于",
+    "sourceReviewed": "资料已复核",
+    "sourceNotRecorded": "未记录",
+    "sourceStars": "Stars",
+    "sourceStarsTitle": "元数据采集时的 GitHub Star 快照，不是实时数量。",
+    "sourceNoDescription": "上游仓库未提供项目简介。",
+    "sourceTopicHint": "按此主题筛选",
+    "sourceLicenseUnknown": "许可证未识别",
+    "sourceScanDetails": "详情",
+    "indexStatusLabel": "索引状态",
+    "sourceScanStatus": "已读取 README",
+    "sourceRequirementsLabel": "使用条件",
+    "sourceRequirements": "请阅读上游 README 中的前置条件；这些条件尚未人工复核。",
+    "sourceReadmeAt": "README 读取时间",
+    "sourceMetadataAt": "元数据采集时间",
+    "sourceHash": "README SHA-256",
+    "sourceRevision": "README Git SHA",
+    "sourceReadmeSize": "README 字节数",
+    "iconsCredit": "图标：Font Awesome Pro ↗"
   }
 };
 
@@ -31,7 +170,7 @@ const RELATION = {
 const params = new URLSearchParams(location.search);
 let storedLang = "en";
 try { storedLang = localStorage.getItem("awesomerea-language") || "en"; } catch (_) { /* storage may be disabled */ }
-const state = { lang: params.get("lang") === "zh" || (!params.has("lang") && storedLang === "zh") ? "zh" : "en", q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", target: params.get("target") || "all", visible: 12, records: [], loaded: false, error: false };
+const state = { lang: params.get("lang") === "zh" || (!params.has("lang") && storedLang === "zh") ? "zh" : "en", q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, records: [], loaded: false, error: false };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -40,7 +179,7 @@ const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : k
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
 function icon(name, small = false) { if (document.documentElement.dataset.iconSet === "fontawesome") { const span = node("span", "icon fa-symbol fa-" + name + (small ? " icon-small" : "")); span.setAttribute("aria-hidden", "true"); return span; } const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "icon" + (small ? " icon-small" : "")); svg.setAttribute("aria-hidden", "true"); const use = document.createElementNS("http://www.w3.org/2000/svg", "use"); use.setAttribute("href", "#i-" + name); svg.append(use); return svg; }
 function external(href, className, text) { const link = node("a", className, text); link.href = href; link.target = "_blank"; link.rel = "noopener noreferrer"; return link; }
-function updateURL() { const next = new URL(location.href); ["q", "group", "category", "target", "lang"].forEach(key => { const value = state[key]; if (value && value !== "all" && !(key === "lang" && value === "en")) next.searchParams.set(key, value); else next.searchParams.delete(key); }); history.replaceState(null, "", next); }
+function updateURL() { const next = new URL(location.href); ["q", "group", "category", "kind", "target", "lang"].forEach(key => { const value = state[key]; if (value && value !== "all" && !(key === "lang" && value === "en")) next.searchParams.set(key, value); else next.searchParams.delete(key); }); history.replaceState(null, "", next); }
 function applyLanguage() {
   document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
   document.title = "Awesome Reverse Engineering Anything";
@@ -48,7 +187,6 @@ function applyLanguage() {
   $$('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   $$('[data-i18n-aria]').forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
   $$('[data-lang]').forEach(el => { el.setAttribute("aria-pressed", String(el.dataset.lang === state.lang)); });
-  $("#copy-status").textContent = "";
   renderCategories(); if (state.loaded) render();
   if (state.error) $("#results-status").textContent = t("errorTitle");
   if (sourceState.loaded) renderSources();
@@ -57,61 +195,55 @@ function applyLanguage() {
 function renderCategories() {
   const select = $("#category-select"); select.replaceChildren(); const first = node("option", "", t("allCategories")); first.value = "all"; select.append(first);
   [...new Set(state.records.map(r => r.category))].sort((a,b) => label(CATEGORY,a).localeCompare(label(CATEGORY,b), state.lang === "zh" ? "zh-CN" : "en")).forEach(category => { const option = node("option", "", label(CATEGORY, category)); option.value = category; select.append(option); });
-  if (![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = state.category;
+  if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
+const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资料"],"research":["Research","研究"]};
+const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
+function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>label(KIND,a).localeCompare(label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
 function card(record) {
-  const article = node("article", "resource-card"); const top = node("div", "card-topline"); const mark = node("span", "card-icon"); mark.append(icon(record.group === "agents" ? "terminal" : record.group === "learn" ? "book" : record.group === "rea" ? "document" : "chip")); top.append(mark, node("span", "relationship-tag", label(RELATION, record.relationship))); article.append(top);
-  const h3 = node("h3"); const title = external(record.url, "card-title-link", state.lang === "zh" ? (record.name_zh || record.name) : record.name); title.append(icon("external", true)); h3.append(title); article.append(h3);
-  article.append(node("p", "card-description", record[state.lang === "zh" ? "description_zh" : "description_en"]));
-  article.append(node("span", "card-category", label(CATEGORY, record.category)));
-  const details = node("details", "requirements"); const summary = node("summary"); summary.append(node("span", "", t("requirements")), icon("chevron", true)); details.append(summary);
-  const list = node("ul"); const requirements = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements; (Array.isArray(requirements) ? requirements : [requirements]).forEach(item => list.append(node("li", "", item))); details.append(list); article.append(details);
-  const footer = node("div", "card-footer"); const source = external(record.evidence_url, "", t("readSource")); source.append(icon("external", true)); const date = node("time", "", t("reviewed") + " " + record.verified_at.slice(0, 10)); date.dateTime = record.verified_at; date.title = t("sourceReviewed") + " · " + record.verified_at; footer.append(source, date); article.append(footer); return article;
+  const article=node("article","resource-card");const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
+  article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
+  const meta=node("div","card-meta");meta.append(node("span","card-category",label(CATEGORY,record.category)),external(record.evidence_url,"",t("readSource")+" ↗"));article.append(meta);
+  const details=node("details","requirements");details.append(node("summary","",t("requirements")));const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
+  const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);details.append(context);article.append(details);return article;
 }
-function filtered() { const terms = state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); return state.records.filter(r => (state.group === "all" || r.group === state.group) && (state.target === "all" || r.targets.includes(state.target)) && (state.category === "all" || r.category === state.category) && terms.every(term => r.search.includes(term))); }
+function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 function render() {
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); grid.setAttribute("aria-busy", "false");
-  $("#results-status").textContent = state.lang === "zh" ? `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项` : `${found.length} resources found · ${state.records.length} in the index`;
-  $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(12, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} resources shown`;
-  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.target === "all";
+  $("#results-status").textContent = state.lang === "zh" ? `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项` : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
+  $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
+  $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
 }
-function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.target = "all"; state.visible = 12; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
+function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
     const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
-    state.records = data.resources.map(r => ({...r, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || [])].join(" ").toLocaleLowerCase()}));
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || [])].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all"; if (!["all","website","game","app","binary","firmware"].includes(state.target)) state.target = "all";
-    $("#stat-resources").textContent = state.records.length; $("#stat-agents").textContent = state.records.filter(r => r.group === "agents").length; $("#stat-playbooks").textContent = String(data.meta.playbook_count).padStart(2,"0");
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => el.href = data.meta.repository_url + (el.dataset.repoPath ? "/" + el.dataset.repoPath : ""));
     state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
   } catch (error) { state.error = true; state.loaded = false; $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }
 $("#search-input").value = state.q;
-$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 12; updateURL(); if (state.loaded) render(); });
-$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 12; updateURL(); if (state.loaded) render(); });
-$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 12; updateURL(); if (state.loaded) render(); }));
-$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 12; updateURL(); if (state.loaded) render(); }));
+$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+$("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
+$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
+$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-lang]').forEach(el => el.addEventListener("click", () => { state.lang = el.dataset.lang; try { localStorage.setItem("awesomerea-language",state.lang); } catch (_) { /* optional preference */ } updateURL(); applyLanguage(); }));
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
-$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 12; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
+$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
-$("#copy-command").addEventListener("click", async () => { const status = $("#copy-status"); try { if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable"); await navigator.clipboard.writeText($("#rea-command").textContent); status.textContent = t("copied"); } catch (_) { status.textContent = t("copyFailed"); const range = document.createRange(); range.selectNodeContents($("#rea-command")); const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range); } });
 
-Object.assign(UI.en, {
-  indexModeLabel: "Index type", curatedMode: "Curated guide", sourceMode: "Source index", sourceBadge: "AUTOMATED README SCANS", sourceIntroTitle: "A wider view of the landscape.", sourceIntro: "These repositories were discovered and their READMEs fetched automatically. They are not manually curated, executed, or endorsed as REA integrations. Descriptions come from upstream repositories.", sourceLanguageNote: "Upstream descriptions are shown in their original language.", sourceSearchLabel: "Search repositories, descriptions and topics", sourceSearchPlaceholder: "Search a repository, topic or idea…", sourceTopicLabel: "Topic", sourceAnyTopic: "Any topic", sourceSortLabel: "Sort", sourceSortRelevance: "Automatic relevance", sourceSortStars: "Most stars", sourceSortUpdated: "Recently updated", sourceSortName: "Repository name", sourceLoading: "Loading the source index…", sourceEmptyDescription: "Try an English search term, clear the topic, or choose another target.", sourceErrorTitle: "The source index couldn’t load.", sourceErrorDescription: "The curated guide is still available. Try loading this index again.", sourceLoadMore: "Show more repositories", sourceNoDescription: "No description supplied by the upstream repository.", sourceScanStatus: "README scanned", sourceScanDetails: "Scan record & requirements", sourceRequirements: "Check the upstream README for prerequisites; these have not been manually reviewed.", sourceReadmeAt: "README fetched", sourceMetadataAt: "Metadata observed", sourceHash: "README SHA-256", sourceRevision: "README Git SHA", sourceReadmeSize: "README bytes", sourceNotRecorded: "Not recorded", sourceStars: "stars", sourceStarsTitle: "GitHub stars at metadata collection time; not a live count.", sourceTopicHint: "Filter by this topic", sourceRequirementsLabel: "Requirements", sourceLicenseUnknown: "License not identified"
-});
-Object.assign(UI.zh, {
-  indexModeLabel: "目录类型", curatedMode: "精选指南", sourceMode: "来源索引", sourceBadge: "自动 README 扫描", sourceIntroTitle: "探索更广的项目版图。", sourceIntro: "这些仓库通过自动发现并成功读取 README 后进入索引，尚未人工精选、执行测试或获得 REA 兼容性背书。项目简介来自上游仓库。", sourceLanguageNote: "上游简介保留原文（主要为英文），没有标为人工中文翻译。", sourceSearchLabel: "搜索仓库、项目简介和主题", sourceSearchPlaceholder: "搜索仓库名称、英文主题或关键词…", sourceTopicLabel: "主题", sourceAnyTopic: "任意主题", sourceSortLabel: "排序", sourceSortRelevance: "自动相关性", sourceSortStars: "Star 数量", sourceSortUpdated: "最近更新", sourceSortName: "仓库名称", sourceLoading: "正在加载来源索引…", sourceEmptyDescription: "试试英文关键词、清除主题，或换一个分析目标。", sourceErrorTitle: "来源索引暂时未能加载。", sourceErrorDescription: "精选指南仍可正常使用；请重新加载来源索引。", sourceLoadMore: "加载更多仓库", sourceNoDescription: "上游仓库未提供项目简介。", sourceScanStatus: "已读取 README", sourceScanDetails: "扫描记录与使用条件", sourceRequirements: "请阅读上游 README 中的前置条件；这些条件尚未人工复核。", sourceReadmeAt: "README 读取时间", sourceMetadataAt: "元数据采集时间", sourceHash: "README SHA-256", sourceRevision: "README Git SHA", sourceReadmeSize: "README 字节数", sourceNotRecorded: "未记录", sourceStars: "Stars", sourceStarsTitle: "元数据采集时的 GitHub Star 快照，不是实时数量。", sourceTopicHint: "按此主题筛选", sourceRequirementsLabel: "使用条件", sourceLicenseUnknown: "许可证未识别"
-});
 const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24 };
-function sourceURL() { const next = new URL(location.href); if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index"); else next.searchParams.delete("view"); for (const [key,value] of [["sourceq",sourceState.q],["source-target",sourceState.target],["topic",sourceState.topic],["sort",sourceState.sort]]) { if (value && value !== "all" && value !== "relevance") next.searchParams.set(key,value); else next.searchParams.delete(key); } history.replaceState(null,"",next); }
+function sourceURL() { const next = new URL(location.href); if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index"); else next.searchParams.set("view", "curated"); for (const [key,value] of [["sourceq",sourceState.q],["source-target",sourceState.target],["topic",sourceState.topic],["sort",sourceState.sort]]) { if (value && value !== "all" && value !== "relevance") next.searchParams.set(key,value); else next.searchParams.delete(key); } history.replaceState(null,"",next); }
 function configureSourceIndex(meta) {
-  const count = Number(meta?.resource_count || 0); sourceState.available = count > 0; $("#mode-sources").hidden = !sourceState.available; $("#mode-source-count").textContent = count || ""; $("#mode-curated-count").textContent = state.records.length;
-  if (sourceState.available && new URLSearchParams(location.search).get("view") === "source-index") setIndexMode("source-index");
+  const count=Number(meta?.resource_count||0);sourceState.available=count>0;$("#mode-sources").hidden=!sourceState.available;$("#mode-source-count").textContent=count?count.toLocaleString():"";$("#mode-curated-count").textContent=state.records.length;
+  const query=new URLSearchParams(location.search);const requested=query.get("view");const legacyCurated=["q","group","category","kind","target"].some(key=>query.has(key));setIndexMode(sourceState.available&&(requested==="source-index"||requested==="repositories"||(!requested&&!legacyCurated))?"source-index":"curated");
 }
 function setIndexMode(mode) {
   if (mode === "source-index" && !sourceState.available) return; sourceState.mode = mode; const isSource = mode === "source-index"; $("#curated-view").hidden = isSource; $("#source-view").hidden = !isSource;
@@ -140,16 +272,16 @@ function sourceCard(record) {
   const article = node("article","source-card"); const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link",record.full_name); link.append(icon("external",true)); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
   article.append(node("p","source-card-description" + (!record.description_en ? " source-card-empty" : ""),record.description_en || t("sourceNoDescription")));
-  if (record.topics.length) { const topics = node("div","source-topics"); record.topics.slice(0,6).forEach(topic => { const button = node("button","source-topic-chip",topic); button.type = "button"; button.title = t("sourceTopicHint"); button.addEventListener("click",() => { sourceState.topic = topic; sourceState.visible = 24; $("#source-topic").value = topic; sourceURL(); renderSources(); }); topics.append(button); }); article.append(topics); }
-  const footer = node("div","source-card-footer"); footer.append(node("span","source-scan-state",t("sourceScanStatus"))); const time = node("time","",sourceTime(record.observed_at)); if (record.observed_at) time.dateTime = record.observed_at; time.title = t("sourceReadmeAt"); footer.append(time,external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
+  if (record.topics.length) { const topics = node("div","source-topics"); record.topics.slice(0,4).forEach(topic => { const button = node("button","source-topic-chip",topic); button.type = "button"; button.title = t("sourceTopicHint"); button.addEventListener("click",() => { sourceState.topic = topic; sourceState.visible = 24; $("#source-topic").value = topic; sourceURL(); renderSources(); }); topics.append(button); }); article.append(topics); }
+  const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails"))); const dl = node("dl");
-  [[t("sourceRequirementsLabel"),t("sourceRequirements")],[t("sourceReadmeAt"),sourceTime(record.observed_at)],[t("sourceMetadataAt"),sourceTime(record.metadata_observed_at)],[t("sourceHash"),record.readme_sha256 || t("sourceNotRecorded")],[t("sourceRevision"),record.readme_git_sha || t("sourceNotRecorded")],[t("sourceReadmeSize"),record.readme_bytes != null ? Number(record.readme_bytes).toLocaleString() : t("sourceNotRecorded")]].forEach(([label,value]) => dl.append(node("dt","",label),node("dd","",String(value)))); details.append(dl); article.append(details); return article;
+  [[t("indexStatusLabel"),t("sourceScanStatus")],[t("sourceRequirementsLabel"),t("sourceRequirements")],[t("sourceReadmeAt"),sourceTime(record.observed_at)],[t("sourceMetadataAt"),sourceTime(record.metadata_observed_at)],[t("sourceHash"),record.readme_sha256 || t("sourceNotRecorded")],[t("sourceRevision"),record.readme_git_sha || t("sourceNotRecorded")],[t("sourceReadmeSize"),record.readme_bytes != null ? Number(record.readme_bytes).toLocaleString() : t("sourceNotRecorded")]].forEach(([label,value]) => dl.append(node("dt","",label),node("dd","",String(value)))); details.append(dl); article.append(details); return article;
 }
 function renderSources() {
   if (!sourceState.loaded) return; const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); $("#source-results").setAttribute("aria-busy","false");
-  $("#source-status").textContent = state.lang === "zh" ? `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个成功读取 README 的仓库` : `${found.length.toLocaleString()} repositories found · ${sourceState.records.length.toLocaleString()} successful README scans`;
+  $("#source-status").textContent = state.lang === "zh" ? `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库` : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
   const completed = sourceState.meta.completed_at || sourceState.meta.finished_at || ""; $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。Star 为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? " 扫描完成于 " : " Scan completed ") + sourceTime(completed) : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "");
-  $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} repositories shown`;
+  $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }

@@ -1,9 +1,9 @@
-Describe the task this resource or change helps a reader complete.
+Describe the resource or correction and why it belongs in the collection.
 
-- Canonical source:
-- Relationship to REA:
-- Requirements and license:
+- Original source URL:
+- Resource type:
+- Target area(s):
+- Short description and material requirements:
 - Validation performed:
 
-For catalog changes, update the JSON records and run `python3 scripts/build_readme.py`
-and `python3 scripts/validate.py`. Describe source review and runtime testing separately.
+For catalog changes, update the JSON records and run `python3 scripts/build_readme.py` and `python3 scripts/validate.py`. Keep documentation review separate from claims of runtime testing.

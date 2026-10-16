@@ -145,10 +145,8 @@ def main() -> None:
     ids = [r["id"] for r in resources]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate catalog IDs")
-    playbooks = (ROOT / "docs" / "playbooks.md").read_text(encoding="utf-8")
-    playbook_count = len(re.findall(r"^## ", playbooks, flags=re.MULTILINE))
     latest_review = max(record["verified_at"] for record in resources)
-    metadata = {"site_url": SITE_URL, "repository_url": REPOSITORY_URL, "resource_count": len(resources), "independent_integration_count": sum(r["group"] == "agents" for r in resources), "playbook_count": playbook_count, "latest_review": latest_review, "verification_note": "Catalog resources are source-reviewed. One CLI run and three original-fixture tests are recorded separately in the lab."}
+    metadata = {"site_url": SITE_URL, "repository_url": REPOSITORY_URL, "resource_count": len(resources), "independent_integration_count": sum(r["group"] == "agents" for r in resources), "latest_review": latest_review, "verification_note": "Curated resource descriptions are reviewed against primary sources. The broader repository index is collected automatically."}
     OUTPUT.mkdir(exist_ok=True)
     for path in SOURCE.iterdir():
         if path.name == "translations.zh-CN.json":
@@ -158,7 +156,7 @@ def main() -> None:
         else:
             shutil.copy2(path, OUTPUT / path.name)
     html = (OUTPUT / "index.html").read_text(encoding="utf-8")
-    for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "PLAYBOOK_COUNT": str(playbook_count).zfill(2), "REVIEWED_AT": latest_review}.items():
+    for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
     html = configure_fontawesome(html, args.fontawesome_dir, args.fontawesome_assets_url)
     source_index_path = ROOT / "data" / "source-index.json"
@@ -168,7 +166,7 @@ def main() -> None:
         try:
             index_data = json.loads(source_index_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
-            print("Optional source index is not a complete JSON snapshot yet; using the curated guide only.")
+            print("Optional source index is not a complete JSON snapshot yet; using the curated collection only.")
         else:
             successful = [record for record in index_data.get("resources", []) if record.get("scan_status") == "readme-scanned"]
             if successful:
@@ -179,9 +177,11 @@ def main() -> None:
     if not metadata["source_index"]["available"]:
         source_index_output.unlink(missing_ok=True)
     (OUTPUT / "catalog.json").write_text(json.dumps({"meta": metadata, "resources": resources}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    for filename, attribute in (("app.js", "src"), ("styles.css", "href")):
+    for filename, attribute in (("app.js", "src"), ("styles.css", "href"), ("favicon.svg", "href")):
         revision = hashlib.sha256((OUTPUT / filename).read_bytes()).hexdigest()[:16]
         html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')
+    social_revision = hashlib.sha256((OUTPUT / "social-card.png").read_bytes()).hexdigest()[:16]
+    html = html.replace(f'{SITE_URL}/social-card.png"', f'{SITE_URL}/social-card.png?v={social_revision}"')
     data_digest = hashlib.sha256()
     for filename in ("catalog.json", "source-index.json"):
         path = OUTPUT / filename
@@ -193,7 +193,7 @@ def main() -> None:
     (OUTPUT / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (OUTPUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     (OUTPUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}/</loc><lastmod>{latest_review}</lastmod></url></urlset>\n', encoding="utf-8")
-    print(f"Built {len(resources)} resources, {playbook_count} playbooks → dist/ ({SITE_URL})")
+    print(f"Built the collection with {len(resources)} curated resources → dist/ ({SITE_URL})")
 
 
 if __name__ == "__main__":

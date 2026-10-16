@@ -1,1 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#f5f4ef"/><rect x="760" y="0" width="440" height="630" fill="#edf1e6"/><text x="70" y="90" fill="#15212e" font-family="Arial,sans-serif" font-size="32" font-weight="700">AwesomeREA.org</text><circle cx="1110" cy="75" r="9" fill="#aad454"/><text x="70" y="230" fill="#15212e" font-family="Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-3">Understand</text><text x="70" y="312" fill="#15212e" font-family="Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-3">what’s inside.</text><text x="70" y="401" fill="#15212e" font-family="Georgia,serif" font-size="65" font-style="italic" letter-spacing="-2">Keep the evidence.</text><text x="70" y="539" fill="#64706d" font-family="Arial,sans-serif" font-size="21">A field guide to agent-assisted reverse engineering.</text><g fill="none" stroke="#a9b79a" stroke-width="2"><rect x="820" y="170" width="300" height="80" rx="6" fill="#fffefa"/><path d="M970 250v55M890 305h160M890 305v40M1050 305v40"/><rect x="815" y="345" width="150" height="74" rx="6" fill="#fafcf6"/><rect x="980" y="345" width="150" height="74" rx="6" fill="#fafcf6"/><path d="M890 419v40h160v-40M970 459v30"/></g><g fill="#35482d" font-family="monospace" text-anchor="middle"><text x="970" y="218" font-size="20">QUESTION → TARGET</text><text x="890" y="390" font-size="17">STATIC</text><text x="1055" y="390" font-size="17">RUNTIME</text><text x="970" y="523" font-size="19" fill="#53683c">EVIDENCE → EXPLANATION</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Awesome Reverse Engineering Anything</title>
+  <desc id="description">A collection of tools, projects, integrations, and resources, organized by Website, Game, App, Native Binary, and Firmware.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <path d="M760 48V582" stroke="#A8DADC" stroke-opacity=".5"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#1D3557">
+    <text x="70" y="90" font-size="30" font-weight="700" letter-spacing="-.5">AwesomeREA.org</text>
+    <text x="66" y="217" font-size="62" font-weight="700" letter-spacing="-2.7">Awesome Reverse</text>
+    <text x="66" y="289" font-size="62" font-weight="700" letter-spacing="-2.7">Engineering Anything</text>
+    <text x="70" y="539" font-size="20">An independent reverse engineering collection.</text>
+  </g>
+  <g font-family="Georgia, serif" font-size="48" fill="#1D3557" letter-spacing="-1">
+    <text x="70" y="391">Tools, projects,</text>
+    <text x="70" y="449">and resources.</text>
+  </g>
+  <circle cx="1110" cy="75" r="5" fill="#E63946"/>
+  <g transform="translate(813 141)" font-family="Arial, Helvetica, sans-serif">
+    <text x="8" y="0" font-size="11" font-weight="700" letter-spacing="1.6" fill="#1D3557">EXPLORE THE COLLECTION</text>
+    <g fill="#FFFFFF" stroke="#A8DADC" stroke-width="1.2">
+      <rect x="0" y="27" width="315" height="57" rx="8"/>
+      <rect x="0" y="101" width="315" height="57" rx="8"/>
+      <rect x="0" y="175" width="315" height="57" rx="8"/>
+      <rect x="0" y="249" width="315" height="57" rx="8"/>
+      <rect x="0" y="323" width="315" height="57" rx="8"/>
+    </g>
+    <g fill="#1D3557" font-size="20">
+      <text x="22" y="63">Website</text>
+      <text x="22" y="137">Game</text>
+      <text x="22" y="211">App</text>
+      <text x="22" y="285">Native Binary</text>
+      <text x="22" y="359">Firmware</text>
+    </g>
+    <g stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-opacity=".55">
+      <path d="M242 51H288M242 61H275"/>
+      <path d="M242 125H278M242 135H288"/>
+      <path d="M242 199H288M242 209H270"/>
+      <path d="M242 273H280M242 283H288"/>
+      <path d="M242 347H288M242 357H276"/>
+    </g>
+  </g>
+</svg>

@@ -26,11 +26,11 @@ Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly
 
 Before publication, check English and Chinese at desktop and 390 px widths: search, all filter types, empty results, clearing filters, loading more, prerequisite expansion, keyboard focus and command-copy feedback. Confirm every record has translated prerequisites, and that the canonical URL, social image URLs, `CNAME`, robots and sitemap agree on `awesomerea.org`.
 
-Review the exact `dist/` payload for credentials, account identifiers, administrative URLs, personal filesystem paths and unrelated files. The public catalog should contain public source links only. Publish generated assets, never an entire working directory or `.git` folder. `source-reviewed` describes documentation review; the lab's CLI execution and fixture tests are separate evidence.
+Review the exact `dist/` payload for credentials, account identifiers, administrative URLs, personal filesystem paths and unrelated files. The public catalog should contain public source links only. Publish generated assets, never an entire working directory or `.git` folder. `source-reviewed` describes a check of the resource's documentation; it does not assert that every listed tool has been executed.
 
 ### Optional licensed production icons
 
-The public source uses original SVG fallback icons. A maintainer with an appropriate Font Awesome Pro license can opt into Classic Light and Brands from a local licensed package:
+The public source provides SVG fallback icons for the collection interface. A maintainer with an appropriate Font Awesome Pro license can opt into Classic Light and Brands from a local licensed package:
 
 ```sh
 python3 scripts/build_site.py --fontawesome-dir ../licensed-fontawesome-pro

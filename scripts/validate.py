@@ -16,7 +16,7 @@ from catalog import ROOT, RESOURCE_FILES
 
 RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
-    'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets',
+    'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
@@ -126,6 +126,8 @@ def validate_resources(records, errors):
             urls.add(canonical)
         if record['category'] not in CATEGORIES:
             errors.append(f"{where}: unknown category {record['category']!r}")
+        if record['kind'] not in {'project', 'tool', 'integration', 'case-study', 'collection', 'documentation', 'learning-resource', 'research'}:
+            errors.append(f"{where}: unknown resource kind {record['kind']!r}")
         if record['relationship'] not in RELATIONSHIPS:
             errors.append(f"{where}: unknown relationship {record['relationship']!r}")
         if record['verification'] != 'source-reviewed':

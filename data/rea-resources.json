@@ -20,7 +20,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "project"
   },
   {
     "id": "rea-official-skill",
@@ -43,7 +44,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "rea-installation",
@@ -66,7 +68,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-cli-evidence",
@@ -89,7 +92,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-mcp-contracts",
@@ -112,7 +116,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-native-workflow",
@@ -132,7 +137,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-js-workflows",
@@ -152,7 +158,8 @@
     "targets": [
       "website",
       "app"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-android-guide",
@@ -171,7 +178,8 @@
     ],
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-managed-guide",
@@ -190,7 +198,8 @@
     ],
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-web-captures",
@@ -210,7 +219,8 @@
     "targets": [
       "website",
       "app"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-firmware-guide",
@@ -229,7 +239,8 @@
     ],
     "targets": [
       "firmware"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-browser-guide",
@@ -248,7 +259,8 @@
     ],
     "targets": [
       "website"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-aegis-case",
@@ -267,7 +279,8 @@
     ],
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "rea-ctf-case",
@@ -286,7 +299,8 @@
     ],
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "rea-dxball-case",
@@ -306,7 +320,8 @@
     "targets": [
       "game",
       "binary"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "rea-notion-case",
@@ -325,7 +340,8 @@
     ],
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "rea-th04-case",
@@ -345,7 +361,8 @@
     "targets": [
       "game",
       "binary"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "rea-electron-guide",
@@ -364,7 +381,8 @@
     ],
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "documentation"
   },
   {
     "id": "rea-playbook",
@@ -382,8 +400,9 @@
       "The offline demo reads bundled results without running REA; its tests were not rerun here."
     ],
     "targets": [
-      "binary"
-    ]
+      "app"
+    ],
+    "kind": "learning-resource"
   },
   {
     "id": "dsh-mcp-rea",
@@ -407,7 +426,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "rea-jev",
@@ -428,7 +448,8 @@
     "targets": [
       "app",
       "website"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "rea-lab",
@@ -448,7 +469,8 @@
     ],
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "research"
   },
   {
     "id": "rea-casebook",
@@ -468,7 +490,8 @@
     ],
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "picoprint-rea-investigation",
@@ -489,7 +512,8 @@
     "targets": [
       "app",
       "firmware"
-    ]
+    ],
+    "kind": "case-study"
   },
   {
     "id": "morluto-awesome-re",
@@ -512,7 +536,8 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "collection"
   },
   {
     "id": "awesome-rea-cases",
@@ -532,6 +557,7 @@
       "app",
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "collection"
   }
 ]

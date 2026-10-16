@@ -13,7 +13,8 @@
     "requirements": "IDA 9.4+ with idalib, Python 3.11+, Git and uv; the GUI plugin is optional for headless use.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "ghidramcp",
@@ -29,7 +30,8 @@
     "requirements": "Match the extension to the documented Ghidra release; Python 3.10+ for the bridge, with additional PyGhidra requirements for headless mode.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "binary-ninja-official-mcp",
@@ -45,7 +47,8 @@
     "requirements": "Reviewed in the development manual: use a build containing MCP. GUI server uses HTTP; headless stdio requires Commercial or Ultimate on macOS/Linux.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "binary-ninja-community-mcp",
@@ -61,7 +64,8 @@
     "requirements": "Binary Ninja, Python 3.12+ and an MCP client; install the plugin separately from the client bridge.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "ida-pro-mcp-community",
@@ -77,7 +81,8 @@
     "requirements": "IDA Pro rather than IDA Free, Python 3.11+ and an MCP client; consult the upstream migration notice before choosing a new setup.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "radare2-mcp",
@@ -93,7 +98,8 @@
     "requirements": "A compatible radare2 build and r2pm, plus an MCP client; advanced HTTP session features depend on the radare2 ABI.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "r2ai",
@@ -109,7 +115,8 @@
     "requirements": "radare2 with the matching r2ai/decai plugins; configure a local model or the credentials required by the selected remote provider.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "daila",
@@ -125,7 +132,8 @@
     "requirements": "A supported decompiler and dailalib; configure a model backend. Ghidra requires the documented PyGhidra setup.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "revengai-ghidra",
@@ -141,7 +149,8 @@
     "requirements": "A compatible Ghidra/Java build and a RevEng.AI API key; creating service-side analysis uploads the selected binary.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "jadx-ai-mcp",
@@ -157,7 +166,8 @@
     "requirements": "JADX with the plugin and the separate JADX MCP Server component; upstream lists Java 11+ and Python 3.10+.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "frida-mcp-yfe404",
@@ -174,7 +184,8 @@
     "targets": [
       "app",
       "game"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "super-trouper",
@@ -191,7 +202,8 @@
     "targets": [
       "app",
       "game"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "lldb-mcp",
@@ -208,7 +220,8 @@
     "targets": [
       "binary",
       "app"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "claude-reverse-engineering-skill",
@@ -225,7 +238,8 @@
     "targets": [
       "app",
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "specterops-re-skills",
@@ -241,7 +255,8 @@
     "requirements": "Configure the chosen Binary Ninja or Ghidra MCP integration separately; the skill package does not install or wrap those servers.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "ghidra",
@@ -259,7 +274,8 @@
       "binary",
       "game",
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "radare2",
@@ -276,7 +292,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "cutter",
@@ -293,7 +310,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "frida",
@@ -310,7 +328,8 @@
     "targets": [
       "app",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "jadx",
@@ -326,7 +345,8 @@
     "requirements": "64-bit Java 11+ unless using a bundled runtime; decompilation can be incomplete and should be checked against bytecode.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "apktool",
@@ -342,7 +362,8 @@
     "requirements": "A supported Java runtime and the release-specific launcher; rebuilding is distinct from recovering original Java source.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "androguard",
@@ -358,7 +379,8 @@
     "requirements": "Version-sensitive: the reviewed README distinguishes the v5 source tree from PyPI 4.1.4; v5 extras require additional Rust/Python components.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "ilspy",
@@ -374,7 +396,8 @@
     "requirements": "Choose a desktop or ILSpyCmd release and its matching .NET runtime; frontend and operating-system support are release-dependent.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "dnspyex",
@@ -390,7 +413,8 @@
     "requirements": "Windows desktop workflow; Unity debugging requires the companion runtime setup documented by the project.",
     "targets": [
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "electron-asar",
@@ -407,7 +431,8 @@
     "targets": [
       "app",
       "website"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "webcrack",
@@ -424,7 +449,8 @@
     "targets": [
       "app",
       "website"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "wabt",
@@ -441,7 +467,8 @@
     "targets": [
       "website",
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "wasm-tools",
@@ -458,7 +485,8 @@
     "targets": [
       "website",
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "binwalk",
@@ -474,7 +502,8 @@
     "requirements": "The current v3 implementation is Rust-based; extraction needs the appropriate external tools or the documented container environment.",
     "targets": [
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "unblob",
@@ -490,7 +519,8 @@
     "requirements": "Python package plus external extractors, or the bundled Docker image; check the project's dependency inventory for the formats needed.",
     "targets": [
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "ghidra-firmware-utils",
@@ -506,7 +536,8 @@
     "requirements": "The reviewed build instructions require Ghidra 12.0+ and JDK 21+; build against the same Ghidra/JRE environment used for analysis.",
     "targets": [
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "qiling",
@@ -523,7 +554,8 @@
     "targets": [
       "binary",
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "unicorn",
@@ -541,7 +573,8 @@
       "binary",
       "game",
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "angr",
@@ -557,7 +590,8 @@
     "requirements": "A compatible Python 3 environment; useful results require an appropriate model of program inputs, state and external functions.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "lief",
@@ -573,7 +607,8 @@
     "requirements": "C++, Python or Rust integration; check the distinction between core and extended features for the selected distribution.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "capstone",
@@ -589,7 +624,8 @@
     "requirements": "Select a library/binding release supporting the target ISA and mode; the next branch can differ from stable releases.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "imhex",
@@ -607,7 +643,8 @@
       "binary",
       "game",
       "firmware"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "x64dbg",
@@ -623,7 +660,8 @@
     "requirements": "Windows; choose x32dbg or x64dbg according to the executable's architecture.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "gdb",
@@ -640,7 +678,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "rr",
@@ -656,7 +695,8 @@
     "requirements": "Linux with supported CPU performance counters; VM use depends on counter virtualization and the project's hardware requirements.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "diaphora",
@@ -673,7 +713,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "bindiff",
@@ -690,7 +731,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "detect-it-easy",
@@ -707,7 +749,8 @@
     "targets": [
       "binary",
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "ost2",
@@ -723,7 +766,8 @@
     "requirements": "Browser access; choose classes according to their published prerequisites and lab requirements.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "learning-resource"
   },
   {
     "id": "pwn-college-re",
@@ -739,7 +783,8 @@
     "requirements": "Browser access and the platform's account/environment setup for interactive challenges.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "learning-resource"
   },
   {
     "id": "re-for-beginners",
@@ -755,7 +800,8 @@
     "requirements": "A browser or PDF reader; use the toolchains relevant to the exercises being followed.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "learning-resource"
   },
   {
     "id": "radare2-book",
@@ -771,7 +817,8 @@
     "requirements": "Upstream lists radare2 5.8.x as the minimum and recommends a current release for following the examples.",
     "targets": [
       "binary"
-    ]
+    ],
+    "kind": "learning-resource"
   },
   {
     "id": "renderdoc",
@@ -788,7 +835,8 @@
     "targets": [
       "game",
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "assetripper",
@@ -804,7 +852,8 @@
     "requirements": "Unity 3.5.0–6000.4.X coverage varies by version; GPL-3.0 open-source edition, with separate premium features.",
     "targets": [
       "game"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "cpp2il",
@@ -822,7 +871,8 @@
       "game",
       "app",
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "il2cppdumper",
@@ -840,7 +890,8 @@
       "game",
       "app",
       "binary"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "renderdoc-mcp",
@@ -857,7 +908,8 @@
     "targets": [
       "game",
       "app"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "chrome-devtools-mcp",
@@ -873,7 +925,8 @@
     "requirements": "Supported Node.js LTS, Chrome, and an MCP client; selected browser profile and target must be available locally.",
     "targets": [
       "website"
-    ]
+    ],
+    "kind": "integration"
   },
   {
     "id": "mitmproxy",
@@ -890,7 +943,8 @@
     "targets": [
       "website",
       "app"
-    ]
+    ],
+    "kind": "tool"
   },
   {
     "id": "playwright-mcp",
@@ -906,6 +960,7 @@
     "requirements": "Node.js 18+ and an MCP client; the upstream also offers a separate CLI-and-skills approach for coding agents.",
     "targets": [
       "website"
-    ]
+    ],
+    "kind": "integration"
   }
 ]
