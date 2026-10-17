@@ -9,13 +9,13 @@ const UI = {
     "openEntry": "Open full entry",
     "sourceTopicsLabel": "Topics",
     "noscriptNote": "JavaScript enables search and filters. Read the complete <a href=\"/browse/\">repository directory</a>, <a href=\"/resources/\">curated collection</a> and <a href=\"/papers/\">research papers</a> without JavaScript. <a href=\"/zh/\" lang=\"zh-CN\">简体中文</a>.",
-    "exploreResources": "Explore the collection",
+    "exploreResources": "Browse resources",
     "explorePapers": "Browse research papers",
     "exploreCases": "Browse case studies",
     "directoryCases": "case studies",
     "shelfTitle": "Explore these collections",
     "shelfCases": "Awesome REA Cases",
-    "shelfCasesDescription": "A collection of software and hardware reconstruction reports.",
+    "shelfCasesDescription": "Software and hardware reconstruction reports.",
     "shelfGames": "REA / Decompiled Games",
     "shelfGamesDescription": "Decompilations, native ports and playable demos.",
     "shelfResearch": "Research papers",
@@ -35,7 +35,7 @@ const UI = {
     "submitResource": "Submit resource",
     "collectionEyebrow": "AN OPEN RESOURCE COLLECTION",
     "pageDescription": "Tools, projects, case studies and resources for reverse engineering websites, games, apps, binaries, firmware and communication protocols.",
-    "collectionDescription": "Find reverse-engineering tools, reconstruction projects, case studies and research papers. Browse by subject or search the collection in English and Chinese.",
+    "collectionDescription": "Tools, reconstruction projects, case studies and research papers — organized by what you want to reverse engineer.",
     "directoryNav": "Collection directories",
     "directoryRepositories": "repositories",
     "directoryCurated": "curated resources",
@@ -82,10 +82,11 @@ const UI = {
     "allKinds": "All types",
     "categoryLabel": "Category",
     "allCategories": "All categories",
-    "reviewNote": "Source-reviewed tools, cases and collections. Open details for requirements and limits.",
+    "reviewNote": "Reviewed against original sources. Names open the project; details explain requirements and limits.",
     "aboutCurated": "Collection notes ↗",
     "loading": "Loading resources…",
     "emptyDescription": "Try another search term or broaden your filters.",
+    "emptySearchPapers": "Search research papers",
     "emptySearchRepositories": "Search automatically indexed repositories",
     "emptySearchRepositoriesFor": "Search automatically indexed repositories for “{query}”",
     "emptyRepositoriesNote": "These repositories are collected automatically, not individually source-reviewed.",
@@ -100,7 +101,7 @@ const UI = {
     "downloadCuratedData": "Curated catalog JSON ↓",
     "viewSource": "GitHub ↗",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
-    "readSource": "Source",
+    "readSource": "Review source",
     "requirements": "Details & requirements",
     "reviewed": "Reviewed",
     "sourceReviewed": "Source-reviewed",
@@ -133,13 +134,13 @@ const UI = {
     "openEntry": "查看完整条目",
     "sourceTopicsLabel": "主题",
     "noscriptNote": "JavaScript 用于搜索和筛选。关闭 JavaScript 仍可阅读完整的<a href=\"/zh/browse/\">仓库目录</a>、<a href=\"/zh/resources/\">精选资源</a>与<a href=\"/zh/papers/\">研究论文</a>。<a href=\"/\" lang=\"en\">English</a>。",
-    "exploreResources": "浏览资源集合",
+    "exploreResources": "浏览资源",
     "explorePapers": "阅读研究论文",
     "exploreCases": "浏览案例",
     "directoryCases": "案例",
     "shelfTitle": "探索相关资源",
     "shelfCases": "REA 案例合集",
-    "shelfCasesDescription": "软件与硬件重建实践报告的资源合集。",
+    "shelfCasesDescription": "软件与硬件重建的实践报告。",
     "shelfGames": "游戏反编译与移植合集",
     "shelfGamesDescription": "反编译、原生移植与可体验的演示。",
     "shelfResearch": "研究论文",
@@ -159,7 +160,7 @@ const UI = {
     "submitResource": "提交资源",
     "collectionEyebrow": "开放的逆向工程资源集合",
     "pageDescription": "收集面向网站、游戏、应用、二进制、固件及通信协议逆向工程的工具、项目、案例与资料。",
-    "collectionDescription": "查找逆向工程工具、重建项目、案例与研究论文。按领域浏览，或使用中英文搜索资源集合。",
+    "collectionDescription": "收集逆向工程工具、重建项目、案例与研究论文，按你想研究的对象分类。",
     "directoryNav": "资源目录",
     "directoryRepositories": "个项目仓库",
     "directoryCurated": "项精选资源",
@@ -206,10 +207,11 @@ const UI = {
     "allKinds": "所有类型",
     "categoryLabel": "类别",
     "allCategories": "所有类别",
-    "reviewNote": "来源已复核的工具、案例与合集。展开详情可查看使用条件与局限。",
+    "reviewNote": "已核对原始来源。点击名称访问原项目，展开详情查看使用条件与局限。",
     "aboutCurated": "收录说明（英文）↗",
     "loading": "正在加载资源…",
     "emptyDescription": "换一个关键词，或扩大筛选范围。",
+    "emptySearchPapers": "搜索研究论文",
     "emptySearchRepositories": "搜索自动采集的仓库",
     "emptySearchRepositoriesFor": "在自动采集的仓库中搜索“{query}”",
     "emptyRepositoriesNote": "这些仓库由自动采集获得，尚未逐项复核来源。",
@@ -224,7 +226,7 @@ const UI = {
     "downloadCuratedData": "精选目录 JSON ↓",
     "viewSource": "GitHub ↗",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
-    "readSource": "来源",
+    "readSource": "复核来源",
     "requirements": "详情与使用条件",
     "reviewed": "复核于",
     "sourceReviewed": "来源已复核",
@@ -343,19 +345,30 @@ function card(record) {
   details.append(context);article.append(details);return article;
 }
 function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
-function renderEmptyRepositoryAction(foundCount = state.loaded ? filtered().length : null) {
-  const show = state.loaded && !state.error && sourceState.available && sourceState.mode === "curated"
+function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
+  const show = state.loaded && !state.error && sourceState.mode === "curated"
     && foundCount === 0 && state.q.trim() !== "";
+  const papers = $("#empty-search-papers");
+  papers.hidden = !show;
+  papers.textContent = t("emptySearchPapers");
+  if (show) {
+    const next = new URL(state.lang === "zh" ? "/zh/papers/" : "/papers/", location.origin);
+    // The directory applies its existing query cleanup and 240-character limit.
+    next.searchParams.set("q", state.q);
+    next.hash = "paper-search";
+    papers.href = next.pathname + next.search + next.hash;
+  }
+  const showRepositories = show && sourceState.available;
   const button = $("#empty-search-repositories");
-  button.hidden = !show;
-  $("#empty-repositories-note").hidden = !show;
-  if (show) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
+  button.hidden = !showRepositories;
+  $("#empty-repositories-note").hidden = !showRepositories;
+  if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
 function render() {
   const expanded = expandedRecords(".resource-card");
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
-  renderEmptyRepositoryAction(found.length);
+  renderEmptySearchActions(found.length);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
@@ -374,7 +387,7 @@ async function load() {
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
     state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
-  } catch (error) { state.error = true; state.loaded = false; renderEmptyRepositoryAction(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
+  } catch (error) { state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }
 $("#search-input").value = state.q;
 $("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
@@ -408,7 +421,7 @@ function configureSourceIndex(meta) {
 function setIndexMode(mode) {
   if (mode === "source-index" && !sourceState.available) return; sourceState.mode = mode; const isSource = mode === "source-index"; $("#curated-view").hidden = isSource; $("#source-view").hidden = !isSource;
   for (const [id,active] of [["#mode-curated",!isSource],["#mode-sources",isSource]]) { $(id).classList.toggle("active",active); $(id).setAttribute("aria-pressed",String(active)); }
-  renderEmptyRepositoryAction();
+  renderEmptySearchActions();
   sourceURL(); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
 }
 function searchRepositoriesFromEmpty() {
