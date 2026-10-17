@@ -5,7 +5,7 @@ const UI = {
     "layoutLabel": "Layout",
     "layoutCompact": "Compact list",
     "layoutCards": "Cards",
-    "requirementsShort": "Requirements",
+    "requirementsShort": "Details & limits",
     "sourceTopicsLabel": "Topics",
     "noscriptNote": "JavaScript enables search and filters. Read the complete <a href=\"/browse/\">repository directory</a>, <a href=\"/resources/\">curated collection</a> and <a href=\"/papers/\">research papers</a> without JavaScript. <a href=\"/zh/\" lang=\"zh-CN\">简体中文</a>.",
     "exploreResources": "Explore the collection",
@@ -60,7 +60,7 @@ const UI = {
     "sourceSortStars": "Most stars",
     "sourceSortPushed": "Recently pushed",
     "sourceSortName": "Repository name",
-    "sourceIntro": "Automatically indexed from upstream.",
+    "sourceIntro": "Automatically collected repositories; not individually reviewed.",
     "aboutCollection": "About this index",
     "sourceDisclosure": "READMEs were fetched automatically. These entries have not been manually reviewed or executed; target labels are inferred and do not establish REA compatibility.",
     "sourceLanguageNote": "Repository descriptions are available in English and Chinese. Translations are AI-assisted; original descriptions remain in the downloadable data.",
@@ -79,7 +79,7 @@ const UI = {
     "allKinds": "All types",
     "categoryLabel": "Category",
     "allCategories": "All categories",
-    "reviewNote": "Selected resources with concise descriptions and links to original sources.",
+    "reviewNote": "Source-reviewed tools, cases and collections. Open details for requirements and limits.",
     "aboutCurated": "Collection notes ↗",
     "loading": "Loading resources…",
     "emptyDescription": "Try another search term or broaden your filters.",
@@ -122,7 +122,7 @@ const UI = {
     "layoutLabel": "布局",
     "layoutCompact": "紧凑列表",
     "layoutCards": "卡片",
-    "requirementsShort": "使用条件",
+    "requirementsShort": "详情与局限",
     "sourceTopicsLabel": "主题",
     "noscriptNote": "JavaScript 用于搜索和筛选。关闭 JavaScript 仍可阅读完整的<a href=\"/zh/browse/\">仓库目录</a>、<a href=\"/zh/resources/\">精选资源</a>与<a href=\"/zh/papers/\">研究论文</a>。<a href=\"/\" lang=\"en\">English</a>。",
     "exploreResources": "浏览资源集合",
@@ -177,7 +177,7 @@ const UI = {
     "sourceSortStars": "星标最多",
     "sourceSortPushed": "最近推送",
     "sourceSortName": "仓库名称",
-    "sourceIntro": "自动索引，简介与主题来自上游。",
+    "sourceIntro": "自动收集的项目仓库，尚未逐项审阅。",
     "aboutCollection": "关于此索引",
     "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工审阅或执行测试；目标标签为自动分类，不表示已验证 REA 兼容性。",
     "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
@@ -196,7 +196,7 @@ const UI = {
     "allKinds": "所有类型",
     "categoryLabel": "类别",
     "allCategories": "所有类别",
-    "reviewNote": "精选资源附简短介绍及原始来源链接。",
+    "reviewNote": "依据来源整理的工具、案例与合集。展开详情可查看使用条件与局限。",
     "aboutCurated": "收录说明 ↗",
     "loading": "正在加载资源…",
     "emptyDescription": "换一个关键词，或扩大筛选范围。",
@@ -312,7 +312,7 @@ function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/
 function render() {
   const expanded = new Set($$(".resource-card:has(details[open])").map(el=>el.dataset.recordId));
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); $$(".resource-card").forEach(el=>{if(expanded.has(el.dataset.recordId))el.querySelector("details").open=true;}); grid.setAttribute("aria-busy", "false");
-  $("#results-status").textContent = state.lang === "zh" ? `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项` : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
+  $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
