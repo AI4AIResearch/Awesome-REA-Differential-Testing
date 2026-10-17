@@ -18,7 +18,7 @@
 
 **论文与更多资源**
 
-- [论文](#papers) (45) · [全部案例](https://awesomerea.org/zh/cases/) (47) · [完整仓库索引](#完整仓库索引) (2,846)
+- [论文](#papers) (46) · [全部案例](https://awesomerea.org/zh/cases/) (47) · [完整仓库索引](#完整仓库索引) (2,839)
 - [智能体与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [文档与学习资源](#references-and-learning) (17)
 <!-- END GENERATED CONTENTS -->
 
@@ -797,11 +797,11 @@
 <a id="papers"></a>
 ## 论文
 
-收录 **45 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
+收录 **46 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**按主题** · [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (7) · [网站](#papers-website-reconstruction) (12) · [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (5) · [固件](#papers-firmware-analysis) (5) · [协议](#papers-protocol-analysis) (5)
+**按主题** · [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (7) · [网站](#papers-website-reconstruction) (13) · [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (5) · [固件](#papers-firmware-analysis) (5) · [协议](#papers-protocol-analysis) (5)
 
 展开各条目的“范围与发表信息”可查看完整研究边界；以下按年份从新到旧排列。
 
@@ -1180,6 +1180,21 @@
 
   </details>
 
+- [**Web2Code：面向多模态大语言模型的大规模网页转代码数据集与评估框架**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html) · **2024 · 会议论文**
+
+  通过指令微调和两个评测基准研究从截图重建 HTML。Web2Code 结合生成网页、经改进的 WebSight 与 pix2code 图像／代码对，以及来自 WebSRC 的问答。模型根据网页图像与指令生成 HTML，渲染输出接受视觉比较，另一个基准则测量截图理解能力。
+
+  [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/MBZUAI-LLM/web2code) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-web2code/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评估使用 1,198 张截图和 5,990 个是／否问题。WCGB 用 GPT-4V 评价渲染图像；其“用户界面与交互性”类别衡量元素外观，并不执行点击路径、持久状态或后端行为。合成与改进样本不能确立对任意真实 Web 应用的覆盖、与原始源码等价或代码质量。论文报告，在 1,000 项隐私抽样中，2.7% 存在联系信息问题，因此不能笼统宣称数据完全不含此类信息。
+
+  **发表信息:** 2024 · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Sukmin Yun 等
+
+  </details>
+
 <a id="papers-game-reconstruction"></a>
 ### 游戏重建与逆向工程
 
@@ -1520,7 +1535,7 @@
 ## 完整仓库索引
 
 <!-- BEGIN REPOSITORY INDEX SUMMARY -->
-已读取 **3,000** 个仓库的 README，当前提供 **2,846** 个浏览条目，明确超出范围的 154 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。
+已读取 **3,000** 个仓库的 README，当前提供 **2,839** 个浏览条目，明确超出范围的 161 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。
 
 [按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)
 <!-- END REPOSITORY INDEX SUMMARY -->
