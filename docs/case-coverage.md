@@ -2,30 +2,33 @@
 
 [简体中文](case-coverage.zh-CN.md) · [Machine-readable ledger](../data/case-coverage.json)
 
-Reviewed 2026-10-17 (UTC). **372 collection occurrences** become **370 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas—not a count of unique verified projects.
+Reviewed 2026-10-17 (UTC). **512 collection occurrences** become **510 inventory units** after 2 documented duplicate merges. These are reports, tools, papers, discussions and ideas—not a count of unique verified projects.
 
 Project identity resolution is incomplete, so the unique-project count is `null`, not zero. English/Chinese copies of one upstream entry are counted once. Separate reports about one project remain separate units unless an explicit alias decision joins them.
 
 ## Frozen sources
 
-| Collection snapshot | Entries | Catalog record |
-| --- | ---: | --- |
-| [songshikang0111/awesome-REA-cases · 2c9ce9597f0a](https://github.com/songshikang0111/awesome-REA-cases/tree/2c9ce9597f0afcbafaa79de0293083224a974e91) | 344 | [awesome-rea-cases](https://awesomerea.org/resources/#awesome-rea-cases) |
-| [yibie/awesome-rea · 6df1bc922ac6](https://github.com/yibie/awesome-rea/tree/6df1bc922ac6b92dcd1b2f905c94d8cc4f3b5a3e) | 28 | [yibie-awesome-rea](https://awesomerea.org/resources/#yibie-awesome-rea) |
+| Collection snapshot | Occurrences | Linked GitHub repositories | Catalog record |
+| --- | ---: | ---: | --- |
+| [songshikang0111/awesome-REA-cases · 2c9ce9597f0a](https://github.com/songshikang0111/awesome-REA-cases/tree/2c9ce9597f0afcbafaa79de0293083224a974e91) | 344 | 42 | [awesome-rea-cases](https://awesomerea.org/resources/#awesome-rea-cases) |
+| [yibie/awesome-rea · 6df1bc922ac6](https://github.com/yibie/awesome-rea/tree/6df1bc922ac6b92dcd1b2f905c94d8cc4f3b5a3e) | 28 | 11 | [yibie-awesome-rea](https://awesomerea.org/resources/#yibie-awesome-rea) |
+| [HaozheH3/awesome-rea-games · 4316a4ce86fd](https://github.com/HaozheH3/awesome-rea-games/tree/4316a4ce86fdd851f0180ffee87dc336851bf5b6) | 140 | 137 | [haozhe-awesome-rea-games](https://awesomerea.org/resources/#haozhe-awesome-rea-games) |
 
 The ledger retains pinned file URLs, Git blob IDs, SHA-256 digests and byte counts. It describes only these enumerated snapshots, not later upstream changes or the whole field. Full upstream descriptions and README bodies are not republished.
+
+Repository counts use normalized GitHub repository, tree and file links within each collection. They do not merge inventory units or establish unique projects. For a game-organized table, each project row is an occurrence; a game heading or a shared repository does not make two rows the same report.
 
 ## Counts and states
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 35 | 34 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 288 | 287 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 49 | 49 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 46 | 45 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 415 | 414 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 51 | 51 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-37 occurrences have catalog links. They reference 33 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+51 occurrences have catalog links. They reference 38 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 23 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 43 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -56,13 +59,36 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | BattleShip: an AI-assisted Super Smash Bros. native port | Already curated | [Source](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |
 | ssbu-recomp: static recompilation with explicit mode limits | Already curated | [Source](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |
 | KartPad: platform integration for a Mario Kart Wii recompilation | Already curated | [Source](https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/README.md) |
+| 🍄 Super Mario 64 — n64decomp/sm64 | Pending | [Source](https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md) |
+| 🗡️ The Legend of Zelda: Breath of the Wild — zeldaret/botw | Pending | [Source](https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md) |
+| 🗡️ The Legend of Zelda: Ocarina of Time — zeldaret/oot | Pending | [Source](https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md) |
+| Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation | Already curated | [Source](https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md) |
+| 🗡️ The Legend of Zelda: The Minish Cap — zeldaret/tmc | Pending | [Source](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
+| 🚀 Metroid Prime — AxioDL/metaforce | Pending | [Source](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
+| 🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation | Pending | [Source](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
+| 🦔 Sonic Unleashed — hedge-dev/UnleashedRecomp | Pending | [Source](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |
+| OpenGOAL: recovering GOAL code and rebuilding the Jak games | Already curated | [Source](https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md) |
+| LEGO Island: source reconstruction with separately reported exact rebuilds | Already curated | [Source](https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md) |
+| ⚡ Pokémon FireRed — pret/pokefirered | Pending | [Source](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
+| 🔥 Diablo / DevilutionX — diasurgical/DevilutionX | Pending | [Source](https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md) |
+| 🧙 The Elder Scrolls III: Morrowind / OpenMW — OpenMW/openmw | Pending | [Source](https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md) |
+| 🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed | Pending | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
+| 🧙 Paper Mario — pmret/papermario | Pending | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
+| 🥊 Super Smash Bros. Melee — doldecomp/melee | Pending | [Source](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
+| ⚔️ Perfect Dark — perfect-dark-pc-port/perfect_dark | Pending | [Source](https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md) |
+| 🚘 Driver 2 — OpenDriver2/REDRIVER2 | Pending | [Source](https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md) |
+| Snowball War: a bounded REA-assisted minigame reconstruction | Already curated | [Source](https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md) |
+| SpaceCadetPinball: decompiled game logic adapted to SDL2 | Already curated | [Source](https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md) |
 
 ## Partial coverage and aliases
 
-Partial catalog mappings:
+Partial or related catalog mappings:
 
 - `song:touhou-reconstruction` — The TH08 component is curated; TH04 and TH095 components in this combined report remain outside the mapping.
 - `song:schaller-opticfilm-thinkpad-linux` — The scanner USB investigation is curated; the same collection entry also reports MIPI camera work that remains outside this catalog mapping.
+- `hao-games:row-134` — The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.
+- `hao-games:row-136` — Only the official TH04 bullet-ring helper showcase is covered. This collection row identifies a broader reconstruction repository, so full repository/game coverage remains pending.
+- `hao-games:row-137` — Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.
 
 Alias decisions:
 

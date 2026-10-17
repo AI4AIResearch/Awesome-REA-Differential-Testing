@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_at": "2026-10-17",
-  "catalog_revision": "b65e229285186b3a313167bffbd85e29d73ba0ef",
+  "catalog_revision": "3b2737005cb1d6a8c4478f27bc1e2273c47f488d",
   "runtime_reproduced": false,
   "project_identity_resolution": "incomplete",
   "collections": [
@@ -208,6 +208,32 @@
         "categories/tooling-and-mcp.md"
       ],
       "catalog_resource_id": "yibie-awesome-rea"
+    },
+    {
+      "id": "hao-games",
+      "repository_url": "https://github.com/HaozheH3/awesome-rea-games",
+      "commit": "4316a4ce86fdd851f0180ffee87dc336851bf5b6",
+      "entry_count": 140,
+      "source_files": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md",
+          "git_blob_sha": "4809bc8a77d338f6ec45b46216c54e16507b8323",
+          "sha256": "9c6e599d3802b64360751daf19b046652414c8dbb9cf5a427e3463ddd9c389a4",
+          "bytes": 104577
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "url": "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/CONTRIBUTING.md",
+          "git_blob_sha": "9f71e7cb6af67775f6a75abe14665906eb85ddb4",
+          "sha256": "39d327071fb7a86a036ba7825c959138e9f91569da15a889b87e6dbda186e86a",
+          "bytes": 3066
+        }
+      ],
+      "catalog_resource_id": "haozhe-awesome-rea-games",
+      "locator_templates": [
+        "README.md"
+      ]
     }
   ],
   "aliases": [
@@ -8241,25 +8267,2949 @@
       "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
       "primary_evidence_urls": [],
       "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-001",
+      "unit_id": "hao-games:row-001",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario 64 — sm64pc/sm64ex",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/sm64pc/sm64ex",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 1 (README line 58) lists sm64pc/sm64ex under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 1 行（README 第 58 行）在 🍄 Super Mario 64 下列出 sm64pc/sm64ex。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-002",
+      "unit_id": "hao-games:row-002",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario 64 — n64decomp/sm64",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/n64decomp/sm64",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. README describes a full decompilation for five listed N64/iQue versions, original asset extraction and a configurable ROM hash comparison. Naming/documentation remain ongoing; disabling COMPARE or using nonmatching options changes the verification claim. Review build/license provenance and matching configuration before drafting; do not conflate this original-target decompilation with sm64ex/Ghostship ports.",
+      "reason_zh": "README 描述五个 N64/iQue 版本的完整反编译、原素材提取及可配置的 ROM 哈希比较；命名和文档仍在推进。关闭比较或采用非匹配选项会改变验证含义。发表前还需核查构建、许可及匹配配置，不能等同于后续 PC 移植。",
+      "primary_evidence_urls": [
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-003",
+      "unit_id": "hao-games:row-003",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario 64 — HarbourMasters/Ghostship",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/Ghostship"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 3 (README line 60) lists HarbourMasters/Ghostship under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 3 行（README 第 60 行）在 🍄 Super Mario 64 下列出 HarbourMasters/Ghostship。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-004",
+      "unit_id": "hao-games:row-004",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario 64 — coop-deluxe/sm64coopdx",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/coop-deluxe/sm64coopdx"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 4 (README line 61) lists coop-deluxe/sm64coopdx under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 4 行（README 第 61 行）在 🍄 Super Mario 64 下列出 coop-deluxe/sm64coopdx。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-005",
+      "unit_id": "hao-games:row-005",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario Sunshine — doldecomp/sms",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/doldecomp/sms"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 5 (README line 73) lists doldecomp/sms under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 5 行（README 第 73 行）在 🍄 Super Mario Sunshine 下列出 doldecomp/sms。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-006",
+      "unit_id": "hao-games:row-006",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario Sunshine — chasem-dev/sms-english",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/chasem-dev/sms-english"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 6 (README line 74) lists chasem-dev/sms-english under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 6 行（README 第 74 行）在 🍄 Super Mario Sunshine 下列出 chasem-dev/sms-english。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-007",
+      "unit_id": "hao-games:row-007",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario Sunshine — chasem-dev/sms-pc-port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/chasem-dev/sms-pc-port"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 7 (README line 75) lists chasem-dev/sms-pc-port under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 7 行（README 第 75 行）在 🍄 Super Mario Sunshine 下列出 chasem-dev/sms-pc-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-008",
+      "unit_id": "hao-games:row-008",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario Sunshine — chasem-dev/sms-launcher",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/chasem-dev/sms-launcher"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 8 (README line 76) lists chasem-dev/sms-launcher under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 8 行（README 第 76 行）在 🍄 Super Mario Sunshine 下列出 chasem-dev/sms-launcher。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-009",
+      "unit_id": "hao-games:row-009",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario Galaxy — SMGCommunity/Petari",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/SMGCommunity/Petari"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 9 (README line 88) lists SMGCommunity/Petari under 🍄 Super Mario Galaxy. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 9 行（README 第 88 行）在 🍄 Super Mario Galaxy 下列出 SMGCommunity/Petari。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-010",
+      "unit_id": "hao-games:row-010",
+      "collection_id": "hao-games",
+      "title": "🍄 Super Mario 64 DS — tangosdev/sm64ds-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/tangosdev/sm64ds-decomp"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published sm64ds-decomp case covers this repository’s matching-decompilation workflow, with its recorded function, relocation and runtime limits. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 sm64ds-decomp 案例对应此仓库的匹配反编译流程，保留函数、重定位与运行状态边界。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md",
+        "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/port/README.md",
+        "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/notes/link-verification.md",
+        "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/tools/requirements.txt",
+        "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sm64ds-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-011",
+      "unit_id": "hao-games:row-011",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Breath of the Wild — zeldaret/botw",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/botw"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Explicit experimental WIP decompilation of Breath of the Wild Switch 1.5.0. README says it cannot be used to play the game and contains no assets/RomFS. Potential research-source case, not a playable-port case; follow primary technical documentation and license before drafting.",
+      "reason_zh": "README 明确将 Switch 1.5.0《旷野之息》列为实验性未完成反编译，并说明不含素材或 RomFS、不能用于游玩。可作为研究代码线索；发表前仍需核查技术文档与许可，不能描述为可玩的移植。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-012",
+      "unit_id": "hao-games:row-012",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Skyward Sword — zeldaret/ss",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/ss"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 12 (README line 128) lists zeldaret/ss under 🗡️ The Legend of Zelda: Skyward Sword. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 12 行（README 第 128 行）在 🗡️ The Legend of Zelda: Skyward Sword 下列出 zeldaret/ss。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-013",
+      "unit_id": "hao-games:row-013",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Ocarina of Time — HarbourMasters/Shipwright",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/Shipwright",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 13 (README line 142) lists HarbourMasters/Shipwright under 🗡️ The Legend of Zelda: Ocarina of Time. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 13 行（README 第 142 行）在 🗡️ The Legend of Zelda: Ocarina of Time 下列出 HarbourMasters/Shipwright。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-014",
+      "unit_id": "hao-games:row-014",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Ocarina of Time — zeldaret/oot",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/oot",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. WIP Ocarina of Time source reconstruction uses static/dynamic analysis and explicitly is not producing a PC port. Version-specific ROMs and checksums are listed; original assets and Python 3.10+ are required by its setup. Review license/build notes and pin any progress figure; do not treat Shipwright or future Zelda64Recomp support as this repo’s output.",
+      "reason_zh": "《时之笛》项目通过静态或动态分析重建源码，README 明确表示不制作 PC 移植，并列出版本对应 ROM 与哈希。还需核查许可、构建和进度；不能把 Shipwright 或 Zelda64Recomp 的成果归入此仓库。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-015",
+      "unit_id": "hao-games:row-015",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Twilight Princess — TwilitRealm/dusklight",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/TwilitRealm/dusklight",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 15 (README line 157) lists TwilitRealm/dusklight under 🗡️ The Legend of Zelda: Twilight Princess. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 15 行（README 第 157 行）在 🗡️ The Legend of Zelda: Twilight Princess 下列出 TwilitRealm/dusklight。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-016",
+      "unit_id": "hao-games:row-016",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Twilight Princess — zeldaret/tp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/tp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 16 (README line 158) lists zeldaret/tp under 🗡️ The Legend of Zelda: Twilight Princess. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 16 行（README 第 158 行）在 🗡️ The Legend of Zelda: Twilight Princess 下列出 zeldaret/tp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-017",
+      "unit_id": "hao-games:row-017",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: The Wind Waker (including HD) — zeldaret/tww",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/tww"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 17 (README line 170) lists zeldaret/tww under 🗡️ The Legend of Zelda: The Wind Waker (including HD). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 17 行（README 第 170 行）在 🗡️ The Legend of Zelda: The Wind Waker (including HD) 下列出 zeldaret/tww。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-018",
+      "unit_id": "hao-games:row-018",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: The Wind Waker (including HD) — ZeldaWWHDRecomp/ZeldaWWHDRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 18 (README line 171) lists ZeldaWWHDRecomp/ZeldaWWHDRecomp under 🗡️ The Legend of Zelda: The Wind Waker (including HD). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 18 行（README 第 171 行）在 🗡️ The Legend of Zelda: The Wind Waker (including HD) 下列出 ZeldaWWHDRecomp/ZeldaWWHDRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-019",
+      "unit_id": "hao-games:row-019",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Majora’s Mask — Zelda64Recomp/Zelda64Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Zelda64Recomp/Zelda64Recomp",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published case covers this US N64 Majora’s Mask static recompilation with its original-ROM and platform requirements. Ocarina of Time remains planned, and the project explicitly disclaims generative-AI development. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布案例覆盖此美版 N64《姆吉拉的假面》静态重编译及原 ROM、平台要求。《时之笛》仍在计划中，项目明确声明不使用生成式 AI 开发。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md",
+        "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
+        "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/COPYING",
+        "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/BUILDING.md",
+        "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CONTRIBUTING.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "zelda64recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-020",
+      "unit_id": "hao-games:row-020",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Majora’s Mask — zeldaret/mm",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/mm",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 20 (README line 186) lists zeldaret/mm under 🗡️ The Legend of Zelda: Majora’s Mask. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 20 行（README 第 186 行）在 🗡️ The Legend of Zelda: Majora’s Mask 下列出 zeldaret/mm。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-021",
+      "unit_id": "hao-games:row-021",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Majora’s Mask — 2ship2harkinian/2ship2harkinian",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/2ship2harkinian/2ship2harkinian"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 21 (README line 187) lists 2ship2harkinian/2ship2harkinian under 🗡️ The Legend of Zelda: Majora’s Mask. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 21 行（README 第 187 行）在 🗡️ The Legend of Zelda: Majora’s Mask 下列出 2ship2harkinian/2ship2harkinian。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-022",
+      "unit_id": "hao-games:row-022",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: The Minish Cap — zeldaret/tmc",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zeldaret/tmc"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. WIP The Minish Cap source reconstruction targets named GBA retail/demo ROMs. The README requires prior game assets and warns that parts may not be shiftable. Review INSTALL/license and current matching evidence before drafting; avoid claiming a finished native port.",
+      "reason_zh": "README 将《缩小帽》源码重建标为进行中，列出 GBA 零售与演示版 ROM，要求原游戏素材，并提醒部分代码可能尚不能移动。发表前仍需核查安装、许可和匹配证据；不是已完成的原生移植声明。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-023",
+      "unit_id": "hao-games:row-023",
+      "collection_id": "hao-games",
+      "title": "🗡️ Zelda II: The Adventure of Link — troyedwardsjr/z2rs",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/troyedwardsjr/z2rs",
+        "https://z2rs.com/"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 23 (README line 215) lists troyedwardsjr/z2rs under 🗡️ Zelda II: The Adventure of Link. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 23 行（README 第 215 行）在 🗡️ Zelda II: The Adventure of Link 下列出 troyedwardsjr/z2rs。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-024",
+      "unit_id": "hao-games:row-024",
+      "collection_id": "hao-games",
+      "title": "🗡️ The Legend of Zelda: Link's Awakening — peiikai/LASRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/peiikai/LASRecomp"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published LASRecomp case covers this Switch-game static recompilation, including original-copy requirements and beta/platform limitations. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 LASRecomp 案例对应此 Switch 游戏静态重编译，保留原游戏要求及测试版／平台边界。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/peiikai/LASRecomp/blob/6244eb9d4d3497094e21cac7dabe998ded1f2800/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lasrecomp",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-025",
+      "unit_id": "hao-games:row-025",
+      "collection_id": "hao-games",
+      "title": "🚀 Metroid Prime — AxioDL/metaforce",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/AxioDL/metaforce",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Metaforce calls itself an engine reimplementation, but the pinned README also says it was recently rewritten on the Prime matching decompilation and that builds are unavailable while stabilizing. Any later draft must preserve the rewrite/stabilization boundary and separate it from the collection’s other MetroidPrimePort row.",
+      "reason_zh": "Metaforce 自述为引擎重实现，但固定版本 README 也说已基于 Prime 匹配反编译重写，目前稳定化期间不提供构建包。后续草稿需保留这一边界，并与合集中的 MetroidPrimePort 项目分开。",
+      "primary_evidence_urls": [
+        "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-026",
+      "unit_id": "hao-games:row-026",
+      "collection_id": "hao-games",
+      "title": "🚀 Metroid Prime — Odrannnn/MetroidPrimePort",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Odrannnn/MetroidPrimePort",
+        "https://github.com/Odrannnn/MetroidPrimePort/releases/latest",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 26 (README line 243) lists Odrannnn/MetroidPrimePort under 🚀 Metroid Prime. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 26 行（README 第 243 行）在 🚀 Metroid Prime 下列出 Odrannnn/MetroidPrimePort。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-027",
+      "unit_id": "hao-games:row-027",
+      "collection_id": "hao-games",
+      "title": "🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Sonic Mania decompilation adds a mod loader and supports the separate RSDKv5(U) engine. README requires official assets, excludes the Netflix version, and warns that nonrecursive ZIPs omit required submodules. Review its custom licensing and exact supported game/engine build combination before drafting; do not merge the separate engine row into one completed case.",
+      "reason_zh": "Sonic Mania 反编译项目包含模组支持，并可结合独立 RSDKv5(U) 引擎；README 要求官方素材、不支持 Netflix 版，并提醒非递归 ZIP 缺少子模块。发表前需核查许可和具体游戏／引擎组合，不将引擎行合并为同一完成案例。",
+      "primary_evidence_urls": [
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-028",
+      "unit_id": "hao-games:row-028",
+      "collection_id": "hao-games",
+      "title": "🦔 Sonic Mania — RSDKModding/RSDKv5-Decompilation",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/RSDKModding/RSDKv5-Decompilation"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 28 (README line 256) lists RSDKModding/RSDKv5-Decompilation under 🦔 Sonic Mania. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 28 行（README 第 256 行）在 🦔 Sonic Mania 下列出 RSDKModding/RSDKv5-Decompilation。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-029",
+      "unit_id": "hao-games:row-029",
+      "collection_id": "hao-games",
+      "title": "🦔 Sonic Unleashed — hedge-dev/UnleashedRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/hedge-dev/UnleashedRecomp"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Unleashed Recompiled translates Xbox 360 PowerPC and shader code with XenonRecomp/XenosRecomp. US/EU files plus a title update are required; JP/PS3 files are excluded. Documented high-frame-rate glitches and loading stutters remain. Follow pinned build/license files; distinguish Windows/Linux support from possible macOS work and author-specific performance reports.",
+      "reason_zh": "Unleashed Recompiled 用 XenonRecomp/XenosRecomp 转换 Xbox 360 代码和着色器，要求美版或欧版文件及更新，不支持日版或 PS3 文件；高帧率问题和加载停顿仍有记录。后续需核查构建、许可，区分 Windows/Linux 与潜在 macOS 工作。",
+      "primary_evidence_urls": [
+        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-030",
+      "unit_id": "hao-games:row-030",
+      "collection_id": "hao-games",
+      "title": "🦍 Donkey Kong 64 — Rainchus/Donkey-Kong-64-Recompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 30 (README line 282) lists Rainchus/Donkey-Kong-64-Recompiled under 🦍 Donkey Kong 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 30 行（README 第 282 行）在 🦍 Donkey Kong 64 下列出 Rainchus/Donkey-Kong-64-Recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-031",
+      "unit_id": "hao-games:row-031",
+      "collection_id": "hao-games",
+      "title": "🌀 Crash Bandicoot — wurlyfox/c1",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/wurlyfox/c1",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 31 (README line 296) lists wurlyfox/c1 under 🌀 Crash Bandicoot. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 31 行（README 第 296 行）在 🌀 Crash Bandicoot 下列出 wurlyfox/c1。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-032",
+      "unit_id": "hao-games:row-032",
+      "collection_id": "hao-games",
+      "title": "🌀 Crash Bandicoot 2: Cortex Strikes Back — Zumbo06/Crash2Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Zumbo06/Crash2Recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 32 (README line 310) lists Zumbo06/Crash2Recomp under 🌀 Crash Bandicoot 2: Cortex Strikes Back. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 32 行（README 第 310 行）在 🌀 Crash Bandicoot 2: Cortex Strikes Back 下列出 Zumbo06/Crash2Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-033",
+      "unit_id": "hao-games:row-033",
+      "collection_id": "hao-games",
+      "title": "🌀 Crash Bandicoot 2: Cortex Strikes Back — ughman/c2c",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/ughman/c2c",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 33 (README line 311) lists ughman/c2c under 🌀 Crash Bandicoot 2: Cortex Strikes Back. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 33 行（README 第 311 行）在 🌀 Crash Bandicoot 2: Cortex Strikes Back 下列出 ughman/c2c。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-034",
+      "unit_id": "hao-games:row-034",
+      "collection_id": "hao-games",
+      "title": "🧭 Conker's Bad Fur Day — sciaschi/CBFD-Recompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/sciaschi/CBFD-Recompiled"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 34 (README line 325) lists sciaschi/CBFD-Recompiled under 🧭 Conker's Bad Fur Day. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 34 行（README 第 325 行）在 🧭 Conker's Bad Fur Day 下列出 sciaschi/CBFD-Recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-035",
+      "unit_id": "hao-games:row-035",
+      "collection_id": "hao-games",
+      "title": "🐻 Banjo-Kazooie — BanjoRecomp/BanjoRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/BanjoRecomp/BanjoRecomp",
+        "https://github.com/BanjoRecomp/BanjoRecomp/releases"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 35 (README line 337) lists BanjoRecomp/BanjoRecomp under 🐻 Banjo-Kazooie. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 35 行（README 第 337 行）在 🐻 Banjo-Kazooie 下列出 BanjoRecomp/BanjoRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-036",
+      "unit_id": "hao-games:row-036",
+      "collection_id": "hao-games",
+      "title": "🐻 Banjo-Kazooie — HarbourMasters/Lighthouse",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/Lighthouse",
+        "https://github.com/HarbourMasters/Lighthouse/releases"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 36 (README line 338) lists HarbourMasters/Lighthouse under 🐻 Banjo-Kazooie. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 36 行（README 第 338 行）在 🐻 Banjo-Kazooie 下列出 HarbourMasters/Lighthouse。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-037",
+      "unit_id": "hao-games:row-037",
+      "collection_id": "hao-games",
+      "title": "🏰 Castlevania: Symphony of the Night — BlackLabelHQ/SymphonyRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/BlackLabelHQ/SymphonyRecomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 37 (README line 350) lists BlackLabelHQ/SymphonyRecomp under 🏰 Castlevania: Symphony of the Night. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 37 行（README 第 350 行）在 🏰 Castlevania: Symphony of the Night 下列出 BlackLabelHQ/SymphonyRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-038",
+      "unit_id": "hao-games:row-038",
+      "collection_id": "hao-games",
+      "title": "🏰 Castlevania: Symphony of the Night — Xeeynamo/sotn-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Xeeynamo/sotn-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 38 (README line 351) lists Xeeynamo/sotn-decomp under 🏰 Castlevania: Symphony of the Night. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 38 行（README 第 351 行）在 🏰 Castlevania: Symphony of the Night 下列出 Xeeynamo/sotn-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-039",
+      "unit_id": "hao-games:row-039",
+      "collection_id": "hao-games",
+      "title": "🏰 Castlevania 64 — RevoSucks/CV64Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/RevoSucks/CV64Recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 39 (README line 365) lists RevoSucks/CV64Recomp under 🏰 Castlevania 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 39 行（README 第 365 行）在 🏰 Castlevania 64 下列出 RevoSucks/CV64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-040",
+      "unit_id": "hao-games:row-040",
+      "collection_id": "hao-games",
+      "title": "🏰 Castlevania 64 — spacefarergames/CV64-Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/spacefarergames/CV64-Recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 40 (README line 366) lists spacefarergames/CV64-Recomp under 🏰 Castlevania 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 40 行（README 第 366 行）在 🏰 Castlevania 64 下列出 spacefarergames/CV64-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-041",
+      "unit_id": "hao-games:row-041",
+      "collection_id": "hao-games",
+      "title": "🧭 Sly Cooper and the Thievius Raccoonus — theclub654/ProjectCane",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/theclub654/ProjectCane",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 41 (README line 380) lists theclub654/ProjectCane under 🧭 Sly Cooper and the Thievius Raccoonus. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 41 行（README 第 380 行）在 🧭 Sly Cooper and the Thievius Raccoonus 下列出 theclub654/ProjectCane。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-042",
+      "unit_id": "hao-games:row-042",
+      "collection_id": "hao-games",
+      "title": "🧭 Sly Cooper and the Thievius Raccoonus — TheOnlyZac/sly1",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/TheOnlyZac/sly1",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 42 (README line 381) lists TheOnlyZac/sly1 under 🧭 Sly Cooper and the Thievius Raccoonus. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 42 行（README 第 381 行）在 🧭 Sly Cooper and the Thievius Raccoonus 下列出 TheOnlyZac/sly1。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-043",
+      "unit_id": "hao-games:row-043",
+      "collection_id": "hao-games",
+      "title": "🧭 Ratchet & Clank — OpenRAC/rac1-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenRAC/rac1-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 43 (README line 395) lists OpenRAC/rac1-decomp under 🧭 Ratchet & Clank. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 43 行（README 第 395 行）在 🧭 Ratchet & Clank 下列出 OpenRAC/rac1-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-044",
+      "unit_id": "hao-games:row-044",
+      "collection_id": "hao-games",
+      "title": "🧭 Jak and Daxter series — open-goal/jak-project",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/open-goal/jak-project"
+      ],
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published OpenGOAL case covers this GOAL-code reconstruction and compiler workflow. Jak 1, Jak 2 beta and unfinished Jak 3 remain distinct, as do supported x86-64/Rosetta and experimental native ARM64 builds. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 OpenGOAL 案例覆盖此 GOAL 代码重建与编译器流程，区分 Jak 1、测试阶段的 Jak 2 和未完成的 Jak 3，也区分受支持的 x86-64／Rosetta 与实验性原生 ARM64 构建。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md",
+        "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
+        "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/LICENSE",
+        "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/linux.md",
+        "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/macos.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "opengoal-jak-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-045",
+      "unit_id": "hao-games:row-045",
+      "collection_id": "hao-games",
+      "title": "🧭 The Simpsons Game (2007) — YesterMester/TheSimpsonsGameRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 45 (README line 421) lists YesterMester/TheSimpsonsGameRecomp under 🧭 The Simpsons Game (2007). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 45 行（README 第 421 行）在 🧭 The Simpsons Game (2007) 下列出 YesterMester/TheSimpsonsGameRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-046",
+      "unit_id": "hao-games:row-046",
+      "collection_id": "hao-games",
+      "title": "🧭 The Lord of the Rings: The Two Towers — Gumpolas/TooTawersRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Gumpolas/TooTawersRecomp",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 46 (README line 435) lists Gumpolas/TooTawersRecomp under 🧭 The Lord of the Rings: The Two Towers. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 46 行（README 第 435 行）在 🧭 The Lord of the Rings: The Two Towers 下列出 Gumpolas/TooTawersRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-047",
+      "unit_id": "hao-games:row-047",
+      "collection_id": "hao-games",
+      "title": "🧭 LEGO Island — isledecomp/isle",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/isledecomp/isle"
+      ],
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published LEGO Island case covers the English 1.1 reconstruction, separating upstream-reported exact ReproBit rebuilds from ordinary CMake builds and the separate portable adaptation. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 LEGO Island 案例覆盖英文 1.1 版重建，区分上游报告的精确 ReproBit 重构建、普通 CMake 构建及另一仓库中的可移植适配。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md",
+        "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
+        "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lego-island-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-048",
+      "unit_id": "hao-games:row-048",
+      "collection_id": "hao-games",
+      "title": "🧭 LEGO Island — isledecomp/isle-portable",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/isledecomp/isle-portable",
+        "https://isle.pizza/"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 48 (README line 448) lists isledecomp/isle-portable under 🧭 LEGO Island. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 48 行（README 第 448 行）在 🧭 LEGO Island 下列出 isledecomp/isle-portable。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-049",
+      "unit_id": "hao-games:row-049",
+      "collection_id": "hao-games",
+      "title": "🧭 MediEvil — BlackLabelHQ/MediEvilRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/BlackLabelHQ/MediEvilRecomp",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 49 (README line 462) lists BlackLabelHQ/MediEvilRecomp under 🧭 MediEvil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 49 行（README 第 462 行）在 🧭 MediEvil 下列出 BlackLabelHQ/MediEvilRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-050",
+      "unit_id": "hao-games:row-050",
+      "collection_id": "hao-games",
+      "title": "🧭 MediEvil — MediEvilDecompilation/medievil-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/MediEvilDecompilation/medievil-decomp",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 50 (README line 463) lists MediEvilDecompilation/medievil-decomp under 🧭 MediEvil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 50 行（README 第 463 行）在 🧭 MediEvil 下列出 MediEvilDecompilation/medievil-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-051",
+      "unit_id": "hao-games:row-051",
+      "collection_id": "hao-games",
+      "title": "🧭 ICO — nathanialf/ico-pc",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/nathanialf/ico-pc",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 51 (README line 477) lists nathanialf/ico-pc under 🧭 ICO. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 51 行（README 第 477 行）在 🧭 ICO 下列出 nathanialf/ico-pc。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-052",
+      "unit_id": "hao-games:row-052",
+      "collection_id": "hao-games",
+      "title": "🧭 Peter Jackson’s King Kong — TekRantGaming/king-kong-recompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/TekRantGaming/king-kong-recompiled",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 52 (README line 491) lists TekRantGaming/king-kong-recompiled under 🧭 Peter Jackson’s King Kong. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 52 行（README 第 491 行）在 🧭 Peter Jackson’s King Kong 下列出 TekRantGaming/king-kong-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-053",
+      "unit_id": "hao-games:row-053",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Red & Blue — pret/pokered",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokered"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 53 (README line 510) lists pret/pokered under ⚡ Pokémon Red & Blue. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 53 行（README 第 510 行）在 ⚡ Pokémon Red & Blue 下列出 pret/pokered。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-054",
+      "unit_id": "hao-games:row-054",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Crystal — pret/pokecrystal",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokecrystal"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 54 (README line 524) lists pret/pokecrystal under ⚡ Pokémon Crystal. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 54 行（README 第 524 行）在 ⚡ Pokémon Crystal 下列出 pret/pokecrystal。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-055",
+      "unit_id": "hao-games:row-055",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Ruby & Sapphire — pret/pokeruby",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokeruby"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 55 (README line 538) lists pret/pokeruby under ⚡ Pokémon Ruby & Sapphire. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 55 行（README 第 538 行）在 ⚡ Pokémon Ruby & Sapphire 下列出 pret/pokeruby。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-056",
+      "unit_id": "hao-games:row-056",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Emerald — pret/pokeemerald",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokeemerald"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 56 (README line 550) lists pret/pokeemerald under ⚡ Pokémon Emerald. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 56 行（README 第 550 行）在 ⚡ Pokémon Emerald 下列出 pret/pokeemerald。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-057",
+      "unit_id": "hao-games:row-057",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon FireRed — pret/pokefirered",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokefirered"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Pokémon FireRed/LeafGreen README identifies six English ROM image variants and exact hashes, with setup delegated to INSTALL.md. Need installation and rights/asset provenance review before publication; a README output-hash list alone is not independent matching verification.",
+      "reason_zh": "README 列出英文 FireRed/LeafGreen 的六个 ROM 变体及哈希，安装步骤另见 INSTALL.md。发表前还需核查安装和素材／权利来源；仅列输出哈希不等于独立验证匹配。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-058",
+      "unit_id": "hao-games:row-058",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon HeartGold — pret/pokeheartgold",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokeheartgold"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 58 (README line 574) lists pret/pokeheartgold under ⚡ Pokémon HeartGold. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. Shared repository links do not merge separately listed game rows.",
+      "reason_zh": "项目第 58 行（README 第 574 行）在 ⚡ Pokémon HeartGold 下列出 pret/pokeheartgold。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。共享仓库链接不会合并分别列出的游戏行。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-059",
+      "unit_id": "hao-games:row-059",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon SoulSilver — pret/pokeheartgold",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokeheartgold"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 59 (README line 586) lists pret/pokeheartgold under ⚡ Pokémon SoulSilver. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. Shared repository links do not merge separately listed game rows.",
+      "reason_zh": "项目第 59 行（README 第 586 行）在 ⚡ Pokémon SoulSilver 下列出 pret/pokeheartgold。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。共享仓库链接不会合并分别列出的游戏行。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-060",
+      "unit_id": "hao-games:row-060",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Platinum — pret/pokeplatinum",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pret/pokeplatinum",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 60 (README line 600) lists pret/pokeplatinum under ⚡ Pokémon Platinum. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 60 行（README 第 600 行）在 ⚡ Pokémon Platinum 下列出 pret/pokeplatinum。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-061",
+      "unit_id": "hao-games:row-061",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Platinum — cybervisi0n/pokeplatinum",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/cybervisi0n/pokeplatinum",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 61 (README line 601) lists cybervisi0n/pokeplatinum under ⚡ Pokémon Platinum. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 61 行（README 第 601 行）在 ⚡ Pokémon Platinum 下列出 cybervisi0n/pokeplatinum。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-062",
+      "unit_id": "hao-games:row-062",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Ultra Sun — tylergraydev/UltraSunnyMoon",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/tylergraydev/UltraSunnyMoon"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 62 (README line 615) lists tylergraydev/UltraSunnyMoon under ⚡ Pokémon Ultra Sun. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 62 行（README 第 615 行）在 ⚡ Pokémon Ultra Sun 下列出 tylergraydev/UltraSunnyMoon。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-063",
+      "unit_id": "hao-games:row-063",
+      "collection_id": "hao-games",
+      "title": "🗝️ Kingdom Hearts 358/2 Days — Yokimitsuro/khdays-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Yokimitsuro/khdays-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 63 (README line 629) lists Yokimitsuro/khdays-decomp under 🗝️ Kingdom Hearts 358/2 Days. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 63 行（README 第 629 行）在 🗝️ Kingdom Hearts 358/2 Days 下列出 Yokimitsuro/khdays-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-064",
+      "unit_id": "hao-games:row-064",
+      "collection_id": "hao-games",
+      "title": "🗝️ Kingdom Hearts 358/2 Days — Yokimitsuro/khdays-port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Yokimitsuro/khdays-port"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 64 (README line 630) lists Yokimitsuro/khdays-port under 🗝️ Kingdom Hearts 358/2 Days. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 64 行（README 第 630 行）在 🗝️ Kingdom Hearts 358/2 Days 下列出 Yokimitsuro/khdays-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-065",
+      "unit_id": "hao-games:row-065",
+      "collection_id": "hao-games",
+      "title": "🔥 Diablo II: Resurrected — jhaizhou-ops/d2r-mobile",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/jhaizhou-ops/d2r-mobile"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 65 (README line 644) lists jhaizhou-ops/d2r-mobile under 🔥 Diablo II: Resurrected. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 65 行（README 第 644 行）在 🔥 Diablo II: Resurrected 下列出 jhaizhou-ops/d2r-mobile。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-066",
+      "unit_id": "hao-games:row-066",
+      "collection_id": "hao-games",
+      "title": "🔥 Diablo / DevilutionX — diasurgical/DevilutionX",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/diasurgical/DevilutionX"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Held for license-scope review; not yet curated. DevilutionX is a Diablo/Hellfire port with improvements and requires original MPQ content or the limited shareware data. Pinned README now states a Sustainable Use License and non-commercial restriction. Do not call it permissively licensed/open source based on historical familiarity. Read pinned LICENSE.md and any per-component notices before a draft.",
+      "reason_zh": "许可范围暂缓：固定版本 DevilutionX README 说明采用 Sustainable Use License，并限制为非商业用途；运行仍需原 MPQ 或有限共享版素材。不能依据历史印象称为宽松许可项目。须进一步核查固定版本 LICENSE.md 和组件声明，本条尚未精选收录。",
+      "primary_evidence_urls": [
+        "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-067",
+      "unit_id": "hao-games:row-067",
+      "collection_id": "hao-games",
+      "title": "🔥 Diablo / DevilutionX — d07RiV/diabloweb",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/d07RiV/diabloweb",
+        "https://d07riv.github.io/diabloweb/"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 67 (README line 659) lists d07RiV/diabloweb under 🔥 Diablo / DevilutionX. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 67 行（README 第 659 行）在 🔥 Diablo / DevilutionX 下列出 d07RiV/diabloweb。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-068",
+      "unit_id": "hao-games:row-068",
+      "collection_id": "hao-games",
+      "title": "🧙 The Elder Scrolls III: Morrowind / OpenMW — OpenMW/openmw",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenMW/openmw"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. OpenMW README describes an engine replacement plus Construction Set replacement, not original decompiled source. It reports main-quest completion but warns about side quests/mod compatibility; no 32-bit support. Follow authoritative GitLab-linked license/build sources and preserve original Morrowind data requirement; do not imply all mods or quests are equivalent.",
+      "reason_zh": "OpenMW README 描述引擎及 Construction Set 替代实现，并非原始源码反编译；报告主线任务可完成，同时保留支线与模组兼容性问题，不支持 32 位平台。发表前须核查 GitLab 一手许可和构建来源，保留自备 Morrowind 数据要求。",
+      "primary_evidence_urls": [
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-069",
+      "unit_id": "hao-games:row-069",
+      "collection_id": "hao-games",
+      "title": "🧙 Final Fantasy Tactics Advance — Jorge262007/FFTARecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Jorge262007/FFTARecomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 69 (README line 687) lists Jorge262007/FFTARecomp under 🧙 Final Fantasy Tactics Advance. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 69 行（README 第 687 行）在 🧙 Final Fantasy Tactics Advance 下列出 Jorge262007/FFTARecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-070",
+      "unit_id": "hao-games:row-070",
+      "collection_id": "hao-games",
+      "title": "🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/abedegno/underworld-exhumed",
+        "https://abedegno.github.io/underworld-exhumed-web/"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. One Underworld Exhumed repo covers both games and reports exact DOS executable rebuilds plus limited recorded-session parity across native/web builds. Its own-work MIT license explicitly grants no rights in game-derived code. Review game-specific manifests/NOTICE/build prerequisites and finite session records; the separate web site’s bundled-data statement is not a redistribution grant. Row 71 shares the same repository and was not counted as another review.",
+      "reason_zh": "同一 Underworld Exhumed 仓库涵盖两款游戏，报告 DOS 可执行文件精确重构建及有限录制场景对照；自身工作的 MIT 许可明确不授予游戏派生代码权利。须核查各游戏清单、NOTICE、依赖与场景证据；第 71 行共享仓库，但不自动合并或计作另一独立审阅。",
+      "primary_evidence_urls": [
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-071",
+      "unit_id": "hao-games:row-071",
+      "collection_id": "hao-games",
+      "title": "🧙 Ultima Underworld II: Labyrinth of Worlds — abedegno/underworld-exhumed",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/abedegno/underworld-exhumed",
+        "https://abedegno.github.io/underworld-exhumed-web/"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 71 (README line 715) lists abedegno/underworld-exhumed under 🧙 Ultima Underworld II: Labyrinth of Worlds. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. Shared repository links do not merge separately listed game rows.",
+      "reason_zh": "项目第 71 行（README 第 715 行）在 🧙 Ultima Underworld II: Labyrinth of Worlds 下列出 abedegno/underworld-exhumed。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。共享仓库链接不会合并分别列出的游戏行。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-072",
+      "unit_id": "hao-games:row-072",
+      "collection_id": "hao-games",
+      "title": "🧙 Vandal Hearts — HalmyLyseas/VandalHearts-PcPort",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 72 (README line 729) lists HalmyLyseas/VandalHearts-PcPort under 🧙 Vandal Hearts. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 72 行（README 第 729 行）在 🧙 Vandal Hearts 下列出 HalmyLyseas/VandalHearts-PcPort。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-073",
+      "unit_id": "hao-games:row-073",
+      "collection_id": "hao-games",
+      "title": "🧙 Paper Mario — lucyawrey/Paper_Mario_64_Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/lucyawrey/Paper_Mario_64_Recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 73 (README line 743) lists lucyawrey/Paper_Mario_64_Recomp under 🧙 Paper Mario. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 73 行（README 第 743 行）在 🧙 Paper Mario 下列出 lucyawrey/Paper_Mario_64_Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-074",
+      "unit_id": "hao-games:row-074",
+      "collection_id": "hao-games",
+      "title": "🧙 Paper Mario — pmret/papermario",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/pmret/papermario",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Paper Mario README calls the decompilation WIP and lists US/JP/PAL/iQue target ROM hashes; setup and current progress are separate linked resources. Review SETUP/license/current progress before drafting; do not equate this repo with the recompilation or PaperBoat native port rows.",
+      "reason_zh": "Paper Mario README 将反编译标为进行中，列出美、日、PAL 和 iQue ROM 哈希；安装及当前进度由独立链接提供。发表前需核查设置、许可和进度，不能等同于重编译项目或 PaperBoat 移植。",
+      "primary_evidence_urls": [
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-075",
+      "unit_id": "hao-games:row-075",
+      "collection_id": "hao-games",
+      "title": "🧙 Paper Mario — HarbourMasters/PaperBoat",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/PaperBoat"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 75 (README line 745) lists HarbourMasters/PaperBoat under 🧙 Paper Mario. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 75 行（README 第 745 行）在 🧙 Paper Mario 下列出 HarbourMasters/PaperBoat。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-076",
+      "unit_id": "hao-games:row-076",
+      "collection_id": "hao-games",
+      "title": "🧙 The Binding of Isaac — whylurking/IsaacRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/whylurking/IsaacRecomp"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published IsaacRecomp case covers this repository’s Flash-bytecode translation workflow; it does not claim recovery of the original authored source. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 IsaacRecomp 案例对应此仓库的 Flash 字节码转换流程，不声称恢复原作者源码。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md",
+        "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/LICENSE",
+        "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/CMakeLists.txt",
+        "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/THIRD-PARTY-LICENSES.txt"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "isaacrecomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-077",
+      "unit_id": "hao-games:row-077",
+      "collection_id": "hao-games",
+      "title": "🧙 Lost Odyssey — freefrank/LostOdysseyRecomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/freefrank/LostOdysseyRecomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 77 (README line 769) lists freefrank/LostOdysseyRecomp under 🧙 Lost Odyssey. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 77 行（README 第 769 行）在 🧙 Lost Odyssey 下列出 freefrank/LostOdysseyRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-078",
+      "unit_id": "hao-games:row-078",
+      "collection_id": "hao-games",
+      "title": "🚗 Grand Theft Auto: Vice City Stories — PSPRecomp · Vice City Stories profile",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/jessicanataliagta/PSPRecomp/tree/main/profiles/vcs",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 78 (README line 788) lists PSPRecomp · Vice City Stories profile under 🚗 Grand Theft Auto: Vice City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 78 行（README 第 788 行）在 🚗 Grand Theft Auto: Vice City Stories 下列出 PSPRecomp · Vice City Stories profile。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-079",
+      "unit_id": "hao-games:row-079",
+      "collection_id": "hao-games",
+      "title": "🚗 Grand Theft Auto: Vice City Stories — codepdbh/PSPRecomp-VCS-Android",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 79 (README line 789) lists codepdbh/PSPRecomp-VCS-Android under 🚗 Grand Theft Auto: Vice City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 79 行（README 第 789 行）在 🚗 Grand Theft Auto: Vice City Stories 下列出 codepdbh/PSPRecomp-VCS-Android。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-080",
+      "unit_id": "hao-games:row-080",
+      "collection_id": "hao-games",
+      "title": "🚗 Grand Theft Auto: Liberty City Stories — elmasas/lcs-recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/elmasas/lcs-recomp",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 80 (README line 803) lists elmasas/lcs-recomp under 🚗 Grand Theft Auto: Liberty City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 80 行（README 第 803 行）在 🚗 Grand Theft Auto: Liberty City Stories 下列出 elmasas/lcs-recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-081",
+      "unit_id": "hao-games:row-081",
+      "collection_id": "hao-games",
+      "title": "⚔️ GoldenEye 007 — n64decomp/007",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/n64decomp/007",
+        "https://gitlab.com/kholdfuzion/goldeneye_src"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 81 (README line 817) lists n64decomp/007 under ⚔️ GoldenEye 007. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 81 行（README 第 817 行）在 ⚔️ GoldenEye 007 下列出 n64decomp/007。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-082",
+      "unit_id": "hao-games:row-082",
+      "collection_id": "hao-games",
+      "title": "⚔️ GoldenEye 007 — jkdansereau/goldeneye-pc-port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/jkdansereau/goldeneye-pc-port"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published GoldenEye PC-port case covers this repository, distinct from the upstream decompilation and bounded by its reported platform and playtest evidence. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 GoldenEye PC 移植案例对应此仓库，与上游反编译项目分开，并受已报告的平台和游玩检查范围限制。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md",
+        "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/NOTICE",
+        "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/LICENSE",
+        "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/docs/ROADMAP.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "goldeneye-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-083",
+      "unit_id": "hao-games:row-083",
+      "collection_id": "hao-games",
+      "title": "🛡️ Halo — chrissotraidis/projectreach",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/chrissotraidis/projectreach",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 83 (README line 832) lists chrissotraidis/projectreach under 🛡️ Halo. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 83 行（README 第 832 行）在 🛡️ Halo 下列出 chrissotraidis/projectreach。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-084",
+      "unit_id": "hao-games:row-084",
+      "collection_id": "hao-games",
+      "title": "🥊 Super Smash Bros. Ultimate — Denkishi/ssbu-recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Denkishi/ssbu-recomp",
+        "https://x.com/dddenk_/status/2110936700281393413"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published ssbu-recomp case covers this Switch 13.0.4-to-Windows project with explicit mode, hardware and reported-test limitations. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 ssbu-recomp 案例对应此 Switch 13.0.4 到 Windows 项目，保留模式、硬件和报告测试的明确限制。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md",
+        "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/BUILDING.md",
+        "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ssbu-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-085",
+      "unit_id": "hao-games:row-085",
+      "collection_id": "hao-games",
+      "title": "⚔️ Dragon Ball Z: Budokai Tenkaichi 3 — z3xox/Tenkaichi3Decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/z3xox/Tenkaichi3Decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 85 (README line 860) lists z3xox/Tenkaichi3Decomp under ⚔️ Dragon Ball Z: Budokai Tenkaichi 3. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 85 行（README 第 860 行）在 ⚔️ Dragon Ball Z: Budokai Tenkaichi 3 下列出 z3xox/Tenkaichi3Decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-086",
+      "unit_id": "hao-games:row-086",
+      "collection_id": "hao-games",
+      "title": "🛡️ Halo 2 — kirklandsig/halo2-decompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/kirklandsig/halo2-decompiled"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 86 (README line 874) lists kirklandsig/halo2-decompiled under 🛡️ Halo 2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 86 行（README 第 874 行）在 🛡️ Halo 2 下列出 kirklandsig/halo2-decompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-087",
+      "unit_id": "hao-games:row-087",
+      "collection_id": "hao-games",
+      "title": "🥊 Super Smash Bros. Melee — doldecomp/melee",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/doldecomp/melee"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Melee README describes matching US 1.02 main.dol reconstruction and notes shiftable builds for modding. Most current effort is naming/cleanup; nonmatching mod configuration is a separate path. Review license/source provenance and exact build gating before drafting. Original DOL extraction, Python/Ninja and platform toolchain constraints remain relevant.",
+      "reason_zh": "Melee README 描述美版 1.02 main.dol 的匹配重建及可移动代码构建，目前工作主要为命名和清理；非匹配模组配置是另一条路径。发表前仍需核查许可、来源和精确构建验证，不把修改版视为原二进制一致结果。",
+      "primary_evidence_urls": [
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-088",
+      "unit_id": "hao-games:row-088",
+      "collection_id": "hao-games",
+      "title": "🥊 Super Smash Bros. Melee — Hero88go/melee-unlocked",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Hero88go/melee-unlocked"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 88 (README line 887) lists Hero88go/melee-unlocked under 🥊 Super Smash Bros. Melee. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 88 行（README 第 887 行）在 🥊 Super Smash Bros. Melee 下列出 Hero88go/melee-unlocked。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-089",
+      "unit_id": "hao-games:row-089",
+      "collection_id": "hao-games",
+      "title": "⚔️ Saints Row — whompay/SaintsReborn",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/whompay/SaintsReborn",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 89 (README line 901) lists whompay/SaintsReborn under ⚔️ Saints Row. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 89 行（README 第 901 行）在 ⚔️ Saints Row 下列出 whompay/SaintsReborn。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-090",
+      "unit_id": "hao-games:row-090",
+      "collection_id": "hao-games",
+      "title": "🦊 Star Fox 64 — sonicdcer/Starfox64Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/sonicdcer/Starfox64Recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 90 (README line 913) lists sonicdcer/Starfox64Recomp under 🦊 Star Fox 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 90 行（README 第 913 行）在 🦊 Star Fox 64 下列出 sonicdcer/Starfox64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-091",
+      "unit_id": "hao-games:row-091",
+      "collection_id": "hao-games",
+      "title": "🦊 Star Fox 64 — HarbourMasters/Starship",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/Starship"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 91 (README line 914) lists HarbourMasters/Starship under 🦊 Star Fox 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 91 行（README 第 914 行）在 🦊 Star Fox 64 下列出 HarbourMasters/Starship。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-092",
+      "unit_id": "hao-games:row-092",
+      "collection_id": "hao-games",
+      "title": "⚔️ Perfect Dark — perfect-dark-pc-port/perfect_dark",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/perfect-dark-pc-port/perfect_dark",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. Perfect Dark is a WIP port from a separate decompilation. README distinguishes recommended US 1.1 ROM from other/custom-build editions, and documents minor gameplay/graphics issues, crashes and experimental high rates. Review code license and build requirements; distinguish the main port from netplay branch and do not generalize advertised platforms to every fork.",
+      "reason_zh": "Perfect Dark 是独立反编译成果上的进行中移植，README 区分推荐美版 1.1 ROM 与其他需专门构建的版本，并记录图形／玩法问题、崩溃和实验性高帧率。发表前需核查许可与依赖，不能将主分支、联网分支和其他 fork 混为一谈。",
+      "primary_evidence_urls": [
+        "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-093",
+      "unit_id": "hao-games:row-093",
+      "collection_id": "hao-games",
+      "title": "⚔️ Perfect Dark — n64decomp/perfect_dark",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/n64decomp/perfect_dark",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 93 (README line 929) lists n64decomp/perfect_dark under ⚔️ Perfect Dark. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 93 行（README 第 929 行）在 ⚔️ Perfect Dark 下列出 n64decomp/perfect_dark。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-094",
+      "unit_id": "hao-games:row-094",
+      "collection_id": "hao-games",
+      "title": "🕵️ Syphon Filter — Madxbio97/SF-pc-port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Madxbio97/SF-pc-port",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 94 (README line 943) lists Madxbio97/SF-pc-port under 🕵️ Syphon Filter. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 94 行（README 第 943 行）在 🕵️ Syphon Filter 下列出 Madxbio97/SF-pc-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-095",
+      "unit_id": "hao-games:row-095",
+      "collection_id": "hao-games",
+      "title": "🕵️ Syphon Filter: The Omega Strain — zm2283145/syphon-filter-omega-strain-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 95 (README line 957) lists zm2283145/syphon-filter-omega-strain-decomp under 🕵️ Syphon Filter: The Omega Strain. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 95 行（README 第 957 行）在 🕵️ Syphon Filter: The Omega Strain 下列出 zm2283145/syphon-filter-omega-strain-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-096",
+      "unit_id": "hao-games:row-096",
+      "collection_id": "hao-games",
+      "title": "⚔️ The Darkness — portingpete/The-Darkness-Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/portingpete/The-Darkness-Recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 96 (README line 971) lists portingpete/The-Darkness-Recomp under ⚔️ The Darkness. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 96 行（README 第 971 行）在 ⚔️ The Darkness 下列出 portingpete/The-Darkness-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-097",
+      "unit_id": "hao-games:row-097",
+      "collection_id": "hao-games",
+      "title": "👻 P.T. — LoreanXavier/pt-pc",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/LoreanXavier/pt-pc",
+        "https://archive.org/details/p.-t.-pc-port-"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 97 (README line 990) lists LoreanXavier/pt-pc under 👻 P.T.. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 97 行（README 第 990 行）在 👻 P.T. 下列出 LoreanXavier/pt-pc。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-098",
+      "unit_id": "hao-games:row-098",
+      "collection_id": "hao-games",
+      "title": "👻 Silent Hill — shdecompilations/silent-hill-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/shdecompilations/silent-hill-decomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 98 (README line 1004) lists shdecompilations/silent-hill-decomp under 👻 Silent Hill. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 98 行（README 第 1004 行）在 👻 Silent Hill 下列出 shdecompilations/silent-hill-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-099",
+      "unit_id": "hao-games:row-099",
+      "collection_id": "hao-games",
+      "title": "🧟 Dead Rising 2: Case Zero — wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 99 (README line 1018) lists wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp under 🧟 Dead Rising 2: Case Zero. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 99 行（README 第 1018 行）在 🧟 Dead Rising 2: Case Zero 下列出 wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-100",
+      "unit_id": "hao-games:row-100",
+      "collection_id": "hao-games",
+      "title": "🧟 Dead Rising 2: Case West — wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 100 (README line 1032) lists wivi514/Dead_Rising_2_Case_West_Xenon_Recomp under 🧟 Dead Rising 2: Case West. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 100 行（README 第 1032 行）在 🧟 Dead Rising 2: Case West 下列出 wivi514/Dead_Rising_2_Case_West_Xenon_Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-101",
+      "unit_id": "hao-games:row-101",
+      "collection_id": "hao-games",
+      "title": "👻 Fatal Frame — Mikompilation/Himuro",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Mikompilation/Himuro",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 101 (README line 1046) lists Mikompilation/Himuro under 👻 Fatal Frame. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 101 行（README 第 1046 行）在 👻 Fatal Frame 下列出 Mikompilation/Himuro。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-102",
+      "unit_id": "hao-games:row-102",
+      "collection_id": "hao-games",
+      "title": "👻 Fatal Frame — Mikompilation/MikuPan",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Mikompilation/MikuPan",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 102 (README line 1047) lists Mikompilation/MikuPan under 👻 Fatal Frame. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 102 行（README 第 1047 行）在 👻 Fatal Frame 下列出 Mikompilation/MikuPan。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-103",
+      "unit_id": "hao-games:row-103",
+      "collection_id": "hao-games",
+      "title": "🏎️ Mario Kart 64 — n64decomp/mk64",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/n64decomp/mk64"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 103 (README line 1064) lists n64decomp/mk64 under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 103 行（README 第 1064 行）在 🏎️ Mario Kart 64 下列出 n64decomp/mk64。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-104",
+      "unit_id": "hao-games:row-104",
+      "collection_id": "hao-games",
+      "title": "🏎️ Mario Kart 64 — sonicdcer/MarioKart64Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/sonicdcer/MarioKart64Recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 104 (README line 1065) lists sonicdcer/MarioKart64Recomp under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 104 行（README 第 1065 行）在 🏎️ Mario Kart 64 下列出 sonicdcer/MarioKart64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-105",
+      "unit_id": "hao-games:row-105",
+      "collection_id": "hao-games",
+      "title": "🏎️ Mario Kart 64 — HarbourMasters/SpaghettiKart",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/HarbourMasters/SpaghettiKart"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 105 (README line 1066) lists HarbourMasters/SpaghettiKart under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 105 行（README 第 1066 行）在 🏎️ Mario Kart 64 下列出 HarbourMasters/SpaghettiKart。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-106",
+      "unit_id": "hao-games:row-106",
+      "collection_id": "hao-games",
+      "title": "🏎️ Need for Speed: Most Wanted (2005) — SpeedBreakerProject/speedbreaker",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/SpeedBreakerProject/speedbreaker"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 106 (README line 1080) lists SpeedBreakerProject/speedbreaker under 🏎️ Need for Speed: Most Wanted (2005). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 106 行（README 第 1080 行）在 🏎️ Need for Speed: Most Wanted (2005) 下列出 SpeedBreakerProject/speedbreaker。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-107",
+      "unit_id": "hao-games:row-107",
+      "collection_id": "hao-games",
+      "title": "🏎️ Need for Speed: Underground 2 — codepdbh/nfsu2-recompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/codepdbh/nfsu2-recompiled"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 107 (README line 1094) lists codepdbh/nfsu2-recompiled under 🏎️ Need for Speed: Underground 2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 107 行（README 第 1094 行）在 🏎️ Need for Speed: Underground 2 下列出 codepdbh/nfsu2-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-108",
+      "unit_id": "hao-games:row-108",
+      "collection_id": "hao-games",
+      "title": "🏁 Skate 3 — mchughalex/skate3recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/mchughalex/skate3recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 108 (README line 1108) lists mchughalex/skate3recomp under 🏁 Skate 3. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 108 行（README 第 1108 行）在 🏁 Skate 3 下列出 mchughalex/skate3recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-109",
+      "unit_id": "hao-games:row-109",
+      "collection_id": "hao-games",
+      "title": "🏁 Dead or Alive Xtreme Beach Volleyball — NoRain211/doaxvb-re",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/NoRain211/doaxvb-re",
+        "https://archive.org/details/dead-or-alive-xtreme-beach-volleyball_202610"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 109 (README line 1122) lists NoRain211/doaxvb-re under 🏁 Dead or Alive Xtreme Beach Volleyball. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 109 行（README 第 1122 行）在 🏁 Dead or Alive Xtreme Beach Volleyball 下列出 NoRain211/doaxvb-re。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-110",
+      "unit_id": "hao-games:row-110",
+      "collection_id": "hao-games",
+      "title": "🏁 FIFA Street — samuelit0davila/fifa-street-pc-port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/samuelit0davila/fifa-street-pc-port",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 110 (README line 1136) lists samuelit0davila/fifa-street-pc-port under 🏁 FIFA Street. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 110 行（README 第 1136 行）在 🏁 FIFA Street 下列出 samuelit0davila/fifa-street-pc-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-111",
+      "unit_id": "hao-games:row-111",
+      "collection_id": "hao-games",
+      "title": "🌀 Crash Team Racing — CameronRedmore/Crash-Team-Racing-Turbocharged",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 111 (README line 1150) lists CameronRedmore/Crash-Team-Racing-Turbocharged under 🌀 Crash Team Racing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 111 行（README 第 1150 行）在 🌀 Crash Team Racing 下列出 CameronRedmore/Crash-Team-Racing-Turbocharged。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-112",
+      "unit_id": "hao-games:row-112",
+      "collection_id": "hao-games",
+      "title": "🏁 Tony Hawk’s Pro Skater 1–4 — LANCommander/TonyWasAProSkater",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/LANCommander/TonyWasAProSkater",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 112 (README line 1164) lists LANCommander/TonyWasAProSkater under 🏁 Tony Hawk’s Pro Skater 1–4. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 112 行（README 第 1164 行）在 🏁 Tony Hawk’s Pro Skater 1–4 下列出 LANCommander/TonyWasAProSkater。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-113",
+      "unit_id": "hao-games:row-113",
+      "collection_id": "hao-games",
+      "title": "🏁 WWE SmackDown vs. Raw 2011 — shaneomac1337/SVR2011-Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/shaneomac1337/SVR2011-Recomp",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/releases",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 113 (README line 1178) lists shaneomac1337/SVR2011-Recomp under 🏁 WWE SmackDown vs. Raw 2011. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 113 行（README 第 1178 行）在 🏁 WWE SmackDown vs. Raw 2011 下列出 shaneomac1337/SVR2011-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-114",
+      "unit_id": "hao-games:row-114",
+      "collection_id": "hao-games",
+      "title": "🏁 WWE SmackDown vs. Raw 2011 — KaikoClanworth1/wwe-svr2011-pc",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/KaikoClanworth1/wwe-svr2011-pc",
+        "https://kaikoclanworth1.github.io/wwe-svr2011-pc/",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 114 (README line 1179) lists KaikoClanworth1/wwe-svr2011-pc under 🏁 WWE SmackDown vs. Raw 2011. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 114 行（README 第 1179 行）在 🏁 WWE SmackDown vs. Raw 2011 下列出 KaikoClanworth1/wwe-svr2011-pc。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-115",
+      "unit_id": "hao-games:row-115",
+      "collection_id": "hao-games",
+      "title": "🏁 The Simpsons Wrestling — TekRantGaming/simpsons-wrestling-recompiled",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled",
+        "https://x.com/mdaman010/status/2109111127238230239?s=46"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 115 (README line 1193) lists TekRantGaming/simpsons-wrestling-recompiled under 🏁 The Simpsons Wrestling. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 115 行（README 第 1193 行）在 🏁 The Simpsons Wrestling 下列出 TekRantGaming/simpsons-wrestling-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-116",
+      "unit_id": "hao-games:row-116",
+      "collection_id": "hao-games",
+      "title": "🚘 Driver: You Are the Wheelman — alexbeavs-ps1-ports/driver-recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 116 (README line 1207) lists alexbeavs-ps1-ports/driver-recomp under 🚘 Driver: You Are the Wheelman. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 116 行（README 第 1207 行）在 🚘 Driver: You Are the Wheelman 下列出 alexbeavs-ps1-ports/driver-recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-117",
+      "unit_id": "hao-games:row-117",
+      "collection_id": "hao-games",
+      "title": "🚘 Driver 2 — OpenDriver2/REDRIVER2",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenDriver2/REDRIVER2",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Bounded primary README review only; further focused review is pending. REDRIVER2 describes translating MIPS to C using debug symbols, Ghidra/IDA and Psy-X, with the memory-card menu explicitly excluded and deliberate bug fixes/improvements. Read installation/license sources and preserve compatibility-layer/modified-behavior boundaries before drafting; do not claim unchanged byte identity.",
+      "reason_zh": "REDRIVER2 描述借助调试符号、Ghidra/IDA 和 Psy-X 将 MIPS 转为 C，但明确排除记忆卡菜单，并有意修复或改动玩法。发表前需核查安装与许可，保留兼容层及行为修改边界，不声称二进制逐字节一致。",
+      "primary_evidence_urls": [
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md"
+      ],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-118",
+      "unit_id": "hao-games:row-118",
+      "collection_id": "hao-games",
+      "title": "🏁 Ski or Die: Snowball War — tuunanet/rea-ski-or-die-reconstruction",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction"
+      ],
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published Snowball War case covers this one-minigame REA workflow, preserving approximated timing/random behavior, absent audio playback and the lack of comparison with the running DOS original. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 Snowball War 案例覆盖此单一小游戏的 REA 工作流，保留计时／随机行为近似、未实现声音播放及缺少原 DOS 游戏运行对照的边界。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md",
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/Cargo.toml",
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/LICENSE.md",
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/docs/reverse-engineering-notes.md",
+        "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/tests/gameplay.rs"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowball-war-rea-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-119",
+      "unit_id": "hao-games:row-119",
+      "collection_id": "hao-games",
+      "title": "🏡 Animal Crossing — ACreTeam/forest",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/ACreTeam/forest",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 119 (README line 1254) lists ACreTeam/forest under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 119 行（README 第 1254 行）在 🏡 Animal Crossing 下列出 ACreTeam/forest。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-120",
+      "unit_id": "hao-games:row-120",
+      "collection_id": "hao-games",
+      "title": "🏡 Animal Crossing — flyngmt/ACGC-PC-Port",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/flyngmt/ACGC-PC-Port",
+        "https://i.4cdn.org/vr/1791496164085175.png"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 120 (README line 1255) lists flyngmt/ACGC-PC-Port under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 120 行（README 第 1255 行）在 🏡 Animal Crossing 下列出 flyngmt/ACGC-PC-Port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-121",
+      "unit_id": "hao-games:row-121",
+      "collection_id": "hao-games",
+      "title": "🏡 Animal Crossing — ACreTeam/ac-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/ACreTeam/ac-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 121 (README line 1256) lists ACreTeam/ac-decomp under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 121 行（README 第 1256 行）在 🏡 Animal Crossing 下列出 ACreTeam/ac-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-122",
+      "unit_id": "hao-games:row-122",
+      "collection_id": "hao-games",
+      "title": "🏡 Animal Crossing: Wild World — banatic/acww-decomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/banatic/acww-decomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 122 (README line 1270) lists banatic/acww-decomp under 🏡 Animal Crossing: Wild World. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 122 行（README 第 1270 行）在 🏡 Animal Crossing: Wild World 下列出 banatic/acww-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-123",
+      "unit_id": "hao-games:row-123",
+      "collection_id": "hao-games",
+      "title": "🏠 The Sims Bustin' Out — DaBrown95/tsbodp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/DaBrown95/tsbodp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 123 (README line 1284) lists DaBrown95/tsbodp under 🏠 The Sims Bustin' Out. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 123 行（README 第 1284 行）在 🏠 The Sims Bustin' Out 下列出 DaBrown95/tsbodp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-124",
+      "unit_id": "hao-games:row-124",
+      "collection_id": "hao-games",
+      "title": "🏗️ Command & Conquer / Dune 2000 / OpenRA — OpenRA/OpenRA",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenRA/OpenRA"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 124 (README line 1298) lists OpenRA/OpenRA under 🏗️ Command & Conquer / Dune 2000 / OpenRA. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 124 行（README 第 1298 行）在 🏗️ Command & Conquer / Dune 2000 / OpenRA 下列出 OpenRA/OpenRA。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-125",
+      "unit_id": "hao-games:row-125",
+      "collection_id": "hao-games",
+      "title": "🏗️ RollerCoaster Tycoon 2 / OpenRCT2 — OpenRCT2/OpenRCT2",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenRCT2/OpenRCT2"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 125 (README line 1312) lists OpenRCT2/OpenRCT2 under 🏗️ RollerCoaster Tycoon 2 / OpenRCT2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 125 行（README 第 1312 行）在 🏗️ RollerCoaster Tycoon 2 / OpenRCT2 下列出 OpenRCT2/OpenRCT2。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-126",
+      "unit_id": "hao-games:row-126",
+      "collection_id": "hao-games",
+      "title": "🏗️ X-COM: UFO Defense / OpenXcom — OpenXcom/OpenXcom",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/OpenXcom/OpenXcom"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 126 (README line 1326) lists OpenXcom/OpenXcom under 🏗️ X-COM: UFO Defense / OpenXcom. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 126 行（README 第 1326 行）在 🏗️ X-COM: UFO Defense / OpenXcom 下列出 OpenXcom/OpenXcom。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-127",
+      "unit_id": "hao-games:row-127",
+      "collection_id": "hao-games",
+      "title": "🏗️ Theme Hospital / CorsixTH — CorsixTH/CorsixTH",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/CorsixTH/CorsixTH"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 127 (README line 1340) lists CorsixTH/CorsixTH under 🏗️ Theme Hospital / CorsixTH. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 127 行（README 第 1340 行）在 🏗️ Theme Hospital / CorsixTH 下列出 CorsixTH/CorsixTH。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-128",
+      "unit_id": "hao-games:row-128",
+      "collection_id": "hao-games",
+      "title": "🎲 Mario Party 4 — mariopartyrd/marioparty4",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/mariopartyrd/marioparty4"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 128 (README line 1359) lists mariopartyrd/marioparty4 under 🎲 Mario Party 4. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 128 行（README 第 1359 行）在 🎲 Mario Party 4 下列出 mariopartyrd/marioparty4。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-129",
+      "unit_id": "hao-games:row-129",
+      "collection_id": "hao-games",
+      "title": "⚡ Pokémon Snap — JackandBeans/Snap64Recomp",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/JackandBeans/Snap64Recomp"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 129 (README line 1373) lists JackandBeans/Snap64Recomp under ⚡ Pokémon Snap. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 129 行（README 第 1373 行）在 ⚡ Pokémon Snap 下列出 JackandBeans/Snap64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-130",
+      "unit_id": "hao-games:row-130",
+      "collection_id": "hao-games",
+      "title": "🕹️ Chrome Dinosaur Runner — zhxunzh84/rea-dino-reverse-engineering",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 130 (README line 1387) lists zhxunzh84/rea-dino-reverse-engineering under 🕹️ Chrome Dinosaur Runner. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. The existing dinosaur-speed teaching case is a distinct artifact, not this repository.",
+      "reason_zh": "项目第 130 行（README 第 1387 行）在 🕹️ Chrome Dinosaur Runner 下列出 zhxunzh84/rea-dino-reverse-engineering。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。现有恐龙加速规则教学案例是另一制品，不是此仓库。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-131",
+      "unit_id": "hao-games:row-131",
+      "collection_id": "hao-games",
+      "title": "🕹️ 3D Pinball for Windows: Space Cadet — k4zmu2a/SpaceCadetPinball",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/k4zmu2a/SpaceCadetPinball"
+      ],
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published SpaceCadetPinball case covers this C++/SDL2 recovery using specified XP/PDB and Full Tilt sources, with original-resource requirements and separate external ports. It does not assert a byte-identical rebuild. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 SpaceCadetPinball 案例覆盖此基于指定 XP/PDB 和 Full Tilt 来源的 C++／SDL2 恢复，保留原资源要求并区分外部移植，不声称逐字节一致重构建。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md",
+        "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
+        "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "space-cadet-pinball-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-132",
+      "unit_id": "hao-games:row-132",
+      "collection_id": "hao-games",
+      "title": "🌙 Touhou 6: Embodiment of Scarlet Devil — GensokyoClub/th06",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/GensokyoClub/th06"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 132 (README line 1413) lists GensokyoClub/th06 under 🌙 Touhou 6: Embodiment of Scarlet Devil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 132 行（README 第 1413 行）在 🌙 Touhou 6: Embodiment of Scarlet Devil 下列出 GensokyoClub/th06。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-133",
+      "unit_id": "hao-games:row-133",
+      "collection_id": "hao-games",
+      "title": "🌙 Touhou 8: Imperishable Night — N0zoM1z0/th08",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/N0zoM1z0/th08"
+      ],
+      "state": "already-curated",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The published TH08 case covers this reconstruction repository and separates exact-function, whole-image and portable-runtime milestones. This is source-reviewed catalog coverage, not independent runtime reproduction.",
+      "reason_zh": "已发布的 TH08 案例对应此重建仓库，并区分函数精确匹配、整文件一致与可移植运行时里程碑。此处表示目录已核查来源，不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/LICENSE",
+        "https://github.com/N0zoM1z0/th08/issues/10",
+        "https://github.com/N0zoM1z0/th08/pull/13"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th08-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-134",
+      "unit_id": "hao-games:row-134",
+      "collection_id": "hao-games",
+      "title": "🌙 Touhou 8: Imperishable Night — N0zoM1z0/th08-web",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/N0zoM1z0/th08-web",
+        "https://th08-web.pages.dev/",
+        "https://github.com/N0zoM1z0/th08"
+      ],
+      "state": "pending",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.",
+      "reason_zh": "TH08 重建已收录，但此独立 WebAssembly 配套仓库不能作为同一制品视为已覆盖；其自身实现与部署说法仍待核查。",
+      "primary_evidence_urls": [
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/LICENSE",
+        "https://github.com/N0zoM1z0/th08/issues/10",
+        "https://github.com/N0zoM1z0/th08/pull/13"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th08-reconstruction-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-135",
+      "unit_id": "hao-games:row-135",
+      "collection_id": "hao-games",
+      "title": "🌙 Touhou 9.5: Shoot the Bullet — N0zoM1z0/th095",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/N0zoM1z0/th095"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 135 (README line 1443) lists N0zoM1z0/th095 under 🌙 Touhou 9.5: Shoot the Bullet. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 135 行（README 第 1443 行）在 🌙 Touhou 9.5: Shoot the Bullet 下列出 N0zoM1z0/th095。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-136",
+      "unit_id": "hao-games:row-136",
+      "collection_id": "hao-games",
+      "title": "🌙 Touhou 4: Lotus Land Story — N0zoM1z0/th04",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/N0zoM1z0/th04"
+      ],
+      "state": "pending",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Only the official TH04 bullet-ring helper showcase is covered. This collection row identifies a broader reconstruction repository, so full repository/game coverage remains pending.",
+      "reason_zh": "目前只覆盖官方 TH04 弹幕角度辅助函数展示；此合集行指向更广的重建仓库，因此完整仓库／游戏覆盖仍待核查。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-th04-case",
+          "kind": "case-study",
+          "scope": "partial"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-137",
+      "unit_id": "hao-games:row-137",
+      "collection_id": "hao-games",
+      "title": "🕹️ DX-Ball — N0zoM1z0/dx-ball",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/N0zoM1z0/dx-ball"
+      ],
+      "state": "pending",
+      "review_level": "catalog-mapped",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.",
+      "reason_zh": "目前只覆盖官方 DX-Ball 声像函数展示，不能据此认定此更广的游戏重建仓库已被精选收录或已完成。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/dx-ball-sound-pan.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-dxball-case",
+          "kind": "case-study",
+          "scope": "partial"
+        }
+      ]
+    },
+    {
+      "id": "hao-games:row-138",
+      "unit_id": "hao-games:row-138",
+      "collection_id": "hao-games",
+      "title": "🕹️ Larax & Zaco — Hubert-Rybak/lezac-decompilation",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://github.com/Hubert-Rybak/lezac-decompilation"
+      ],
+      "state": "pending",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Project row 138 (README line 1485) lists Hubert-Rybak/lezac-decompilation under 🕹️ Larax & Zaco. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
+      "reason_zh": "项目第 138 行（README 第 1485 行）在 🕹️ Larax & Zaco 下列出 Hubert-Rybak/lezac-decompilation。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-139",
+      "unit_id": "hao-games:row-139",
+      "collection_id": "hao-games",
+      "title": "🎪 The Little Prince: Among the Stars — The Little Prince browser experience",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://littleprince.dev/",
+        "https://x.com/0xMovez/status/2110046218034229730",
+        "https://x.com/Saccc_c/status/2109962425512734739"
+      ],
+      "state": "insufficient-evidence",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Row 139 is presented as an original browser-game showcase, not as reconstruction of an existing game. A playable link or public code does not establish reverse-engineering evidence.",
+      "reason_zh": "第 139 行作为原创浏览器游戏展示列出，而非已有游戏的重建；可玩链接或公开代码本身不能建立逆向工程证据。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
+    },
+    {
+      "id": "hao-games:row-140",
+      "unit_id": "hao-games:row-140",
+      "collection_id": "hao-games",
+      "title": "🎪 Roadster City — Roadster City browser game",
+      "collection_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
+      "reported_source_urls": [
+        "https://roadster-city.vercel.app/",
+        "https://github.com/0xCodez/roadster-city",
+        "https://x.com/0xMovez/status/2111113272535781854",
+        "https://github.com/0xCodez/roadster-city/blob/main/src/config.js"
+      ],
+      "state": "insufficient-evidence",
+      "review_level": "inventory-only",
+      "reviewed_at": "2026-10-17",
+      "reason_en": "Row 140 is presented as an original browser-game showcase, not as reconstruction of an existing game. A playable link or public code does not establish reverse-engineering evidence.",
+      "reason_zh": "第 140 行作为原创浏览器游戏展示列出，而非已有游戏的重建；可玩链接或公开代码本身不能建立逆向工程证据。",
+      "primary_evidence_urls": [],
+      "catalog_matches": []
     }
   ],
   "counts": {
-    "occurrences": 372,
-    "inventory_units": 370,
+    "occurrences": 512,
+    "inventory_units": 510,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 35,
-      "insufficient-evidence": 49,
-      "pending": 288
+      "already-curated": 46,
+      "insufficient-evidence": 51,
+      "pending": 415
     },
     "units_by_state": {
-      "already-curated": 34,
-      "insufficient-evidence": 49,
-      "pending": 287
+      "already-curated": 45,
+      "insufficient-evidence": 51,
+      "pending": 414
     },
-    "primary_reviewed_units": 23,
-    "catalog_linked_occurrences": 37,
-    "distinct_resource_ids": 33,
+    "primary_reviewed_units": 43,
+    "catalog_linked_occurrences": 51,
+    "distinct_resource_ids": 38,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

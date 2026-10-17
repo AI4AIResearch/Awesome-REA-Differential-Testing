@@ -6,9 +6,16 @@ from pathlib import Path
 import sys
 
 from case_coverage import read_case_coverage, validate_case_coverage
+from artifact_links import github_repository
 from validate import public_https_error
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def linked_repository_count(entries):
+    """Count normalized repository links without merging occurrence identities."""
+    return len({repository for entry in entries for url in entry['reported_source_urls']
+                if (repository := github_repository(url, artifact=True))})
 
 
 def render(document, resources, translations, zh=False):
@@ -22,14 +29,18 @@ def render(document, resources, translations, zh=False):
              label('Project identity resolution is incomplete, so the unique-project count is `null`, not zero. English/Chinese copies of one upstream entry are counted once. Separate reports about one project remain separate units unless an explicit alias decision joins them.',
                    '项目身份归并尚未完成，因此独立项目数为 `null`，并非零。同一上游条目的中英文版本只计一次。同一项目的不同报告仍分别计为清单单元，除非已有明确的别名合并决定。'), '',
              label('## Frozen sources', '## 固定来源'), '',
-             label('| Collection snapshot | Entries | Catalog record |', '| 合集快照 | 条目数 | 目录记录 |'), '| --- | ---: | --- |']
+             label('| Collection snapshot | Occurrences | Linked GitHub repositories | Catalog record |', '| 合集快照 | 出现项 | 链接的 GitHub 仓库 | 目录记录 |'), '| --- | ---: | ---: | --- |']
     for source in document['collections']:
         name = source['repository_url'].removeprefix('https://github.com/')
         link = source['repository_url'] + '/tree/' + source['commit']
         destination = ('/zh' if zh else '') + '/resources/#' + source['catalog_resource_id']
-        lines.append(f"| [{name} · {source['commit'][:12]}]({link}) | {source['entry_count']} | [{source['catalog_resource_id']}](https://awesomerea.org{destination}) |")
+        repository_count = linked_repository_count(entry for entry in document['entries']
+                                                   if entry['collection_id'] == source['id'])
+        lines.append(f"| [{name} · {source['commit'][:12]}]({link}) | {source['entry_count']} | {repository_count} | [{source['catalog_resource_id']}](https://awesomerea.org{destination}) |")
     lines += ['', label('The ledger retains pinned file URLs, Git blob IDs, SHA-256 digests and byte counts. It describes only these enumerated snapshots, not later upstream changes or the whole field. Full upstream descriptions and README bodies are not republished.',
                         '记录保留固定版本文件 URL、Git blob 标识、SHA-256 和字节数，仅描述这些已清点快照，不代表上游后续版本或整个领域。这里不再发布完整的上游简介或 README 正文。'), '',
+              label('Repository counts use normalized GitHub repository, tree and file links within each collection. They do not merge inventory units or establish unique projects. For a game-organized table, each project row is an occurrence; a game heading or a shared repository does not make two rows the same report.',
+                    '仓库数按每个合集中的 GitHub 仓库、目录及文件链接规范化后计数，不会据此合并清单单元，也不代表独立项目数。对于按游戏组织的表格，每个项目行是一个出现项；同一游戏标题或共享仓库不能证明两个项目行是同一报告。'), '',
               label('## Counts and states', '## 数量与状态'), '',
               label('| State | Occurrences | Inventory units | Meaning |', '| 状态 | 出现项 | 清单单元 | 含义 |'), '| --- | ---: | ---: | --- |']
     state_labels = {
@@ -59,9 +70,9 @@ def render(document, resources, translations, zh=False):
         lines.append(f"| {name} | {state_labels[entry['state']][zh]} | [{label('Source', '来源')}]({entry['primary_evidence_urls'][0]}) |")
     lines += ['', label('## Partial coverage and aliases', '## 部分覆盖与别名'), '']
     partial = [entry for entry in document['entries']
-               if any(match['scope'] == 'partial' for match in entry['catalog_matches'])]
+               if any(match['scope'] in {'partial', 'related'} for match in entry['catalog_matches'])]
     if partial:
-        lines += [label('Partial catalog mappings:', '部分目录映射：'), '']
+        lines += [label('Partial or related catalog mappings:', '部分或相关目录映射：'), '']
         for entry in partial:
             reason = entry['reason_zh' if zh else 'reason_en'].replace('\n', ' ')
             lines.append(f"- `{entry['id']}` — {reason}")
