@@ -17,16 +17,16 @@ Browse by target or topic below. **Source review does not imply runtime verifica
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (16) · [Game](#game) (42) · [App](#app) (37)
+- [Website](#website) (16) · [Game](#game) (42) · [App](#app) (38)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
 
-- [Papers](#papers) (49) · [Agents and MCP](#agents-and-mcp) (19) · [References and Learning](#references-and-learning) (20)
+- [Papers](#papers) (50) · [Agents and MCP](#agents-and-mcp) (19) · [References and Learning](#references-and-learning) (20)
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (51) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (52) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -433,6 +433,11 @@ Includes independent projects and resources for [REA (Reverse Engineer Anything)
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/ledger-reborn-accounting-case/)
 
   The maintainer reports using REA and Ghidra to study selected QuickBooks Desktop for Mac behavior, then independently implements a local accounting application. Its Python/SQLite engine persists double-entry journals, invoices, inventory and payments, while public synthetic fixtures test bounded accounting and rollback behavior.
+
+- [**Pocket Tasks: reconstructing task state and persistence**](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/tree/main/evals/reference/reconstruction)<br>
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/pocket-tasks-reconstruction-case/)
+
+  A teaching case with disclosed prior source access carries a REA-assisted investigation of a small command-line app into a separate Node implementation. It preserves observed task editing, persistence and selection behavior, then compares scoped outputs against fixed expectations and captured reference sessions.
 
 - [**LSX II Volume Fixer: reconstructing volume behavior**](https://github.com/roberdorfer/kef-lsx-volume)<br>
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/kef-lsx-volume-case/)
@@ -1018,7 +1023,7 @@ Includes independent projects and resources for [REA (Reverse Engineer Anything)
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **49 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **50 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -1026,7 +1031,7 @@ A bibliography of **49 papers** on reverse-engineering agent evaluation, decompi
 
 - [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (8) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (5)
-- [Protocols](#papers-protocol-analysis) (7)
+- [Protocols](#papers-protocol-analysis) (8)
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -1652,6 +1657,20 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 ### Protocol inference and analysis
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**ICEPRE: ICS Protocol Reverse Engineering via Data-Driven Concolic Execution**](https://dl.acm.org/doi/10.1145/3728982)<br>
+  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [Code](https://github.com/QYbPtqyb/ICEPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-icepre/)
+
+  Infers message-field boundaries by following concrete message-guided paths through binary protocol parsers, then symbolically replaying them to extract byte-level data flow. It merges bytes using value-preserving operations and similar processing traces. For the 1,000-message datasets of four public ICS protocols, the authors report average boundary F1 of 0.76 and field perfection of 0.67.
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Recovers message syntax, not field semantics, protocol state machines or endpoint equivalence. It needs the binary, loader configuration and correctly identified initialization, input and parsing functions; manual filtering remains necessary, especially without symbols. Encrypted protocols and bit-level fields are unsupported, and ignored or only copied bytes can be merged incorrectly. Perfection measures fields with both boundaries correct. Quantitative tests use four public protocols with 50- and 1,000-message sets; separate proprietary studies cover three protocols in five firmware targets, with interaction checks on three devices and manually established ground truth. Those checks do not demonstrate complete device behavior.
+
+  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Yibo Qu et al.
+
+  </details>
 
 - [**BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering**](https://dl.acm.org/doi/10.1145/3658644.3690299)<br>
   2024 · Conference paper · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-binpre/)
