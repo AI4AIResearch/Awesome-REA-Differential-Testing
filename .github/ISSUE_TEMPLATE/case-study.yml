@@ -8,8 +8,8 @@ body:
         English or 简体中文 is welcome; you do not need to write both. Partial or untested cases can be submitted. Sharing a reproduction result helps source review; it does not make a catalog entry runtime-verified.
         可用英文或简体中文填写，无需重复翻译。部分重建或未测试的案例也可提交；复现说明用于帮助来源复核，不直接作为目录的运行验证结论。
 
-        Issues are public. Link public evidence; do not upload proprietary target binaries or private captures. Remove credentials, account identifiers and personal filesystem paths. Report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
-        Issue 内容公开。请链接公开证据，不要上传专有目标二进制文件或私人抓包数据，并去除凭据、账户标识及个人文件系统路径。安全问题请按[安全策略](https://github.com/reacher-z/Awesome-REA/security/policy)私下报告。
+        Issues are public. Link public evidence; do not upload proprietary target binaries or private captures. Remove credentials, private account details and personal filesystem paths. Report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
+        Issue 内容公开。请链接公开证据，不要上传专有目标二进制文件或私人抓包数据，并去除凭据、私人账户信息及个人文件系统路径。安全问题请按[安全策略](https://github.com/reacher-z/Awesome-REA/security/policy)私下报告。
   - type: input
     id: url
     attributes:
