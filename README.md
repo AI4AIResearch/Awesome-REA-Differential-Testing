@@ -13,9 +13,9 @@ An independent, source-reviewed collection. Review does not imply runtime verifi
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-- **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>37</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>12</sub> · [Protocol](#protocol) <sub>11</sub>
+- **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>41</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>12</sub> · [Protocol](#protocol) <sub>11</sub>
 
-- [Papers](#papers) <sub>39</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
+- [Papers](#papers) <sub>40</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>41</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -73,6 +73,10 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 - [**LEGO Island: source reconstruction with separately reported exact rebuilds**](https://github.com/isledecomp/isle) - Reconstructs the English LEGO Island 1.1 source for its original 32-bit Windows target. The project distinguishes function-comparison reports, ReproBit’s reported byte-identical retail rebuilds and ordinary developer builds; its modern portable adaptation is a separate repository. <sub>Case study · Independent reconstruction</sub>
 - [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) - The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. The public notes distinguish recovered tables and mechanics from approximations and deliberate presentation changes. <sub>Case study · Mixed workflow</sub>
 - [**SpaceCadetPinball: decompiled game logic adapted to SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball) - Converts the reverse-engineered Space Cadet pinball game into compilable C++ for desktop platforms. The README identifies the Windows XP executable and public PDB, a Full Tilt executable, and the work of recovering structures, naming variables and adapting the decompiled routines. <sub>Case study · Independent reconstruction</sub>
+- [**Super Mario 64: ROM reconstruction with explicit comparison gates**](https://github.com/n64decomp/sm64) - Reconstructs Super Mario 64 source for Japanese, North American, European, Shindou and iQue releases. Its build files distinguish original-ROM hash comparison from nonmatching or modified configurations, while source naming and documentation remain ongoing. <sub>Case study · Independent reconstruction</sub>
+- [**Unleashed Recompiled: translating Xbox 360 game code and shaders**](https://github.com/hedge-dev/UnleashedRecomp) - Builds an unofficial Sonic Unleashed PC port by statically recompiling Xbox 360 PowerPC code with XenonRecomp and Xenos shaders with XenosRecomp. The port adds modern display and modding options while documenting original-engine limits and remaining compatibility issues. <sub>Case study · Independent reconstruction</sub>
+- [**OpenMW: replacing Morrowind’s engine while reusing original content**](https://github.com/OpenMW/openmw) - Provides an independent engine for playing Morrowind and an alternative editor, OpenMW-CS. It loads original game content through its own runtime and documents script and mod compatibility differences; it is an engine replacement rather than a recovered Bethesda source tree. <sub>Case study · Independent reconstruction</sub>
+- [**REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer**](https://github.com/OpenDriver2/REDRIVER2) - Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. The project documents symbol-assisted Ghidra/IDA work alongside intentional bug fixes and gameplay changes. <sub>Case study · Independent reconstruction</sub>
 - [**LASRecomp: Link’s Awakening static recompilation**](https://github.com/peiikai/LASRecomp) - A native desktop reconstruction of the 2019 Switch version of Link’s Awakening using static recompilation. The author attributes most code, tooling and reverse-engineering work to Claude Code with human direction and review. <sub>Case study · Independent reconstruction</sub>
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb) - Runs Spider-Man Remastered and Arkham Knight together, streaming Gotham collision into Spider-Man’s physics world and compositing his rendered frame into Arkham. This experimental runtime bridge is not a recovered standalone game or new engine. <sub>Case study · Independent reconstruction</sub>
 
@@ -276,11 +280,11 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **39 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **40 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>7</sub> · [Websites](#papers-website-reconstruction) <sub>12</sub> · [Games](#papers-game-reconstruction) <sub>5</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>3</sub>
+**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>7</sub> · [Websites](#papers-website-reconstruction) <sub>12</sub> · [Games](#papers-game-reconstruction) <sub>6</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>3</sub>
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -736,6 +740,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
   **Scope and limits:** Assumes deterministic dynamics and symbolic, discrete states rather than recovering a game from arbitrary pixels or binaries. Consistency with observed transitions and successful planning do not establish complete engine equivalence or correctness on every unseen state. Evaluation concerns bounded environment models and planning, not original source or asset recovery.
 
   **Publication:** 2024 · NeurIPS 2024 · Conference paper · Hao Tang et al.
+
+  </details>
+
+- [**Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html) · **2024 · Conference paper**
+
+  GIF-MCTS generates executable Python transition and reward models from natural-language environment descriptions and offline state-transition trajectories, using prediction feedback to generate, improve and repair code. CWMB evaluates 18 reinforcement-learning environments and downstream planning; a separate experiment uses a simplified Read to Fight Monsters grid world.
+
+  [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [Code](https://github.com/nicoladainese96/code-world-models)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.
+
+  **Publication:** 2024 · NeurIPS 2024 · Conference paper · Nicola Dainese et al.
 
   </details>
 
