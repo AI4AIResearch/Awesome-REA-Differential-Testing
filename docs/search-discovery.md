@@ -6,7 +6,7 @@ The canonical website is [AwesomeREA.org](https://awesomerea.org/); the public s
 
 ## What the site provides
 
-- `/papers/` and `/zh/papers/` provide the source-reviewed bibliography with original author names, publication status, precise dates, bilingual scope limits and BibTeX downloads. Some papers also appear in the curated catalog; the counts are not additive.
+- `/papers/` and `/zh/papers/` provide the source-reviewed bibliography with original author names, publication status, precise dates, bilingual scope limits and BibTeX downloads. The `.bib` files use standard month macros and are served as `application/x-bibtex; charset=utf-8` through [site/_headers](../site/_headers). Some papers also appear in the curated catalog; the counts are not additive.
 - `/resources/` and `/zh/resources/` contain every curated record in ordinary HTML, with its original source, review date, requirements, and a stable section link.
 - `/about/` and `/zh/about/` explain the collection, its relationship to REA, source review, and the separate automated repository index.
 - `/browse/` and `/zh/browse/` provide category pages for the automated index. Their provenance stays distinct from curated resources.
@@ -44,13 +44,7 @@ Do not place account emails, dashboard URLs with private identifiers, session co
 
 ## Measurement
 
-Keep a dated private log for a small fixed query set, including both branded and non-branded questions. Examples:
-
-- `AwesomeREA reverse engineering resources`
-- `tools for reverse engineering Electron apps`
-- `MCP tools for Ghidra and IDA`
-- `papers on LLM decompilation evaluation`
-- `逆向工程工具与论文目录`
+Keep a dated private log using the [versioned EN/ZH query set](discovery/queries.v1.json) and [empty observation template](discovery/observation.template.json). The [bilingual observation guide](discovery/README.md) defines provider/version fields, exact-query matching, bounded inspection, distinct failure and citation outcomes, and privacy review before publishing a summary. These files contain no measured results and do not run or schedule searches.
 
 For each observation, record query, language, engine, date, whether web search actually ran, visible source URLs, and whether the cited statement matches the page. Repeat with fixed paraphrases and preserve failures. Record Search Console indexing separately from impressions/clicks and from AI citations. Avoid presenting a single successful answer as durable visibility or a causal effect of these changes.
 

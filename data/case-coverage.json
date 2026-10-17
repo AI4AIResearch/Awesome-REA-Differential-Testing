@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_at": "2026-10-17",
-  "catalog_revision": "bc54d5687a397ac803bf94046bffa31eacd7855f",
+  "catalog_revision": "3b2737005cb1d6a8c4478f27bc1e2273c47f488d",
   "runtime_reproduced": false,
   "project_identity_resolution": "incomplete",
   "collections": [
@@ -7784,13 +7784,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:using-coding-agents-to-decompile-nintendo-64-games",
@@ -7803,13 +7813,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:all-games-are-open-source-now",
@@ -7955,13 +7975,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:finding-jingle-town-debugging-an-n64-game-without-symbols",
@@ -8616,11 +8646,11 @@
         "https://github.com/Zelda64Recomp/Zelda64Recomp",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bilingual draft prepared; case publication remains pending, so no catalog mapping is claimed. Static recompilation of the US N64 Majora’s Mask, with RT64 and decompilation headers/functions for enhancements; Ocarina of Time is planned. Team explicitly disclaims GenAI development. Draft preserves original-ROM, graphics/CPU and source-build dependencies, GPLv3 terms, reported-vs-reproduced boundary and no REA attribution.",
-      "reason_zh": "已核查固定版本 README、构建说明和许可，并准备了双语草稿，案例尚未发布，不记为已精选收录。范围是美版 N64《姆吉拉的假面》静态重编译；《时之笛》仍在计划中，团队明确声明不使用生成式 AI。本记录不将草稿视为已精选案例，也未复现运行结果。",
+      "reason_en": "The published case covers this US N64 Majora’s Mask static recompilation with its original-ROM and platform requirements. Ocarina of Time remains planned, and the project explicitly disclaims generative-AI development. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布案例覆盖此美版 N64《姆吉拉的假面》静态重编译及原 ROM、平台要求。《时之笛》仍在计划中，项目明确声明不使用生成式 AI 开发。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
         "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md",
         "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
@@ -8628,7 +8658,14 @@
         "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/BUILDING.md",
         "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CONTRIBUTING.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "zelda64recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-020",
@@ -9129,11 +9166,11 @@
       "reported_source_urls": [
         "https://github.com/open-goal/jak-project"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bilingual draft prepared; case publication remains pending, so no catalog mapping is claimed. OpenGOAL reconstructs GOAL with manually supplied types and a custom compiler. Jak 1, Jak 2 beta and unfinished Jak 3 have different status; macOS native ARM64 remains experimental/unsupported. Draft preserves original PS2 edition requirements, x86-64/Rosetta boundary, development prerequisites and ISC/original-asset separation.",
-      "reason_zh": "已核查固定版本源码说明、平台构建指南与 ISC 许可，并准备双语草稿，案例尚未发布，不记为已精选收录。Jak 1、测试阶段的 Jak 2 和未完成的 Jak 3 状态不同；macOS 原生 ARM64 构建仍属不受支持的实验功能。未建立 REA 参与或独立运行复现。",
+      "reason_en": "The published OpenGOAL case covers this GOAL-code reconstruction and compiler workflow. Jak 1, Jak 2 beta and unfinished Jak 3 remain distinct, as do supported x86-64/Rosetta and experimental native ARM64 builds. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 OpenGOAL 案例覆盖此 GOAL 代码重建与编译器流程，区分 Jak 1、测试阶段的 Jak 2 和未完成的 Jak 3，也区分受支持的 x86-64／Rosetta 与实验性原生 ARM64 构建。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
         "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md",
         "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
@@ -9141,7 +9178,14 @@
         "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/linux.md",
         "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/macos.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "opengoal-jak-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-045",
@@ -9193,17 +9237,24 @@
       "reported_source_urls": [
         "https://github.com/isledecomp/isle"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bilingual draft prepared; case publication remains pending, so no catalog mapping is claimed. LEGO Island targets English 1.1 and original 32-bit Windows. README reports exact ReproBit cold rebuilds for three binaries, separately from ordinary CMake and isle-portable. Draft labels exact rebuilds as upstream reports, preserves original files/toolchain requirements and LGPLv3 boundary; no binary/report experiment was rerun.",
-      "reason_zh": "已核查英文 LEGO Island 1.1 的 README、构建和 LGPLv3 许可并准备双语草稿，案例尚未发布，不记为已精选收录。上游报告三个原版二进制的精确 ReproBit 重构建；普通 CMake 与 isle-portable 是不同路径，本记录未执行验证。",
+      "reason_en": "The published LEGO Island case covers the English 1.1 reconstruction, separating upstream-reported exact ReproBit rebuilds from ordinary CMake builds and the separate portable adaptation. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 LEGO Island 案例覆盖英文 1.1 版重建，区分上游报告的精确 ReproBit 重构建、普通 CMake 构建及另一仓库中的可移植适配。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
         "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md",
         "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
         "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lego-island-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-048",
@@ -10635,11 +10686,11 @@
       "reported_source_urls": [
         "https://github.com/tuunanet/rea-ski-or-die-reconstruction"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bilingual draft prepared; case publication remains pending, so no catalog mapping is claimed. REA CLI/Ghidra-backed Snowball War analysis has explicit scope limits, approximations and no side-by-side runtime comparison. Notes document a deliberate animation-placement deviation. Draft uses actual MIT OR Apache-2.0 LICENSE/Cargo terms while noting README shorthand; avoids stale README count of 17 tests because pinned tests/gameplay.rs contains 18 #[test] declarations.",
-      "reason_zh": "已核查 Snowball War 的 REA CLI/Ghidra 笔记、构建、测试源码与许可，并准备双语草稿，案例尚未发布，不记为已精选收录。仅涵盖一个小游戏；有帧率、随机算法和表现近似，缺少原 DOS 游戏运行对照。LICENSE/Cargo 为 MIT OR Apache-2.0，README 的 MIT 简写和旧测试数量不扩展为已验证结果。",
+      "reason_en": "The published Snowball War case covers this one-minigame REA workflow, preserving approximated timing/random behavior, absent audio playback and the lack of comparison with the running DOS original. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 Snowball War 案例覆盖此单一小游戏的 REA 工作流，保留计时／随机行为近似、未实现声音播放及缺少原 DOS 游戏运行对照的边界。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
         "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md",
         "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/Cargo.toml",
@@ -10647,7 +10698,14 @@
         "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/docs/reverse-engineering-notes.md",
         "https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/tests/gameplay.rs"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowball-war-rea-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-119",
@@ -10890,17 +10948,24 @@
       "reported_source_urls": [
         "https://github.com/k4zmu2a/SpaceCadetPinball"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bilingual draft prepared; case publication remains pending, so no catalog mapping is claimed. SpaceCadetPinball describes Ghidra/IDA-assisted C++ recovery using named XP/PDB and Full Tilt sources. Desktop project and external ports are distinguished; original assets are required. Draft preserves C++11/SDL2/SDL2_mixer requirements, MIT terms, unfinished Full Tilt features and no independently verified byte match.",
-      "reason_zh": "已核查 SpaceCadetPinball 的固定版本 README、CMake 和 MIT 许可，并准备双语草稿，案例尚未发布，不记为已精选收录。它基于指定 XP/PDB 和 Full Tilt 来源恢复 C++，需要原素材；桌面主项目与外部移植分开，不声称独立验证了字节匹配或运行结果。",
+      "reason_en": "The published SpaceCadetPinball case covers this C++/SDL2 recovery using specified XP/PDB and Full Tilt sources, with original-resource requirements and separate external ports. It does not assert a byte-identical rebuild. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "已发布的 SpaceCadetPinball 案例覆盖此基于指定 XP/PDB 和 Full Tilt 来源的 C++／SDL2 恢复，保留原资源要求并区分外部移植，不声称逐字节一致重构建。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
         "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md",
         "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
         "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "space-cadet-pinball-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-132",
@@ -11132,18 +11197,18 @@
     "inventory_units": 510,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 38,
+      "already-curated": 46,
       "insufficient-evidence": 51,
-      "pending": 423
+      "pending": 415
     },
     "units_by_state": {
-      "already-curated": 37,
+      "already-curated": 45,
       "insufficient-evidence": 51,
-      "pending": 422
+      "pending": 414
     },
-    "primary_reviewed_units": 40,
-    "catalog_linked_occurrences": 43,
-    "distinct_resource_ids": 32,
+    "primary_reviewed_units": 43,
+    "catalog_linked_occurrences": 51,
+    "distinct_resource_ids": 38,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
