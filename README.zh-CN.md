@@ -17,16 +17,16 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (15) · [游戏](#game) (42) · [应用](#app) (37)
+- [网站](#website) (16) · [游戏](#game) (42) · [应用](#app) (37)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
 
-- [论文](#papers) (47) · [智能体与 MCP](#agents-and-mcp) (18) · [文档与学习资源](#references-and-learning) (20)
+- [论文](#papers) (49) · [智能体与 MCP](#agents-and-mcp) (19) · [文档与学习资源](#references-and-learning) (20)
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (50) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (51) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -56,6 +56,11 @@
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)
 
   记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。
+
+- [**BaoCut Slides：交互式网页编辑器改编**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)<br>
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)
+
+  记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。
 
 #### 工具、项目与集成
 
@@ -874,6 +879,11 @@
 
   基于 PyGhidra 的 MCP 服务器，可分析 Ghidra 项目中的全部二进制，提供反编译、交叉引用、调用图、符号与字符串搜索、基于索引的语义代码检索，以及重命名、类型和注释编辑。另附基于 HTTP 的独立命令行客户端，以及可选的图形界面模式：由服务器自行启动 Ghidra 图形界面并加以操控。
 
+- [**LeanREA 命令行逆向分析技能**](https://github.com/aicodeking/leanrea)<br>
+  集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/leanrea-skill/)
+
+  独立智能体技能，使用普通命令行工具开展应用与二进制调查，提供批量初查、针对性源码／反汇编阅读，以及明确的已观察／推断／未知证据标记，并附有作者报告的 REA MCP 工作流小规模对照。
+
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
 
@@ -1009,7 +1019,7 @@
 <a id="papers"></a>
 ## 论文
 
-收录 **47 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
+收录 **49 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -1017,7 +1027,7 @@
 
 - [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (8) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (5) · [固件](#papers-firmware-analysis) (5)
-- [协议](#papers-protocol-analysis) (5)
+- [协议](#papers-protocol-analysis) (7)
 
 展开各条目的“范围与发表信息”可查看完整研究边界；以下按年份从新到旧排列。
 
@@ -1643,6 +1653,34 @@
 ### 协议推断与分析
 
 [↑ 论文主题](#papers) · [目录](#目录)
+
+- [**BinPRE：增强基于二进制分析的协议逆向工程中的字段推断**](https://dl.acm.org/doi/10.1145/3658644.3690299)<br>
+  2024 · 会议论文 · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [代码](https://github.com/ecnusse/BinPRE) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-binpre/)
+
+  根据受插桩监测的服务端二进制及输入报文，推断协议报文的字段边界与语义。BinPRE 按处理字节的指令操作符进行分组，使用检测器识别字段类型和功能，再借助相似报文细化结果。作者在八种协议、每种 50 条报文上报告平均字段完美分割率为 0.73，类型／功能推断的 F1 分数为 0.74／0.81。
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 研究对象是字段推断，不是恢复协议状态机或端点的完整行为。方法需要能够访问并插桩的实现及运行时的报文处理；仅有被动捕获数据并不足够。完美分割率统计被精确分割的字段占全部真实字段的比例，而非完整恢复的协议比例。检测器库覆盖五种语义类型与六种功能。字节级污点分析无法准确解析位标志，也不确立未执行行为。真实标签依据 Wireshark 解析器与协议规范构建；三种二进制分析基线由作者重新实现。报告的模糊测试改进属于下游评估，不是实现等价性的证明。
+
+  **发表信息:** 2024 · ACM CCS 2024 · 会议论文 · Jiayi Jiang 等
+
+  </details>
+
+- [**BinaryInferno：面向二进制报文格式字段推断的语义驱动方法**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/)<br>
+  2023 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [代码](https://github.com/binaryinferno/binaryinferno) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-binaryinferno/)
+
+  无需对可执行程序插桩，即可从静态报文样本推断部分二进制报文格式。专用检测器识别浮点数、时间戳、长度、熵边界和序列化模式，再通过基于图的集成步骤协调各自的描述。作者对十种协议的样本开展评估，在每组 1,000 条报文且不使用分析者先验的设置下，报告顶层字段边界的精确率为 0.69、召回率为 0.73、假阳性率为 0.04。
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 假设数据无错误、未经压缩或加密、按字节对齐，并推断起始偏移一致的共有字段或载荷区域。可选字段、联合类型字段及不支持的序列化模式仍未解决；样本多样性会影响结果。26 组封装载荷测试集依据已知真实报文类型预先分组，并非自动发现。真实标签合并了在整个样本中均保持常量的相邻字段；文中注明的平均值排除了没有推断结果的样本。BI+ 额外使用给定的字节序和捕获时间范围。这些是字段边界结果，不代表完整语义恢复、协议状态推断或行为等价。
+
+  **发表信息:** 2023 · NDSS 2023 · 会议论文 · Jared Chandler 等
+
+  </details>
 
 - [**越仔细观察，学到的越多：用于协议状态机学习的灰盒方法**](https://doi.org/10.1145/3548606.3559365)<br>
   2022 · 会议论文 · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [代码](https://github.com/ChrisMcMStone/state-inspector) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-stateinspector/)

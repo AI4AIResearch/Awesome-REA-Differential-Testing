@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_at": "2026-10-17",
-  "catalog_revision": "bbb6c162dd589ac3ae913ba9454b1163883d881f",
+  "catalog_revision": "65f9292947ca93b7f73d2eb0bf88637658e06631",
   "runtime_reproduced": false,
   "project_identity_resolution": "incomplete",
   "collections": [
@@ -443,13 +443,28 @@
         "https://x.com/dotey/status/2109151666020794711",
         "https://github.com/JimLiu/baocut/commit/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Pinned component code, design notes and tests establish the named BaoCut Slides adaptation report. Full mapping covers this editor-specific report, not all BaoCut features or complete Claude service equivalence. Web validation remains author-reported; original backend, exact Claude input provenance and third-party reuse rights are not established by this review.",
+      "reason_zh": "固定版本的组件源码、设计说明与测试确立了具名 BaoCut Slides 改编报告。完整映射仅覆盖这一编辑器报告，不代表整个 BaoCut 或完整 Claude 服务等价。Web 验证仍为作者报告；本次审阅未确立原有后端、确切 Claude 输入来源或第三方复用权。",
+      "primary_evidence_urls": [
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/docs/design/slides/slides-design.md",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime/README.md",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-store.test.ts",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-routes.test.ts",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-check.test.ts",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/LICENSE",
+        "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/THIRD_PARTY_NOTICES.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "baocut-slides-editor-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:claude-code-analysis",
@@ -7997,13 +8012,27 @@
         "https://x.com/i/status/2111299719888884167",
         "https://x.com/i/status/2111298045421953535"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Pinned skill, harness, answer keys and published metrics establish the named LeanREA integration and its bounded author benchmark. The full mapping covers this inventory report as an integration, not an additional reconstruction case. Unequal scores, a prose-only grading correction and missing transcripts/target hashes remain explicit; no runtime or general replacement claim is verified.",
+      "reason_zh": "固定版本的技能、运行器、答案键与公开指标确立了具名 LeanREA 集成及其有限范围的作者基准。完整映射覆盖该清单报告，并以集成分类，不增加重建案例。不同得分、仅在正文中说明的评分修正，以及缺失的回答转录／目标哈希均明确保留；未验证运行结果或普遍替代能力。",
+      "primary_evidence_urls": [
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md",
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/leanrea/SKILL.md",
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/bench/BENCHMARK.md",
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/bench/tasks.json",
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/bench/run.py",
+        "https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/bench/results/final.jsonl"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "leanrea-skill",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:mise-ghidra-claude-rules",
@@ -12034,18 +12063,18 @@
     "inventory_units": 541,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 53,
+      "already-curated": 55,
       "insufficient-evidence": 51,
-      "pending": 439
+      "pending": 437
     },
     "units_by_state": {
-      "already-curated": 52,
+      "already-curated": 54,
       "insufficient-evidence": 51,
-      "pending": 438
+      "pending": 436
     },
-    "primary_reviewed_units": 48,
-    "catalog_linked_occurrences": 59,
-    "distinct_resource_ids": 50,
+    "primary_reviewed_units": 50,
+    "catalog_linked_occurrences": 61,
+    "distinct_resource_ids": 52,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

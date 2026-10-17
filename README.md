@@ -17,16 +17,16 @@ Browse by target or topic below. **Source review does not imply runtime verifica
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (15) · [Game](#game) (42) · [App](#app) (37)
+- [Website](#website) (16) · [Game](#game) (42) · [App](#app) (37)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
 
-- [Papers](#papers) (47) · [Agents and MCP](#agents-and-mcp) (18) · [References and Learning](#references-and-learning) (20)
+- [Papers](#papers) (49) · [Agents and MCP](#agents-and-mcp) (19) · [References and Learning](#references-and-learning) (20)
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (50) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (51) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -55,6 +55,11 @@ Includes independent projects and resources for [REA (Reverse Engineer Anything)
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/rauchg-rsc-reconstruction-case/)
 
   Documents a website-rebuild-skill case that decodes browser-delivered React Server Component Flight streams, reconstructs a buildable Next project and compares its output with a captured site. The reported rauchg.com campaign uses route-tree comparison and module-reference mapping; the new server source is inferred from observable output.
+
+- [**BaoCut Slides: adapting an interactive web editor**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)<br>
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/baocut-slides-editor-case/)
+
+  Documents BaoCut’s interactive slide editor, whose author says the implementation draws on Claude Slides. It adds a local deck store, HTML/CSS compiler and annotation-to-agent bridge for browser and desktop hosts; the design reports a Web-flow check, without establishing original backend recovery or full behavioral parity.
 
 #### Tools, projects and integrations
 
@@ -873,6 +878,11 @@ Includes independent projects and resources for [REA (Reverse Engineer Anything)
 
   PyGhidra-based MCP server that analyzes every binary in a Ghidra project and exposes decompilation, cross-references, call graphs, symbol and string search, indexed semantic code search, and renaming, typing and comment edits. A separate HTTP CLI client and an optional mode driving a Ghidra GUI it launches are included.
 
+- [**LeanREA**](https://github.com/aicodeking/leanrea)<br>
+  Integration · Independent agent · [Requirements & evidence](https://awesomerea.org/resources/leanrea-skill/)
+
+  An independent agent skill that routes application and binary investigations through ordinary command-line tools. It supplies batched triage recipes, targeted source/disassembly reading and explicit seen/inferred/unknown evidence labels, accompanied by a small author-reported comparison against an REA MCP workflow.
+
 <a id="related-collections"></a>
 ### Related Collections
 
@@ -1008,7 +1018,7 @@ Includes independent projects and resources for [REA (Reverse Engineer Anything)
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **47 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **49 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -1016,7 +1026,7 @@ A bibliography of **47 papers** on reverse-engineering agent evaluation, decompi
 
 - [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (8) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (5)
-- [Protocols](#papers-protocol-analysis) (5)
+- [Protocols](#papers-protocol-analysis) (7)
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -1642,6 +1652,34 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 ### Protocol inference and analysis
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering**](https://dl.acm.org/doi/10.1145/3658644.3690299)<br>
+  2024 · Conference paper · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-binpre/)
+
+  Infers protocol-message field boundaries and semantics from instrumented server binaries and input messages. BinPRE groups bytes by the instruction operators that process them, applies detectors for field types and functions, then refines results across similar messages. On eight protocols with 50 messages each, the authors report average field perfection of 0.73 and type/function F1 scores of 0.74/0.81.
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** This is field inference, not recovery of a protocol state machine or complete endpoint behavior. It requires an accessible, instrumentable implementation and runtime message processing; passive captures alone are insufficient. Perfection counts exactly segmented fields against all true fields, not fully recovered protocols. The detector library covers five semantic types and six functions. Byte-level taint cannot accurately resolve bit flags, and unexercised behavior is not established. Ground truth uses Wireshark dissectors and specifications; three binary-analysis baselines were author reimplementations. Reported fuzzing improvements are a downstream evaluation, not proof of implementation equivalence.
+
+  **Publication:** 2024 · ACM CCS 2024 · Conference paper · Jiayi Jiang et al.
+
+  </details>
+
+- [**BinaryInferno: A Semantic-Driven Approach to Field Inference for Binary Message Formats**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/)<br>
+  2023 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [Code](https://github.com/binaryinferno/binaryinferno) · [Full entry & citation](https://awesomerea.org/papers/paper-binaryinferno/)
+
+  Infers partial binary-message formats from static message samples without instrumenting an executable. Specialized detectors recognize floats, timestamps, lengths, entropy boundaries and serialization patterns; a graph-based integration step reconciles their descriptions. Across samples from ten protocols, the authors report top-level field-boundary precision of 0.69, recall of 0.73 and false-positive rate of 0.04 for the 1,000-message setting without analyst priors.
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Assumes error-free, uncompressed, unencrypted, byte-aligned data and infers common fields or payload regions beginning at consistent offsets. It leaves optional/union fields and unsupported serialization patterns unresolved; sample diversity matters. The 26 encapsulated-payload test sets were pre-grouped using ground-truth message types, not discovered automatically. Ground truth merges adjacent fields that are constant across the sample; empty inference results are excluded from reported averages where stated. BI+ additionally uses supplied endianness and capture-time ranges. These are field-boundary results, not complete semantic recovery, protocol-state inference or behavioral equivalence.
+
+  **Publication:** 2023 · NDSS 2023 · Conference paper · Jared Chandler et al.
+
+  </details>
 
 - [**The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning**](https://doi.org/10.1145/3548606.3559365)<br>
   2022 · Conference paper · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [Code](https://github.com/ChrisMcMStone/state-inspector) · [Full entry & citation](https://awesomerea.org/papers/paper-stateinspector/)
