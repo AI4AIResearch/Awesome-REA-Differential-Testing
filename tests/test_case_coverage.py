@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from case_coverage import coverage_counts, read_case_coverage, validate_case_coverage
-from build_case_coverage import render
+from build_case_coverage import linked_repository_count, render
 from validate import public_https_error
 import review_pr
 
@@ -61,6 +61,34 @@ class CaseCoverageTests(unittest.TestCase):
 
     def test_valid_inventory_keeps_project_count_unknown(self):
         self.assertEqual(self.errors(fixture()), [])
+
+    def test_repository_links_do_not_merge_occurrences_or_count_subpaths_twice(self):
+        document = fixture()
+        original = copy.deepcopy(document)
+        document['entries'][0]['reported_source_urls'] += [
+            'https://github.com/EXAMPLE/Project.git',
+            'https://github.com/example/project/blob/' + PIN + '/README.md',
+            'https://github.com/example/project/tree/main/subdir',
+            'https://github.com/example/another',
+            'https://example.org/game',
+        ]
+        self.assertEqual(linked_repository_count(document['entries']), 2)
+        self.assertEqual(coverage_counts(document['entries']), original['counts'])
+        self.assertEqual(self.errors(document), [])
+
+    def test_related_mapping_is_visible_without_claiming_full_coverage(self):
+        document = fixture()
+        entry = document['entries'][2]
+        entry['state'] = 'pending'
+        entry['catalog_matches'][0]['scope'] = 'related'
+        entry['reason_en'] = 'The parent is curated; the separate port remains pending.'
+        entry['reason_zh'] = '父项目已收录；独立移植项目仍待核查。'
+        document['counts'] = coverage_counts(document['entries'])
+        self.assertEqual(self.errors(document), [])
+        for zh in (False, True):
+            summary = render(document, {row['id']: row for row in RESOURCES}, {}, zh)
+            self.assertIn(entry['reason_zh' if zh else 'reason_en'], summary)
+            self.assertIn('部分或相关目录映射' if zh else 'Partial or related catalog mappings', summary)
 
     def test_count_grains_and_boolean_counts_are_rejected(self):
         for key, value in [('inventory_units', 3), ('unique_projects', 2), ('distinct_resource_ids', True)]:
