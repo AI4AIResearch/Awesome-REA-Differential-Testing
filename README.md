@@ -15,12 +15,12 @@ An independent collection reviewed against primary sources. **Source review does
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (14) · [Game](#game) (41) · [App](#app) (32)
+- [Website](#website) (14) · [Game](#game) (42) · [App](#app) (34)
 - [Native Binary](#native-binary) (20) · [Firmware & Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and more**
 
-- [Papers](#papers) (40) · [All cases](https://awesomerea.org/?view=curated&kind=case-study) (43) · [Repository index](#full-repository-index) (2,846)
+- [Papers](#papers) (42) · [All cases](https://awesomerea.org/?view=curated&kind=case-study) (46) · [Repository index](#full-repository-index) (2,846)
 - [Agents & MCP](#agents-and-mcp) (18) · [Collections](#related-collections) (4) · [Learning](#references-and-learning) (17)
 <!-- END GENERATED CONTENTS -->
 
@@ -188,6 +188,10 @@ Independent projects and [REA](https://github.com/morluto/rea) resources are inc
 
   Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. The project documents symbol-assisted Ghidra/IDA work alongside intentional bug fixes and gameplay changes.
 
+- [**DevilutionX: porting Diablo’s reconstructed engine**](https://github.com/diasurgical/DevilutionX) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/devilutionx-case/)
+
+  Builds a modern Diablo and Hellfire port on the Devilution reconstruction, with platform support, bug fixes and optional quality-of-life features. The project documents the original symbol-assisted reconstruction and includes selected dungeon-generation and saved-game regression checks.
+
 - [**LASRecomp: Link’s Awakening static recompilation**](https://github.com/peiikai/LASRecomp) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lasrecomp/)
 
   A native desktop reconstruction of the 2019 Switch version of Link’s Awakening using static recompilation. The author attributes most code, tooling and reverse-engineering work to Claude Code with human direction and review.
@@ -320,6 +324,14 @@ Independent projects and [REA](https://github.com/morluto/rea) resources are inc
 - [**WordCraft: document workflow reconstruction and bounded DOCX compatibility**](https://github.com/storytold/wordcraft) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/wordcraft-case/)
 
   The authors describe WordCraft as a clean-room Rust implementation of familiar Microsoft Word workflows. It provides its own document model, layout engine and DOCX reader/writer, with desktop and browser interfaces; source tests exercise selected editing and file-preservation behavior.
+
+- [**GridCraft: spreadsheet workflow reconstruction and XLSX round-trip limits**](https://github.com/storytold/gridcraft) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/gridcraft-case/)
+
+  The authors describe GridCraft as a clean-room Rust implementation of Excel-style spreadsheet workflows. A workbook model, formula parser and dependency-driven recalculation are connected to XLSX I/O and a shared editing-command layer for desktop, browser and automation interfaces.
+
+- [**DeckCraft: presentation workflow reconstruction and bounded PPTX interchange**](https://github.com/storytold/deckcraft) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/deckcraft-case/)
+
+  The authors describe DeckCraft as a clean-room Rust implementation of PowerPoint-style presentation workflows. Its slide model, rendering and command layers support desktop/browser editing and PPTX interchange; reviewed source tests check constructed decks and selected preserved package parts.
 
 - [**LSX II Volume Fixer: reconstructing volume behavior**](https://github.com/roberdorfer/kef-lsx-volume) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/kef-lsx-volume-case/)
 
@@ -782,11 +794,11 @@ Independent projects and [REA](https://github.com/morluto/rea) resources are inc
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **40 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **42 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**By topic** · [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (7) · [Websites](#papers-website-reconstruction) (12) · [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (2) · [Protocols](#papers-protocol-analysis) (3)
+**By topic** · [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (7) · [Websites](#papers-website-reconstruction) (12) · [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (3) · [Protocols](#papers-protocol-analysis) (4)
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -1375,10 +1387,40 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 
   </details>
 
+- [**HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) · **2020 · Conference paper**
+
+  HALucinator rehosts monolithic ARM Cortex-M firmware by identifying hardware-abstraction-library functions and replacing them with authored Python handlers and peripheral models. LibMatch locates library interfaces; the QEMU/Avatar2 implementation supports interactive I/O, while the paper-associated HAL-fuzz variant uses AFL-Unicorn for fuzzing.
+
+  [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [Code](https://github.com/embedded-sec/halucinator) · [Full entry & citation](https://awesomerea.org/papers/paper-halucinator/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** LibMatch requires an available HAL/library and a sufficiently similar compilation environment; compiler variation and inlining limit matching. Rehosting also needs a QEMU-supported architecture, firmware memory layout, interception addresses and authored handlers/models. Unmodeled direct hardware accesses may return zero or ignore writes, and simplified timing and peripheral behavior do not establish hardware equivalence. The authors’ rehosting and fuzzing demonstrations are not universal firmware coverage, complete device reconstruction or original-source recovery.
+
+  **Publication:** 2020 · USENIX Security 2020 · Conference paper · Abraham A Clements et al.
+
+  </details>
+
 <a id="papers-protocol-analysis"></a>
 ### Protocol inference and analysis
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning**](https://doi.org/10.1145/3548606.3559365) · **2022 · Conference paper**
+
+  StateInspector learns protocol Mealy machines by combining active message queries with snapshots of runtime memory, without requiring the target’s source code. It identifies candidate state-defining heap locations and uses taint and concolic analysis to merge states, evaluated by the authors on TLS 1.2 and WPA/2 implementations.
+
+  [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [Code](https://github.com/ChrisMcMStone/state-inspector) · [Full entry & citation](https://awesomerea.org/papers/paper-stateinspector/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Assumes a finite Mealy-machine abstraction, a known input alphabet that can reach the relevant states, and state-defining memory on the heap exercised by bootstrap queries. State merging depends on configured search-depth and symbolic look-ahead bounds. Missing inputs or state stored elsewhere can leave behavior unmodeled; malformed harness messages, response abstraction and timeouts can create misleading transitions. Learned models and bounded checks do not establish full implementation equivalence, recover unknown message formats or reconstruct an application’s source code.
+
+  **Publication:** 2022 · ACM CCS 2022 · Conference paper · Chris McMahon Stone et al.
+
+  </details>
 
 - [**NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/) · **2021 · Conference paper**
 
