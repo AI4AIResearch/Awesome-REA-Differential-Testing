@@ -632,52 +632,180 @@ def validate_source_index(document, errors):
     return len(records)
 
 
-LIST_MARKER = re.compile(r'([-+*]|\d{1,9}[.)])( +|$)')
-BLOCK_START = re.compile(r'(?:[-+*]|\d{1,9}[.)])(?: |$)|`{3,}|~{3,}|#{1,6}(?: |$)|>')
+def list_item_prefix(line):
+    """Return (marker column, content column, marker) within the current container."""
+    match = re.match(r'^( {0,3})([-+*]|[0-9]{1,9}[.)])(?: +(.*)|$)', line)
+    if not match:
+        return None
+    marker_column = len(match[1])
+    marker_end = marker_column + len(match[2])
+    padding = len(line[marker_end:]) - len(line[marker_end:].lstrip(' '))
+    # Five or more spaces leave an indented code block after one padding space.
+    content_column = marker_end + (padding if 1 <= padding <= 4 else 1)
+    return marker_column, content_column, match[2]
 
 
-def prose_only(text):
-    """Remove fenced and indented code while retaining line numbers.
+def fence_start(line):
+    match = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)$', line)
+    if match and not (match[1][0] == '`' and '`' in match[2]):
+        return match[1][0], len(match[1])
+    return None
 
-    As in CommonMark, indentation counts from the enclosing list item's content, so
-    nested items and continuation paragraphs remain prose, and indented code cannot
-    interrupt a paragraph.
-    """
-    lines, fence, items, paragraph = [], None, [], False
-    for line in text.splitlines(keepends=True):
-        hidden = '\n' if line.endswith('\n') else ''
-        expanded = line.rstrip('\r\n').expandtabs(4)
-        content = expanded.lstrip(' ')
-        indent = len(expanded) - len(content)
-        if not content:
-            lines.append(hidden)
-            paragraph = False
+
+def nonparagraph_block(line, paragraph=False):
+    """Block starts relevant to list laziness and indented-code interruption."""
+    return bool(re.match(r'^ {0,3}(?:#{1,6}(?: |$)|>)', line)
+                or re.match(r'^ {0,3}</?pre(?:[ >]|$)', line, re.IGNORECASE)
+                or (paragraph and re.fullmatch(r' {0,3}(?:=+|-+) *', line))
+                or any(re.fullmatch(r' {0,3}(?:' + re.escape(char) + r' *){3,}', line)
+                       for char in '*_-'))
+
+
+def mask_inline_code(text):
+    """Mask equal-length backtick spans within one paragraph, preserving newlines."""
+    runs = list(re.finditer(r'`+', text))
+    parts, cursor, index = [], 0, 0
+    while index < len(runs):
+        opening = runs[index]
+        prefix = text[:opening.start()]
+        escapes = len(prefix) - len(prefix.rstrip('\\'))
+        if escapes % 2:
+            index += 1
             continue
-        # A lazy continuation line extends the open paragraph without closing its list items.
-        lazy = paragraph and not BLOCK_START.match(content)
-        while items and indent < items[-1] and not lazy:
-            items.pop()
-        base = items[-1] if items else 0
-        if fence and indent < fence[2]:
-            fence = None  # Its list item has ended.
-        match = re.match(r'(`{3,}|~{3,})', content) if indent - base < 4 else None
+        closing_index = next((following for following in range(index + 1, len(runs))
+                              if len(runs[following][0]) == len(opening[0])), None)
+        if closing_index is None:
+            index += 1
+            continue
+        end = runs[closing_index].end()
+        parts.append(text[cursor:opening.start()])
+        parts.append(re.sub(r'[^\r\n]', ' ', text[opening.start():end]))
+        cursor, index = end, closing_index + 1
+    return ''.join(parts) + text[cursor:]
+
+
+def prose_only(text, *, inline_code=False, include_pre_ranges=False):
+    """Mask code blocks while retaining list prose, original indentation and line numbers."""
+    # Items store marker/content columns, marker style, and whether they have content.
+    lines, containers, fence = [], [], None
+    paragraph = False
+    paragraph_lines = []
+    pre_base, pre_start = None, None
+    pre_ranges = []
+
+    def finish_pre():
+        nonlocal pre_base, pre_start
+        pre_ranges.append((pre_start, sum(map(len, lines))))
+        pre_base, pre_start = None, None
+
+    def flush_paragraph():
+        value = ''.join(paragraph_lines)
+        lines.append(mask_inline_code(value) if inline_code else value)
+        paragraph_lines.clear()
+
+    for raw in text.splitlines(keepends=True):
+        ending = re.search(r'(\r\n|\n|\r)$', raw)
+        masked = ending[0] if ending else ''
+        line = raw.rstrip('\r\n').expandtabs(4)
+        indent = len(line) - len(line.lstrip(' '))
+        blank = not line.strip()
+        if pre_base is not None:
+            if blank or indent >= pre_base:
+                # Keep raw HTML for links; default anchor extraction still masks indentation.
+                lines.append(raw if inline_code or indent < 4 else masked)
+                paragraph = False
+                if re.search(r'</pre\s*>', line, re.IGNORECASE):
+                    finish_pre()
+                continue
+            finish_pre()
         if fence:
-            if match and match[1][0] == fence[0] and len(match[1]) >= fence[1]:
-                fence = None
-            lines.append(hidden)
-        elif match:
-            fence, paragraph = (match[1][0], len(match[1]), base), False
-            lines.append(hidden)
-        elif indent - base >= 4 and not paragraph:
-            lines.append(hidden)
+            # An unclosed fence ends when its containing list item ends.
+            if blank or indent >= fence[2]:
+                closing = re.fullmatch(r' {0,3}(`{3,}|~{3,}) *', line[fence[2]:])
+                if closing and closing[1][0] == fence[0] and len(closing[1]) >= fence[1]:
+                    fence = None
+                lines.append(masked)
+                continue
+            fence = None
+        if blank:
+            flush_paragraph()
+            # A blank line ends an item that has not contained any content yet.
+            while containers and not containers[-1][3]:
+                containers.pop()
+            paragraph = False
+            lines.append(raw)
+            continue
+
+        base = containers[-1][1] if containers else 0
+        if indent < base:
+            outer = next((item[1] for item in reversed(containers) if item[1] <= indent), 0)
+            candidate = line[outer:]
+            prefix = list_item_prefix(candidate)
+            starts_list = False
+            if prefix:
+                marker_column, content_column, marker = prefix
+                sibling = any(outer + marker_column == item[0] and marker[-1] == item[2]
+                              for item in containers)
+                can_interrupt = marker in '-+*' or int(marker[:-1]) == 1
+                starts_list = sibling or (candidate[content_column:].strip() and can_interrupt)
+            interrupts = fence_start(candidate) or nonparagraph_block(candidate, paragraph) or starts_list
+            if paragraph and not interrupts:
+                # A lazy continuation belongs to the open list paragraph despite dedenting.
+                paragraph_lines.append(raw)
+                continue
+            flush_paragraph()
+            while containers and indent < containers[-1][1]:
+                containers.pop()
+            paragraph = False
+            base = containers[-1][1] if containers else 0
+
+        body = line[base:]
+        if body.strip():
+            containers = [(*item[:3], True) for item in containers]
+        while not nonparagraph_block(body, paragraph):
+            prefix = list_item_prefix(body)
+            if not prefix:
+                break
+            marker_column, content_column, marker = prefix
+            content = body[content_column:]
+            can_interrupt = marker in '-+*' or int(marker[:-1]) == 1
+            if paragraph and (not content.strip() or not can_interrupt):
+                break
+            flush_paragraph()
+            containers.append((base + marker_column, base + content_column, marker[-1], bool(content.strip())))
+            base += content_column
+            body = line[base:]
+            paragraph = False
+
+        opening = fence_start(body)
+        if re.match(r'^ {0,3}<pre(?:[ >]|$)', body, re.IGNORECASE):
+            flush_paragraph()
+            pre_base, pre_start = base, sum(map(len, lines))
+            lines.append(raw)
+            paragraph = False
+            if re.search(r'</pre\s*>', body, re.IGNORECASE):
+                finish_pre()
+        elif opening:
+            flush_paragraph()
+            fence = (*opening, base)
+            paragraph = False
+            lines.append(masked)
+        elif len(body) - len(body.lstrip(' ')) >= 4 and not paragraph:
+            flush_paragraph()
+            lines.append(masked)
         else:
-            marker = LIST_MARKER.match(content) if indent - base < 4 else None
-            if marker:
-                spaces = len(marker[2])
-                items.append(indent + len(marker[1]) + (spaces if spaces <= 4 and content[marker.end():] else 1))
-            paragraph = not re.match(r'#{1,6}(?: |$)', content)
-            lines.append(line)
-    return ''.join(lines)
+            continues_paragraph = bool(body.strip()) and not nonparagraph_block(body, paragraph)
+            if continues_paragraph:
+                paragraph_lines.append(raw)
+            else:
+                flush_paragraph()
+                lines.append(mask_inline_code(raw) if inline_code else raw)
+            paragraph = continues_paragraph
+    flush_paragraph()
+    if pre_base is not None:
+        finish_pre()
+    result = ''.join(lines)
+    return (result, pre_ranges) if include_pre_ranges else result
 
 
 def markdown_anchors(text):
@@ -707,13 +835,17 @@ HTML_LINK_PATTERN = re.compile(r'<[A-Za-z][^>]*?\b(?:href|src)=["\']([^"\']+)["\
 
 
 def document_links(text):
-    prose = prose_only(text)
-    # Inline code is not a rendered link; retain its newlines for diagnostics.
-    prose = re.sub(r'(`+)([^\n]*?)\1', lambda match: ' ' * len(match[0]), prose)
-    for pattern in (LINK_PATTERN, REFERENCE_PATTERN, HTML_LINK_PATTERN):
-        for match in pattern.finditer(prose):
+    # Inline spans may cross lines, but never a paragraph or block boundary.
+    prose, pre_ranges = prose_only(text, inline_code=True, include_pre_ranges=True)
+    markdown = prose
+    for start, end in reversed(pre_ranges):
+        markdown = markdown[:start] + re.sub(r'[^\r\n]', ' ', markdown[start:end]) + markdown[end:]
+    # Raw HTML links remain clickable inside <pre>; Markdown-like text does not.
+    for pattern, content in ((LINK_PATTERN, markdown), (REFERENCE_PATTERN, markdown),
+                             (HTML_LINK_PATTERN, prose)):
+        for match in pattern.finditer(content):
             destination = html.unescape(match[1].strip('<>'))
-            yield destination, prose.count('\n', 0, match.start()) + 1
+            yield destination, content.count('\n', 0, match.start()) + 1
 
 
 def validate_markdown(root, errors):
