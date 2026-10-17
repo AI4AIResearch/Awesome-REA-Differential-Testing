@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_at": "2026-10-17",
-  "catalog_revision": "3b2737005cb1d6a8c4478f27bc1e2273c47f488d",
+  "catalog_revision": "4a4cf2b0884cc7ba85d48b79d1974449e60c09aa",
   "runtime_reproduced": false,
   "project_identity_resolution": "incomplete",
   "collections": [
@@ -8300,15 +8300,25 @@
         "https://github.com/n64decomp/sm64",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. README describes a full decompilation for five listed N64/iQue versions, original asset extraction and a configurable ROM hash comparison. Naming/documentation remain ongoing; disabling COMPARE or using nonmatching options changes the verification claim. Review build/license provenance and matching configuration before drafting; do not conflate this original-target decompilation with sm64ex/Ghostship ports.",
-      "reason_zh": "README 描述五个 N64/iQue 版本的完整反编译、原素材提取及可配置的 ROM 哈希比较；命名和文档仍在推进。关闭比较或采用非匹配选项会改变验证含义。发表前还需核查构建、许可及匹配配置，不能等同于后续 PC 移植。",
+      "reason_en": "The catalog case covers this original-target Super Mario 64 reconstruction, its five release targets, original-ROM prerequisite and configurable comparison gates. Disabled comparison and modified builds do not establish byte-identical results; separate PC ports are outside this mapping. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "目录案例覆盖此 Super Mario 64 原目标平台重建、五个发行版本、原 ROM 前提和可配置比较门槛。关闭比较或修改后的构建不能证明逐字节一致；独立 PC 移植不在此映射范围内。来源核查不表示独立运行复现。",
       "primary_evidence_urls": [
-        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md"
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/LICENSE.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sm64-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-003",
@@ -8870,15 +8880,25 @@
       "reported_source_urls": [
         "https://github.com/hedge-dev/UnleashedRecomp"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Unleashed Recompiled translates Xbox 360 PowerPC and shader code with XenonRecomp/XenosRecomp. US/EU files plus a title update are required; JP/PS3 files are excluded. Documented high-frame-rate glitches and loading stutters remain. Follow pinned build/license files; distinguish Windows/Linux support from possible macOS work and author-specific performance reports.",
-      "reason_zh": "Unleashed Recompiled 用 XenonRecomp/XenosRecomp 转换 Xbox 360 代码和着色器，要求美版或欧版文件及更新，不支持日版或 PS3 文件；高帧率问题和加载停顿仍有记录。后续需核查构建、许可，区分 Windows/Linux 与潜在 macOS 工作。",
+      "reason_en": "The catalog case covers this Xbox 360 Sonic Unleashed code/shader recompilation, original game and update prerequisites, and documented compatibility limits. Same-revision macOS documentation disagreement is retained rather than treated as verified support. Source review does not establish original-source recovery or independently reproduced performance.",
+      "reason_zh": "目录案例覆盖此 Xbox 360 Sonic Unleashed 代码与着色器重编译、原游戏及更新前提和已记录的兼容性限制。同一固定版本中关于 macOS 的文档分歧被保留，不视为已验证支持。来源核查不证明恢复原始源码或独立复现性能结果。",
       "primary_evidence_urls": [
-        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md"
+        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md",
+        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
+        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
+        "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/COPYING"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "unleashed-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-030",
@@ -9660,15 +9680,27 @@
       "reported_source_urls": [
         "https://github.com/OpenMW/openmw"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. OpenMW README describes an engine replacement plus Construction Set replacement, not original decompiled source. It reports main-quest completion but warns about side quests/mod compatibility; no 32-bit support. Follow authoritative GitLab-linked license/build sources and preserve original Morrowind data requirement; do not imply all mods or quests are equivalent.",
-      "reason_zh": "OpenMW README 描述引擎及 Construction Set 替代实现，并非原始源码反编译；报告主线任务可完成，同时保留支线与模组兼容性问题，不支持 32 位平台。发表前须核查 GitLab 一手许可和构建来源，保留自备 Morrowind 数据要求。",
+      "reason_en": "The catalog case covers OpenMW as an independent Morrowind engine/editor replacement that reuses original game content. Platform, dependency, quest/mod compatibility and selected-test limits remain explicit. This maps the documented replacement project, not a recovered Bethesda source tree or independently proven whole-game equivalence.",
+      "reason_zh": "目录案例将 OpenMW 收录为复用原游戏内容的独立 Morrowind 引擎及编辑器替代实现，保留平台、依赖、任务与模组兼容性及有限测试范围。映射对应已记录的替代项目，不代表恢复 Bethesda 源码或独立证明完整游戏等价。",
       "primary_evidence_urls": [
-        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md"
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md",
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/docs/source/manuals/installation/install-game-files.rst",
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/scripts/data/morrowind_tests/README.md",
+        "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CI/run_integration_tests.sh"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "openmw-engine-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-069",
@@ -10666,15 +10698,28 @@
         "https://github.com/OpenDriver2/REDRIVER2",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. REDRIVER2 describes translating MIPS to C using debug symbols, Ghidra/IDA and Psy-X, with the memory-card menu explicitly excluded and deliberate bug fixes/improvements. Read installation/license sources and preserve compatibility-layer/modified-behavior boundaries before drafting; do not claim unchanged byte identity.",
-      "reason_zh": "REDRIVER2 描述借助调试符号、Ghidra/IDA 和 Psy-X 将 MIPS 转为 C，但明确排除记忆卡菜单，并有意修复或改动玩法。发表前需核查安装与许可，保留兼容层及行为修改边界，不声称二进制逐字节一致。",
+      "reason_en": "The catalog case covers REDRIVER2’s symbol-assisted reconstruction and PlayStation compatibility layer, with both-disc prerequisites and separately pinned installation/build wiki evidence. The memory-card menu exclusion and deliberate behavior changes remain explicit; source review does not establish a byte-identical rebuild or independent runtime reproduction.",
+      "reason_zh": "目录案例覆盖 REDRIVER2 借助符号的重建与 PlayStation 兼容层，并记录双碟前提和单独固定版本的安装、构建 Wiki 证据。记忆卡菜单未覆盖及有意修改的行为仍明确保留；来源核查不证明逐字节一致重构建或独立运行复现。",
       "primary_evidence_urls": [
-        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md"
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md",
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/appveyor.yml",
+        "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/LICENSE",
+        "https://github.com/OpenDriver2/REDRIVER2/wiki/Installation-instructions/35c32de044cc80e10574838860489e5fe773fed3",
+        "https://github.com/OpenDriver2/REDRIVER2/wiki/Contributing-to-project/35c32de044cc80e10574838860489e5fe773fed3"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "redriver2-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-118",
@@ -11198,18 +11243,18 @@
     "inventory_units": 510,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 46,
+      "already-curated": 50,
       "insufficient-evidence": 51,
-      "pending": 415
+      "pending": 411
     },
     "units_by_state": {
-      "already-curated": 45,
+      "already-curated": 49,
       "insufficient-evidence": 51,
-      "pending": 414
+      "pending": 410
     },
     "primary_reviewed_units": 43,
-    "catalog_linked_occurrences": 51,
-    "distinct_resource_ids": 38,
+    "catalog_linked_occurrences": 55,
+    "distinct_resource_ids": 42,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
