@@ -1201,5 +1201,45 @@
       "由于依赖 QEMU 等 GPLv2 组件，项目整体采用 GPL-2.0，单个文件采用 MIT 许可。rev.ng 网站将反编译流水线描述为自由软件。界面目前处于封闭测试阶段，计划免费提供公开项目的云端使用，私有项目及完全离线版本则将推出商业方案。",
       "生成合法且可重新编译的 C 代码是项目的设计目标，并非对任意二进制都已验证的特性；推断出的类型和名称需要分析者复核。本次未反编译任何二进制。"
     ]
+  },
+  "sm64-decomp-case": {
+    "name": "Super Mario 64：带明确比较开关的 ROM 重建",
+    "requirements": [
+      "需要用户自备匹配的原 ROM 来提取素材。五个目标版本分别处理；此仓库的源码重建不能与独立维护的 sm64ex、Ghostship 或多人移植混为一谈。",
+      "文档中的构建使用 GNU make、Python 3.6+、MIPS binutils、pkgconf 和宿主开发工具。Windows 指南采用 WSL/Linux；macOS 指南要求合适的 MIPS 工具链及较新的 GNU make。",
+      "Makefile 通常把输出 ROM 的 SHA-1 与所选参考哈希比较；NON_MATCHING、非 N64 目标或非标准配置会关闭比较。修改构建成功不等于获得匹配结果。",
+      "固定版本 Jenkins 配置明确为 iQue 和增强补丁构建设置 COMPARE=0，因此不能把五版本构建矩阵称为五个已独立确认的逐字节一致结果。本合集未构建或运行游戏。",
+      "仓库包含 CC0-1.0 声明；该声明不提供原 Nintendo 内容或其他第三方权利。所审阅文件未证实 REA 或编程智能体参与。"
+    ]
+  },
+  "unleashed-recompiled-case": {
+    "name": "Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器",
+    "requirements": [
+      "需要用户自备美版或欧版 Xbox 360 游戏文件及更新；所审阅安装指南不支持日版或 PS3 文件。DLC 为可选内容，项目不提供游戏素材。",
+      "README 的 Windows/Linux 基线包括支持 AVX 的 CPU、8 GB 内存，以及支持带 Shader Model 6 的 Direct3D 12.0 或 Vulkan 1.2 的显卡；列出的系统为 Windows 10 版本 1909 和 Ubuntu 22.04 等现代 Linux 发行版。",
+      "源码构建需要子模块、CMake 3.20+、C++20 工具链、配置 VCPKG_ROOT 的 vcpkg，以及相互匹配的可执行文件、更新和着色器输入。同一修订的 BUILDING.md 记录了 Xcode 16.3+ 和 macOS 预设，而 README 称 macOS 不在计划中；这种不一致不能证明已验证 macOS 支持。",
+      "文档仍记录高帧率玩法异常、加载停顿和超宽屏过场问题；不支持替换原可执行文件或着色器的模组。本合集未独立复现功能改进或性能说法。",
+      "项目采用 GPLv3，原游戏及依赖另有条款。这是静态重编译，不表示恢复原作者源码；所审阅一手文件未证实 REA 或编程智能体参与。"
+    ]
+  },
+  "openmw-engine-case": {
+    "name": "OpenMW：复用原内容并替代 Morrowind 引擎",
+    "requirements": [
+      "运行 Morrowind 需要用户自备原游戏数据，包括 Morrowind.esm 和安装设置。Tribunal 与 Bloodmoon 是可选扩展；安装指南建议同时安装以取得最佳效果。OpenMW-CS 也可支持另行创作的项目。",
+      "固定版本 README 和构建文件标明 0.52.0；这是源码快照标识，不表示本合集测试了某个发行版。README 列出 Windows 10+、macOS 14.8+ 和 Linux，并说明不支持 32 位平台。",
+      "源码配置使用 CMake 3.16+、C++20、SDL2 2.26+、OpenSceneGraph 3.6.5+、Boost 1.70+ 和 OpenAL；启动器、编辑器及向导构建使用 Qt6。其他依赖随启用组件而异。",
+      "项目报告主线任务可完成，但提醒支线和依赖原引擎特殊行为的模组仍有问题。Example Suite 集成测试及独立的 Morrowind 内容测试配置只覆盖特定行为，不能证明原游戏或所有模组完全等价；本合集未重新运行。",
+      "官方 GitHub 镜像指向主 GitLab 项目。项目代码采用 GPLv3，字体、依赖和原游戏数据各有条款。所审阅来源未证实 REA 或编程智能体参与。"
+    ]
+  },
+  "redriver2-case": {
+    "name": "REDRIVER2：借助 PlayStation 兼容层重建 Driver 2",
+    "requirements": [
+      "需要用户自备 Driver 2 的两张游戏光盘。固定修订的安装 wiki 列出英文 PAL 欧洲版和 NTSC 美版的 1.0/1.1 版本，其他语言仍在计划中；作为反编译输入引用的意大利语／西班牙语 SYM 文件不代表支持这些游戏数据版本。",
+      "文档中的运行路径面向 Windows 和 Linux；安装阶段用 Java 转换光盘视频与音频。Linux 运行说明列出 SDL2 和 OpenAL；项目不提供原游戏内容。",
+      "源码构建使用子模块、Premake5 和 C++ 工具链。Windows 指南采用 Visual Studio 2022；Linux 构建链接 SDL2、OpenAL、OpenGL 和 libjpeg。Wiki 中旧 Premake 测试版下载示例不被视为通用最低版本要求。",
+      "README 报告重建结果可玩，但明确把记忆卡菜单排除在反编译声明之外；部分原错误和玩法被有意修改。[D]、[T]、[A] 标记区分反编译、测试及改动代码，不能证明整款游戏的保真度。",
+      "项目代码采用 MIT 许可；原游戏数据和第三方组件保留各自权利。本次核查未建立逐字节一致重构建、独立运行测试或 REA／编程智能体参与的结论。"
+    ]
   }
 }

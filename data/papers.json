@@ -2021,5 +2021,61 @@
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-code-world-models",
+    "title": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search",
+    "title_zh": "通过蒙特卡洛树搜索引导大语言模型生成代码世界模型",
+    "authors": [
+      "Nicola Dainese",
+      "Matteo Merler",
+      "Minttu Alakuijala",
+      "Pekka Marttinen"
+    ],
+    "year": 2024,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The final NeurIPS proceedings and publisher-deposited Crossref record identify 2024. No publication month or day is asserted; conference event dates are not substituted for publication dates.",
+    "date_basis_zh": "正式 NeurIPS 论文集及出版方提交的 Crossref 记录给出 2024 年。不推定出版月份或日期，也不把会议举办日期当作出版日期。",
+    "venue": "NeurIPS 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2405.15383",
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": "2024-05-24",
+    "doi": "10.52202/079017-1933",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf",
+    "code_url": "https://github.com/nicoladainese96/code-world-models",
+    "project_url": "https://sites.google.com/view/code-world-models/home",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GIF-MCTS generates executable Python transition and reward models from natural-language environment descriptions and offline state-transition trajectories, using prediction feedback to generate, improve and repair code. CWMB evaluates 18 reinforcement-learning environments and downstream planning; a separate experiment uses a simplified Read to Fight Monsters grid world.",
+    "description_zh": "GIF-MCTS 根据环境的自然语言描述与离线状态转移轨迹生成可执行的 Python 状态转移和奖励模型，并利用预测反馈生成、改进和修复代码。CWMB 评估 18 个强化学习环境及后续规划；另一个实验使用简化的 Read to Fight Monsters 网格世界。",
+    "scope_limitations_en": "Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.",
+    "scope_limitations_zh": "假设环境动态具有确定性、状态完全可观测，并且描述足够详细；并非仅凭像素或二进制进行恢复。准确率使用合成过程中提供的回放转移，并结合规划回报评估，不能证明所有未见状态上的正确性或完整引擎等价。RTFM 在不同回合间固定手册内容，并让怪物保持静止。CWMB 也包含非游戏的控制与物理任务；部分规划回报未给出，复杂连续状态模型仍然困难。",
+    "why_fits_en": "Shows how documented rules and observed transitions in game-like environments can become executable behavior models with test feedback. It complements game reconstruction without claiming recovery of original engines, graphics or assets.",
+    "why_fits_zh": "展示如何借助测试反馈，将类游戏环境中的已记录规则和已观察转移转为可执行行为模型。它可补充游戏重建研究，但不声称恢复原始引擎、图形或资产。",
+    "evidence_urls": [
+      "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html",
+      "https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf",
+      "https://api.crossref.org/works/10.52202/079017-1933",
+      "https://arxiv.org/abs/2405.15383",
+      "https://sites.google.com/view/code-world-models/home",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/README.md",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/LICENSE",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/RTFM/LICENSE",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/environment.yml",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/src/mcts/gif_mcts/simulators/simulator_cwm.py",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/src/cwm_benchmark/generate_env.py",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/src/experiments/eval_cwm_planning.py",
+      "https://github.com/nicoladainese96/code-world-models/blob/e17e787b41137793bcef9f860bdfe9e6fc07b768/data/prompts/rtfm/generate.md"
+    ],
+    "metadata_notes": "Reviewed the final proceedings paper, pages 60429–60474. Its WorldCoder baseline follows the first arXiv version, not later revisions. The Apache-2.0 repository provides prompts, replay-buffer files and evaluation scripts; bundled RTFM carries CC BY-NC 4.0. The pinned evaluator balances reward classes, grants partial credit over next-state components, skips terminal next-state checks, and accepts nonempty valid-action subsets for RTFM; continuous states use 1e-5 relative/absolute tolerance. Its score is not a strict full-transition match rate. The planning script defaults to two episodes, while the paper reports ten. Reproduction needs the Linux-oriented Conda/Python 3.10 environment, Gymnasium/MuJoCo and model access. No upstream code, serialized buffer or model was executed.",
+    "metadata_notes_zh": "核查的是正式论文集版本，页码 60429–60474。其中的 WorldCoder 基线依据首个 arXiv 版本，而非后续修订版。Apache-2.0 仓库提供提示词、回放缓冲区文件和评估脚本；随附 RTFM 采用 CC BY-NC 4.0。固定版本评估器对奖励类别作平衡加权，按下一状态分量给予部分分数，跳过终止转移的下一状态核对，并允许 RTFM 返回有效动作集合的非空子集；连续状态采用 1e-5 的相对和绝对容差。因此该分数不是严格的完整转移匹配率。规划脚本默认运行两个回合，而论文报告十个回合。复现需要面向 Linux 的 Conda/Python 3.10 环境、Gymnasium/MuJoCo 及模型访问权限。本次未执行上游代码、加载序列化缓冲区或调用模型。",
+    "kind": "research",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

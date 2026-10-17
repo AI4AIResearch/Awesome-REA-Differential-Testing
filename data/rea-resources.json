@@ -1361,5 +1361,122 @@
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE"
     ]
+  },
+  {
+    "id": "sm64-decomp-case",
+    "name": "Super Mario 64: ROM reconstruction with explicit comparison gates",
+    "url": "https://github.com/n64decomp/sm64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs Super Mario 64 source for Japanese, North American, European, Shindou and iQue releases. Its build files distinguish original-ROM hash comparison from nonmatching or modified configurations, while source naming and documentation remain ongoing.",
+    "description_zh": "为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。构建文件区分原 ROM 哈希比较与非匹配或修改配置；源码命名和文档工作仍在推进。",
+    "evidence_url": "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s matching original ROM for asset extraction. The five target releases are separate; this repository’s reconstruction should not be confused with the separately maintained sm64ex, Ghostship or multiplayer ports.",
+      "The documented build uses GNU make, Python 3.6+, MIPS binutils, pkgconf and host development tools. Windows instructions use WSL/Linux; macOS instructions require an appropriate MIPS toolchain and newer GNU make.",
+      "The Makefile normally checks the output ROM’s SHA-1 against the selected reference. NON_MATCHING, a non-N64 target or nonstandard configurations disable comparison; a successful modified build is not a matching-result claim.",
+      "The pinned Jenkins configuration explicitly sets COMPARE=0 for iQue and enhancement builds. Its five-version build matrix therefore must not be described as five independently confirmed byte-identical results; no build or game was run for this catalog.",
+      "The repository carries CC0-1.0; original Nintendo content and any separate third-party rights are not supplied by that declaration. No REA or coding-agent involvement is established by the reviewed files."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/LICENSE.md"
+    ]
+  },
+  {
+    "id": "unleashed-recompiled-case",
+    "name": "Unleashed Recompiled: translating Xbox 360 game code and shaders",
+    "url": "https://github.com/hedge-dev/UnleashedRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Builds an unofficial Sonic Unleashed PC port by statically recompiling Xbox 360 PowerPC code with XenonRecomp and Xenos shaders with XenosRecomp. The port adds modern display and modding options while documenting original-engine limits and remaining compatibility issues.",
+    "description_zh": "使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。项目增加现代显示与模组选项，同时记录原引擎限制和仍存在的兼容性问题。",
+    "evidence_url": "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s US or EU Xbox 360 game files and the title update; the Japanese release and PS3 files are unsupported by the reviewed installation guide. DLC is optional, and the project does not provide game assets.",
+      "The README’s Windows/Linux baseline includes an AVX-capable CPU, 8 GB RAM and Direct3D 12.0 with Shader Model 6 or Vulkan 1.2 graphics. It lists Windows 10 version 1909 and a modern Linux distribution such as Ubuntu 22.04.",
+      "Source builds require submodules, CMake 3.20+, C++20 tooling, vcpkg with VCPKG_ROOT configured, and matching executable/update/shader inputs. At the same revision, BUILDING.md documents Xcode 16.3+ and macOS presets while the README says macOS is not on the roadmap; this inconsistency does not establish verified macOS support.",
+      "High-frame-rate gameplay glitches, loading stutters and ultrawide cutscene issues remain documented. Mods replacing the original executable or shaders are unsupported; improvements and performance claims were not independently reproduced here.",
+      "GPLv3 project license, with separate original-game and dependency terms. This is static recompilation, not a claim to recover the original authored source; reviewed primary files do not establish REA or coding-agent involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/COPYING"
+    ]
+  },
+  {
+    "id": "openmw-engine-case",
+    "name": "OpenMW: replacing Morrowind’s engine while reusing original content",
+    "url": "https://github.com/OpenMW/openmw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Provides an independent engine for playing Morrowind and an alternative editor, OpenMW-CS. It loads original game content through its own runtime and documents script and mod compatibility differences; it is an engine replacement rather than a recovered Bethesda source tree.",
+    "description_zh": "提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。这是引擎替代实现，而非恢复出的 Bethesda 源码树。",
+    "evidence_url": "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Playing Morrowind requires the user’s original game data, including Morrowind.esm and the installation settings. Tribunal and Bloodmoon are optional expansions; the installation guide recommends both for best results. OpenMW-CS can also support separately authored projects.",
+      "The pinned README and build files identify version 0.52.0; this is a source-snapshot identifier, not a claim that a release was tested. The README lists Windows 10+, macOS 14.8+ and Linux, with no 32-bit support.",
+      "The source configuration uses CMake 3.16+, C++20, SDL2 2.26+, OpenSceneGraph 3.6.5+, Boost 1.70+ and OpenAL; launcher/editor/wizard builds use Qt6. Additional dependencies depend on enabled components.",
+      "The project reports the main quests as completable, but warns about side quests and mods that depend on original-engine quirks. Example Suite integration tests and the separate Morrowind-content test setup cover selected behavior, not complete original-game or mod equivalence; none was rerun here.",
+      "The official GitHub mirror points to the main GitLab project. GPLv3 covers project code, with separate font/dependency terms and original-game data rights. No REA or coding-agent involvement is established by the reviewed sources."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/docs/source/manuals/installation/install-game-files.rst",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/scripts/data/morrowind_tests/README.md",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CI/run_integration_tests.sh"
+    ]
+  },
+  {
+    "id": "redriver2-case",
+    "name": "REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer",
+    "url": "https://github.com/OpenDriver2/REDRIVER2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. The project documents symbol-assisted Ghidra/IDA work alongside intentional bug fixes and gameplay changes.",
+    "description_zh": "将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。项目记录借助符号的 Ghidra/IDA 分析，同时明确包含有意修复的错误和玩法改动。",
+    "evidence_url": "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s copies of both Driver 2 discs. The pinned installation wiki lists English PAL EU and NTSC US revisions 1.0/1.1; other languages remain planned. Italian/Spanish SYM files cited as decompilation inputs do not imply support for those game-data editions.",
+      "Documented play paths cover Windows and Linux; installation converts disc video/audio using Java. Linux runtime instructions list SDL2 and OpenAL; original game content is not supplied by the project.",
+      "Source builds use submodules, Premake5 and a C++ toolchain. The Windows guide uses Visual Studio 2022; Linux builds link SDL2, OpenAL, OpenGL and libjpeg. The wiki’s old Premake beta download example is not treated as a general minimum-version requirement.",
+      "The README reports a playable reconstruction but explicitly excludes the memory-card menu from its decompilation claim. Original bugs and some gameplay are deliberately changed; [D], [T] and [A] annotations distinguish decompiled, tested and altered code rather than proving whole-game fidelity.",
+      "MIT license for project code; original game data and third-party components retain their own rights. No byte-identical rebuild, independent runtime test or REA/coding-agent involvement is established by this review."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/appveyor.yml",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/LICENSE",
+      "https://github.com/OpenDriver2/REDRIVER2/wiki/Installation-instructions/35c32de044cc80e10574838860489e5fe773fed3",
+      "https://github.com/OpenDriver2/REDRIVER2/wiki/Contributing-to-project/35c32de044cc80e10574838860489e5fe773fed3"
+    ]
   }
 ]
