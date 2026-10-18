@@ -6,7 +6,7 @@
 
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
-**[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)**
+**[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
 
 **来源核查不代表运行验证。** [核查方法](https://awesomerea.org/zh/about/)
 
@@ -26,6 +26,16 @@
 
 - [全部案例](https://awesomerea.org/zh/cases/) (56) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
+
+## 按任务查找
+
+| 任务 | 相关分类 |
+| --- | --- |
+| 检查网站或应用界面 | [网站](#website) · [应用](#app) |
+| 重建游戏或检查代码匹配 | [游戏](#game) · [游戏案例](https://awesomerea.org/zh/cases/#cases-game) |
+| 分析编译后代码或恢复符号 | [原生二进制](#native-binary) · [智能体与 MCP](#agents-and-mcp) |
+| 研究固件或设备协议 | [固件](#firmware) · [协议](#protocol) |
+| 比较方法与评测证据 | [论文](#papers) · [综述中的对比分析](https://awesomerea.org/zh/survey/#comparative-studies) |
 
 <a id="资源目录"></a>
 <a id="resource-catalog"></a>
