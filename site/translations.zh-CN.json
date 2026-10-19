@@ -3887,5 +3887,13 @@
       "Android 与 iOS 版 UnCrackable 应用是 OWASP 自己的逆向工程挑战，在指南中通篇用作示例。示例应用页面介绍的是第三方应用，工具页面介绍的是外部软件，二者均保留各自条款。演示结果基于指南自带的示例代码撰写，并非对正式发布应用的测试。",
       "仓库采用 CC BY-SA 4.0 许可，改编文本须署名并沿用相同许可。该指南未确立与 REA 的关联；本条目将其作为测试与逆向工程参考收录，本次审阅未运行任何演示。"
     ]
+  },
+  "wino-mail-case": {
+    "name": "Wino Mail：重建 Windows 邮件与日历体验",
+    "requirements": [
+      "来自 bkaankose/Wino-Mail 的 Windows 应用；已审查 README 链接 Microsoft Store 与 App Installer 分发渠道。",
+      "仓库为其代码提供 GNU GPL 第 3 版许可证正文；这不授予原 Microsoft 应用或品牌的许可。",
+      "功能覆盖与保留原有体验均为上游目标和声明。本次未安装、构建或对比应用，未证实 REA 集成。"
+    ]
   }
 }
