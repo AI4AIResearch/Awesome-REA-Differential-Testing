@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**621 repositories** · 2026-10-16 UTC
+**620 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -134,7 +134,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Diobf/Deobfuscator](https://github.com/Diobf/Deobfuscator) — Some deobfuscator for java lol **[540 stars]**
 - [pret/pokediamond](https://github.com/pret/pokediamond) — Decompilation of Pokémon Diamond/Pearl **[540 stars]**
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) — Nightly Claude Code CLI Decompile — Reverse Engineered &amp; Rebuilt **[533 stars]**
-- [jac3km4/redscript](https://github.com/jac3km4/redscript) — Compiler/decompiler toolkit for redscript **[520 stars]**
 - [MaxPixelStudios/MinecraftDecompiler](https://github.com/MaxPixelStudios/MinecraftDecompiler) — Minecraft Decompiler. A useful tool/library to deobfuscate and decompile Minecraft(or any jar file) through popular mappings and various decompilers. Or use it as a lib to process obfuscation mappings such as converting a mapping to another format **[493 stars]**
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT bytecode decompiler **[487 stars]**
 - [aozhimin/iOS-APM-Secrets](https://github.com/aozhimin/iOS-APM-Secrets) — <span>:</span>secret: WIP: An in-depth look at the core technologies and implementation details behind major APM vendors' iOS SDKs. Updates ongoing... **[474 stars]**
