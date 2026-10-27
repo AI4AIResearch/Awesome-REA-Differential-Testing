@@ -21,6 +21,8 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
+490 curated resources (206 cases) · 134 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 487 because 3 of these appear only under Papers.
+
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (193) · [App](#app) (77)
